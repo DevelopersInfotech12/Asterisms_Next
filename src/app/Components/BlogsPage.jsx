@@ -21,7 +21,7 @@ const BlogsPage = () => {
         "Understanding how businesses can effectively navigate insolvency proceedings under the IBC framework.",
       content:
         "The Insolvency and Bankruptcy Code (IBC) provides a time-bound process for resolving corporate insolvency. Strategic restructuring involves evaluating debt, negotiating with creditors, and ensuring business continuity...",
-      image: "https://source.unsplash.com/800x600/?law,justice",
+      image: "/images/blog4.jpg",
       author: "Priyanshu Gupta",
       date: "2025-03-15",
       readTime: "7 min read",
@@ -37,7 +37,7 @@ const BlogsPage = () => {
         "Examining the duties and powers of insolvency professionals under the IBC.",
       content:
         "Insolvency professionals act as intermediaries, managing the debtor's assets, coordinating with creditors, and ensuring compliance with the IBC regulations...",
-      image: "https://source.unsplash.com/800x600/?court,lawyer",
+     image: "/images/blog5.jpg",
       author: "Dr. Anjali Mehra",
       date: "2025-03-18",
       readTime: "6 min read",
@@ -55,7 +55,7 @@ const BlogsPage = () => {
         "Breaking down key compliance requirements for banks and financial institutions.",
       content:
         "Banking institutions in India are governed by RBI guidelines, covering risk management, asset classification, and corporate governance...",
-      image: "https://source.unsplash.com/800x600/?bank,finance",
+      image: "/images/blog6.jpg",
       author: "Dr. Rakesh Sharma",
       date: "2025-03-17",
       readTime: "8 min read",
@@ -71,7 +71,7 @@ const BlogsPage = () => {
         "Exploring effective legal strategies for banks to resolve disputes with borrowers.",
       content:
         "Dispute resolution in the banking sector often involves debt recovery tribunals, arbitration, and structured settlements...",
-      image: "https://source.unsplash.com/800x600/?courtroom,legal",
+      image: "/images/blog7.jpg",
       author: "Dr. Meera Nair",
       date: "2025-03-20",
       readTime: "7 min read",
@@ -89,7 +89,7 @@ const BlogsPage = () => {
         "A deep dive into regulatory approvals and due diligence in corporate mergers.",
       content:
         "M&A transactions require compliance with SEBI, Competition Commission of India (CCI), and corporate governance norms to safeguard shareholders...",
-      image: "https://source.unsplash.com/800x600/?business,contract",
+      image: "/images/blog1.jpg",
       author: "Dr. Rahul Khanna",
       date: "2025-03-10",
       readTime: "9 min read",
@@ -105,7 +105,7 @@ const BlogsPage = () => {
         "Understanding clauses that safeguard the rights of minority shareholders.",
       content:
         "Shareholder agreements define exit rights, voting powers, and dispute resolution mechanisms, ensuring protection for minority investors...",
-      image: "https://source.unsplash.com/800x600/?contract,law",
+      image: "/images/blog2.jpg",
       author: "Dr. Kavita Joshi",
       date: "2025-03-12",
       readTime: "6 min read",
@@ -124,7 +124,7 @@ const BlogsPage = () => {
         "Best practices for boards and directors to maintain compliance with corporate governance norms.",
       content:
         "Corporate governance strengthens transparency, prevents fraud, and aligns company practices with stakeholder interests...",
-      image: "https://source.unsplash.com/800x600/?boardroom,meeting",
+      image: "/images/blog3.jpg",
       author: "Dr. Sameer Verma",
       date: "2025-03-09",
       readTime: "7 min read",
