@@ -134,33 +134,6 @@ const LearnAbout = () => {
             </div>
           </div>
         </div>
-
-        {/* Stats Section */}
-        <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="relative group cursor-pointer"
-                onMouseEnter={() => setHoveredStat(index)}
-                onMouseLeave={() => setHoveredStat(null)}
-              >
-                <div className={`text-center p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${hoveredStat === index ? 'scale-105' : ''}`}>
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${stat.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {stat.icon}
-                  </div>
-                  <div className="text-4xl font-black text-slate-900 mb-2">{stat.number}</div>
-                  <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">{stat.label}</div>
-                </div>
-
-                {/* Hover Effect */}
-                {hoveredStat === index && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-2xl -z-10 blur-xl"></div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

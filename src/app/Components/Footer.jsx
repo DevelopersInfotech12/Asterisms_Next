@@ -137,10 +137,6 @@ const Footer = () => {
                   <Linkedin className="w-8 h-8 text-yellow-500 group-hover:text-slate-900" />
                 </a>
               </div>
-              <button className="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-lg shadow-lg hover:shadow-xl">
-                <ArrowUp className="w-5 h-5" />
-                Back to Top
-              </button>
             </div>
           </div>
         </div>
