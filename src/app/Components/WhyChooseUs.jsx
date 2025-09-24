@@ -1,37 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Scale, Award, Target, ArrowRight, Phone, Mail, Users } from 'lucide-react';
 
 const WhyChooseUs = () => {
-const features = [
-  {
-    icon: <Award className="w-12 h-12" />,
-    title: "Best Law Practices",
-    description:
-      "At our firm, we combine unparalleled expertise with unwavering dedication, ensuring comprehensive legal solutions tailored to each client's unique needs."
-  },
-  {
-    icon: <Scale className="w-12 h-12" />,
-    title: "Efficiency & Trust",
-    description:
-      "Our firm's integrity is the cornerstone of our practice, built on a legacy of trustworthiness, transparency, and steadfast reliability."
-  },
-  {
-    icon: <Target className="w-12 h-12" />,
-    title: "Results You Deserve",
-    description:
-      "Our firm consistently achieves impactful results through a potent combination of strategic acumen and legal prowess, securing favorable outcomes."
-  },
-  {
-    icon: <Users className="w-12 h-12" />, // you can also use 'Briefcase' or 'Gavel' icon if you prefer
-    title: "Client-Centered Approach",
-    description:
-      "We place our clients at the heart of everything we do, offering personalized guidance, clear communication, and unwavering support throughout every stage of the legal process."
-  }
-];
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const features = [
+    {
+      icon: <Award className="w-12 h-12" />,
+      title: "Best Law Practices",
+      description:
+        "At our firm, we combine unparalleled expertise with unwavering dedication, ensuring comprehensive legal solutions tailored to each client's unique needs."
+    },
+    {
+      icon: <Scale className="w-12 h-12" />,
+      title: "Efficiency & Trust",
+      description:
+        "Our firm's integrity is the cornerstone of our practice, built on a legacy of trustworthiness, transparency, and steadfast reliability."
+    },
+    {
+      icon: <Target className="w-12 h-12" />,
+      title: "Results You Deserve",
+      description:
+        "Our firm consistently achieves impactful results through a potent combination of strategic acumen and legal prowess, securing favorable outcomes."
+    },
+    {
+      icon: <Users className="w-12 h-12" />,
+      title: "Client-Centered Approach",
+      description:
+        "We place our clients at the heart of everything we do, offering personalized guidance, clear communication, and unwavering support throughout every stage of the legal process."
+    }
+  ];
+
+  const stats = [
+    { number: 500, suffix: '+', label: 'Happy Clients', icon: '👥' },
+    { number: 21, suffix: '+', label: 'Years of Service', icon: '⚖️' },
+    { number: 25, suffix: '+', label: 'Expert Lawyers', icon: '🎓' },
+    { number: 2000, suffix: '+', label: 'Successful Cases', icon: '🏆' }
+  ];
+
+  const CountUpNumber = ({ target, suffix, duration = 2000 }) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      if (!isVisible) return;
+      
+      let startTime;
+      const animate = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        setCount(Math.floor(target * easeOutQuart));
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      
+      requestAnimationFrame(animate);
+    }, [target, duration, isVisible]);
+
+    return <span>{count.toLocaleString()}{suffix}</span>;
+  };
 
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-slate-50 pb-20 pt-8">
       <div className="container mx-auto px-6">
 
         {/* Header */}
@@ -129,32 +166,72 @@ const features = [
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {/* Modern Statistics Section */}
         <div className="mt-24 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl font-light text-slate-900 mb-6">
+          <div className="max-w-3xl mx-auto mb-12">
+            <h3 className="text-3xl font-light text-slate-900 mb-2">
               Experience Legal Excellence Like Never Before
             </h3>
-            <p className="text-lg text-slate-600 font-light mb-8">
+            <p className="text-[15px] font-sans text-slate-600 mb-8">
               Join hundreds of satisfied clients who have trusted us with their most important legal matters.
             </p>
+          </div>
 
-            <div className="inline-flex items-center gap-8 p-8 bg-white rounded-lg shadow-lg">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-amber-600 mb-1">500+</div>
-                <div className="text-sm text-slate-600">Happy Clients</div>
+          {/* Modern Stats Component */}
+          <div className="w-full max-w-5xl mx-auto overflow-hidden">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-white to-amber-50 shadow-2xl border border-slate-100">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-amber-400 to-amber-600"></div>
+                <div className="absolute top-4 right-4 w-32 h-32 bg-amber-200 rounded-full blur-3xl opacity-30"></div>
+                <div className="absolute bottom-4 left-4 w-24 h-24 bg-blue-200 rounded-full blur-2xl opacity-20"></div>
               </div>
-              <div className="w-px h-12 bg-slate-200"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-amber-600 mb-1">15+</div>
-                <div className="text-sm text-slate-600">Years of Service</div>
+
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  ">
+                {stats.map((stat, index) => (
+                  <div 
+                    key={index}
+                    className={`group relative text-center transform transition-all duration-700 hover:scale-105 ${
+                      isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                    }`}
+                    style={{ transitionDelay: `${index * 150}ms` }}
+                  >
+                    {/* Hover Background Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-95 group-hover:scale-100"></div>
+                    
+                    <div className="relative z-10 p-6">
+                      {/* Icon */}
+                      <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                        {stat.icon}
+                      </div>
+
+                      {/* Number */}
+                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 bg-clip-text text-transparent mb-3 tracking-tight">
+                        <CountUpNumber target={stat.number} suffix={stat.suffix} />
+                      </div>
+
+                      {/* Label */}
+                      <div className="text-slate-600 font-medium text-lg tracking-wide group-hover:text-slate-700 transition-colors duration-300">
+                        {stat.label}
+                      </div>
+
+                      {/* Decorative Line */}
+                      <div className="w-12 h-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full mx-auto mt-4 transform scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                    </div>
+
+                    {/* Separator Line (hidden on mobile, visible on larger screens) */}
+                    {index < stats.length - 1 && (
+                      <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-slate-200 to-transparent"></div>
+                    )}
+                  </div>
+                ))}
               </div>
-              <div className="w-px h-12 bg-slate-200"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-amber-600 mb-1">98%</div>
-                <div className="text-sm text-slate-600">Success Rate</div>
-              </div>
+
+              {/* Bottom Accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
             </div>
+
+
           </div>
         </div>
 

@@ -150,14 +150,14 @@ const Navbar = () => {
                         }
                         className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
                       >
-                        Commercial & Corporate Law
+                        Commercial, Corporate & Companies Law
                       </Link>
                       <Link
                         href="/companieslaw"
                         onClick={() => handleDropdownItemClick("/companieslaw")}
                         className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
                       >
-                        Companies Law
+                        Arbitration Law
                       </Link>
                     </div>
                   )}

@@ -11,32 +11,33 @@ const OtherPracticeAreas = ({ currentPractice }) => {
     {
       id: 'bankruptcy-insolvency',
       title: 'Bankruptcy & Insolvency Laws',
-      description: 'The Firm provides strategic advice and support to clients concerning the protection, exploitation and enforcement of trademarks and copyrights....',
+      description: 'The Firm provides strategic advice and support to clients concerning the protection, exploitation and enforcement of trademarks and copyrights. We also assist in restructuring and insolvency resolution .',
       icon: <Scale className="w-6 h-6" />,
-      bgImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop'
+      bgImage: '/images/img3.jpg'
     },
     {
       id: 'banking-law',
       title: 'Banking Law',
-      description: 'The Firm represents in the Deaf and Hard-of-Hearing Community in public interest litigation filed in the Supreme Court....',
+      description: 'The Firm represents in the Deaf and Hard-of-Hearing Community in public interest litigation filed in the Supreme Court. We advise banks and financial institutions on compliance, disputes .',
       icon: <Handshake className="w-6 h-6" />,
-      bgImage: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop'
+      bgImage: '/images/img2.jpg'
     },
     {
       id: 'commercial-corporate',
-      title: 'Commercial & Corporate Law',
-      description: 'The Firm is recognised as one of the best corporate litigation firms in the country. We have extensive experience in dealing with complex....',
+      title: 'Commercial, Corporate & Companies Law',
+      description: 'The Firm is recognised as one of the best corporate litigation firms in the country. We have extensive experience in dealing with complex disputes and offering strategic business-oriented solutions .',
       icon: <Gavel className="w-6 h-6" />,
       bgImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop'
     },
     {
       id: 'companies-law',
-      title: 'Companies Law',
-      description: 'Expert legal services in corporate governance, compliance, mergers and acquisitions, and corporate restructuring matters....',
+      title: 'Arbitration Law',
+      description: 'Expert legal services in corporate governance, compliance, mergers and acquisitions, and corporate restructuring matters. Our team ensures smooth navigation of legal complexities for businesses .',
       icon: <Building2 className="w-6 h-6" />,
       bgImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop'
     }
   ];
+
 
   // Filter out the current practice area
   const otherPracticeAreas = allPracticeAreas.filter(area => area.id !== currentPractice);
@@ -87,7 +88,7 @@ const OtherPracticeAreas = ({ currentPractice }) => {
               <div key={area.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 {/* Image Section */}
                 <div
-                  className="h-48 bg-cover bg-center relative"
+                  className="h-56 bg-cover bg-center relative"
                   style={{
                     backgroundImage: `url(${area.bgImage})`,
                     backgroundBlendMode: 'overlay',
@@ -108,10 +109,10 @@ const OtherPracticeAreas = ({ currentPractice }) => {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
                     {area.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 text-[14px] leading-relaxed mb-4 font-sans text-justify">
                     {area.description}
                   </p>
-             
+
                 </div>
               </div>
             ))}
@@ -150,7 +151,7 @@ const OtherPracticeAreas = ({ currentPractice }) => {
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">
                         {area.description}
                       </p>
-                  
+
                     </div>
                   </div>
                 </div>

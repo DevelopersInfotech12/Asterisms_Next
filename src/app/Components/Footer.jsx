@@ -19,7 +19,7 @@ const Footer = () => {
             </button>
             <div className="flex items-center gap-4 text-slate-900">
               <Phone className="w-6 h-6" />
-              <span className="text-lg font-semibold">+91-9811893418</span>
+              <span className="text-lg font-semibold">+91-9811898418</span>
             </div>
           </div>
         </div>
@@ -72,12 +72,12 @@ const Footer = () => {
             {/* Practice Areas */}
             <div>
               <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">PRACTICE AREAS</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 ">
                 {[
-                  "Bankruptcy & Insolvency Laws",
+                  "Bankruptcy & Insolvency Law",
                   "Banking Law", 
-                  "Commercial & Corporate Law",
-                  "Companies Law"
+                  "Commercial, Corporate & Companies Law",
+                  "Arbitration Law"
                 ].map((item, index) => (
                   <li key={index}>
                     <a href="#" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-base font-sans">

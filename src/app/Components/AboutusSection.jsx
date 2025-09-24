@@ -71,7 +71,7 @@ const AboutusSection = () => {
                 <div className={`absolute inset-0 bg-gradient-to-r ${aboutSections[0].gradient} rounded-3xl transform rotate-3 opacity-20`}></div>
                 <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-gray-100">
                   <h2 className="text-4xl font-bold text-gray-900 mb-6">{aboutSections[0].title}</h2>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-8">{aboutSections[0].content}</p>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8 text-justify">{aboutSections[0].content}</p>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@ const AboutusSection = () => {
                 <div className={`absolute inset-0 bg-gradient-to-r ${aboutSections[1].gradient} rounded-3xl transform -rotate-3 opacity-20`}></div>
                 <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-gray-100">
                   <h2 className="text-4xl font-bold text-gray-900 mb-6">{aboutSections[1].title}</h2>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-8">{aboutSections[1].content}</p>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8 text-justify">{aboutSections[1].content}</p>
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@ const AboutusSection = () => {
                 <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-gray-100">
                  
                   <h2 className="text-4xl font-bold text-gray-900 mb-6">{aboutSections[2].title}</h2>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-8">{aboutSections[2].content}</p>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8 text-justify">{aboutSections[2].content}</p>
                 </div>
               </div>
             </div>

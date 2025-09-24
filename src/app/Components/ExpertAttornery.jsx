@@ -13,13 +13,13 @@ const ExpertAttorneys = () => {
       title: "Advocate & Insolvency Professional",
       image: "images/gautam.jfif",
       specialties: ["Commercial Law", "Banking Law", "Corporate Litigation"],
-      experience: "15+ Years",
+      experience: "21+ Years",
       cases: "500+ Cases",
-      description: "Leading expert in insolvency and bankruptcy proceedings with extensive experience in complex corporate restructuring.",
+      description: "Leading expert in insolvency and bankruptcy proceedings with extensive experience in corporate restructuring.",
       contact: {
         email: "gautam@asterismslegal.com",
-        phone: "+91 98765 43210",
-        linkedin: "#"
+        phone: "+91-9811898418",
+        linkedin: "https://www.linkedin.com/in/gautam-singhal-a09235193/"
       }
     },
     {
@@ -28,13 +28,13 @@ const ExpertAttorneys = () => {
       title: "Advocate",
       image: "images/rajat.jpg",
       specialties: ["Commercial Law", "Banking Law", "Corporate Litigation"],
-      experience: "12+ Years",
+      experience: "8+ Years",
       cases: "350+ Cases",
       description: "Specialized in banking and commercial law with a proven track record in high-stakes corporate litigation.",
       contact: {
         email: "rajat@asterismslegal.com",
-        phone: "+91 98765 43211",
-        linkedin: "#"
+        phone: "+91-9910356257",
+        linkedin: "https://www.linkedin.com/in/rajat-chaudhary-7a3905a9/"
       }
     }
   ];
@@ -48,8 +48,8 @@ const ExpertAttorneys = () => {
           <button
             onClick={() => setIsDark(!isDark)}
             className={`p-3 rounded-full transition-all duration-300 ${isDark
-                ? 'bg-gray-800 hover:bg-gray-700 text-amber-400 shadow-xl shadow-amber-500/20'
-                : 'bg-white hover:bg-gray-100 text-gray-600 shadow-xl shadow-gray-200/50'
+              ? 'bg-gray-800 hover:bg-gray-700 text-amber-400 shadow-xl shadow-amber-500/20'
+              : 'bg-white hover:bg-gray-100 text-gray-600 shadow-xl shadow-gray-200/50'
               }`}
           >
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -83,11 +83,11 @@ const ExpertAttorneys = () => {
             <div
               key={attorney.id}
               className={`group relative overflow-hidden transition-all duration-700 ${isDark
-                  ? 'bg-gradient-to-br from-gray-800/80 via-gray-800 to-gray-900 backdrop-blur-sm'
-                  : 'bg-gradient-to-br from-white via-gray-50/50 to-white backdrop-blur-sm'
+                ? 'bg-gradient-to-br from-gray-800/80 via-gray-800 to-gray-900 backdrop-blur-sm'
+                : 'bg-gradient-to-br from-white via-gray-50/50 to-white backdrop-blur-sm'
                 } rounded-2xl border ${isDark ? 'border-gray-700/50' : 'border-gray-200/80'
-                } hover:shadow-3xl ${isDark ? 'hover:shadow-amber-500/10' : 'hover:shadow-amber-500/20'
-                } transform hover:-translate-y-2 hover:scale-[1.02]`}
+                }
+                } transform `}
               style={{
                 animationDelay: `${index * 200}ms`
               }}
@@ -112,8 +112,8 @@ const ExpertAttorneys = () => {
                   <div className="relative inline-block mb-6">
                     <div className="relative">
                       <div className={`w-32 h-32 lg:w-36 lg:h-36 rounded-2xl overflow-hidden border-4 transition-all duration-500 ${isDark
-                          ? 'border-amber-400/30 group-hover:border-amber-400/60 shadow-xl shadow-amber-500/20'
-                          : 'border-amber-300/40 group-hover:border-amber-400/70 shadow-xl shadow-amber-500/30'
+                        ? 'border-amber-400/30 group-hover:border-amber-400/60 shadow-xl shadow-amber-500/20'
+                        : 'border-amber-300/40 group-hover:border-amber-400/70 shadow-xl shadow-amber-500/30'
                         }`}>
                         <img
                           src={attorney.image}
@@ -123,8 +123,8 @@ const ExpertAttorneys = () => {
                       </div>
                       {/* Floating Accent */}
                       <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isDark
-                          ? 'bg-amber-500 text-gray-900 shadow-lg shadow-amber-500/40'
-                          : 'bg-amber-500 text-white shadow-lg shadow-amber-500/50'
+                        ? 'bg-amber-500 text-gray-900 shadow-lg shadow-amber-500/40'
+                        : 'bg-amber-500 text-white shadow-lg shadow-amber-500/50'
                         } group-hover:rotate-12 group-hover:scale-110`}>
                         <Award className="w-4 h-4" />
                       </div>
@@ -133,15 +133,15 @@ const ExpertAttorneys = () => {
 
                   {/* Name & Title */}
                   <h3 className={`text-3xl lg:text-4xl font-serif italic mb-3 tracking-wide transition-all duration-300 ${isDark
-                      ? 'text-white group-hover:text-amber-100'
-                      : 'text-gray-900 group-hover:text-gray-800'
+                    ? 'text-white group-hover:text-amber-100'
+                    : 'text-gray-900 group-hover:text-gray-800'
                     }`}>
                     {attorney.name}
                   </h3>
 
                   <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 transition-all duration-300 ${isDark
-                      ? 'bg-amber-500/20 text-amber-300 border border-amber-400/30'
-                      : 'bg-amber-50 text-amber-700 border border-amber-200'
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-400/30'
+                    : 'bg-amber-50 text-amber-700 border border-amber-200'
                     }`}>
                     <BookOpen className="w-4 h-4 mr-2" />
                     {attorney.title}
@@ -162,7 +162,7 @@ const ExpertAttorneys = () => {
                       }`}>
                       {attorney.experience}
                     </div>
-                    <div className={`text-xs uppercase tracking-wider transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-500'
+                    <div className={`text-xs uppercase tracking-wider transition-colors font-sans font-semibold duration-300 ${isDark ? 'text-gray-400' : 'text-gray-500'
                       }`}>
                       Experience
                     </div>
@@ -174,7 +174,7 @@ const ExpertAttorneys = () => {
                       }`}>
                       {attorney.cases}
                     </div>
-                    <div className={`text-xs uppercase tracking-wider transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-500'
+                    <div className={`text-xs uppercase tracking-wider transition-colors font-sans font-semibold duration-300 ${isDark ? 'text-gray-400' : 'text-gray-500'
                       }`}>
                       Cases Won
                     </div>
@@ -191,9 +191,9 @@ const ExpertAttorneys = () => {
                     {attorney.specialties.map((specialty, idx) => (
                       <span
                         key={idx}
-                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 border ${isDark
-                            ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-amber-900/30 hover:text-amber-300 hover:border-amber-500/50'
-                            : 'bg-white text-gray-700 border-gray-200 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300'
+                        className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 border font-sans ${isDark
+                          ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-amber-900/30 hover:text-amber-300 hover:border-amber-500/50'
+                          : 'bg-white text-gray-700 border-gray-200 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300'
                           } hover:scale-105 cursor-default`}
                       >
                         {specialty}
@@ -204,30 +204,44 @@ const ExpertAttorneys = () => {
 
                 {/* Contact Section */}
                 <div className={`p-6 rounded-xl border transition-all duration-300 ${isDark
-                    ? 'bg-gray-700/20 border-gray-600/50'
-                    : 'bg-gray-50/50 border-gray-200/70'
+                  ? 'bg-gray-700/20 border-gray-600/50'
+                  : 'bg-gray-50/50 border-gray-200/70'
                   }`}>
                   <div className="flex flex-wrap gap-3 justify-center">
-                    <button className={`flex items-center gap-3 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 group/btn border ${isDark
-                        ? 'bg-amber-500 text-gray-900 border-amber-400 hover:bg-amber-400 hover:shadow-xl hover:shadow-amber-500/30'
-                        : 'bg-amber-500 text-white border-amber-600 hover:bg-amber-600 hover:shadow-xl hover:shadow-amber-500/40'
-                      } hover:scale-105`}>
-                      <Mail className="w-4 h-4" />
+                    <button 
+                      onClick={() => window.location.href = `tel:${attorney.contact.phone}`}
+                      className={`flex items-center gap-3 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border cursor-pointer ${isDark
+                        ? 'bg-amber-500 text-gray-900 border-amber-400 hover:bg-amber-400'
+                        : 'bg-amber-500 text-white border-amber-600 hover:bg-amber-600'
+                        }`}
+                    >
+                      <Phone className="w-4 h-4" />
                       {attorney.contact.phone}
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4" />
                     </button>
 
-                    <button className={`p-3 rounded-xl transition-all duration-300 border ${isDark
-                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-gray-600 hover:text-white hover:border-gray-500'
-                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-800 hover:border-gray-300'
-                      } hover:scale-110`}>
-                      <Phone className="w-5 h-5" />
+                    <button
+                      onClick={() => window.location.href = `mailto:${attorney.contact.email}`}
+                      className={`p-3 rounded-xl transition-all duration-200 border cursor-pointer ${isDark
+                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-gray-600 hover:text-white'
+                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-800'
+                        }`}
+                      title={attorney.contact.email}
+                    >
+                      <Mail className="w-5 h-5" />
                     </button>
 
-                    <button className={`p-3 rounded-xl transition-all duration-300 border ${isDark
-                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-gray-600 hover:text-white hover:border-gray-500'
-                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-800 hover:border-gray-300'
-                      } hover:scale-110`}>
+                    <button
+                      onClick={() => {
+                        console.log('Opening LinkedIn:', attorney.contact.linkedin);
+                        window.open(attorney.contact.linkedin, '_blank');
+                      }}
+                      className={`p-3 rounded-xl transition-all duration-200 border cursor-pointer ${isDark
+                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-gray-600 hover:text-white'
+                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-800'
+                        }`}
+                      title="Open LinkedIn Profile"
+                    >
                       <Linkedin className="w-5 h-5" />
                     </button>
                   </div>
@@ -236,8 +250,8 @@ const ExpertAttorneys = () => {
 
               {/* Animated Border Glow */}
               <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isDark
-                  ? 'bg-gradient-to-r from-amber-400/0 via-amber-400/20 to-amber-400/0'
-                  : 'bg-gradient-to-r from-amber-300/0 via-amber-300/30 to-amber-300/0'
+                ? 'bg-gradient-to-r from-amber-400/0 via-amber-400/20 to-amber-400/0'
+                : 'bg-gradient-to-r from-amber-300/0 via-amber-300/30 to-amber-300/0'
                 } blur-sm`}></div>
             </div>
           ))}

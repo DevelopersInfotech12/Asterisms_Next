@@ -12,10 +12,10 @@ const AboutIntro = () => {
 
             {/* Small Badge */}
             <div className="inline-block">
-               <div className="inline-flex items-center gap-3 bg-gradient-to-r from-slate-900 to-slate-700 text-white px-6 py-3 rounded-full text-sm font-semibold mb-3 shadow-lg">
-                  <Scale className="w-5 h-5" />
-                  Trusted Legal Excellence
-                </div>
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-slate-900 to-slate-700 text-white px-6 py-3 rounded-full text-sm font-semibold mb-3 shadow-lg">
+                <Scale className="w-5 h-5" />
+                Trusted Legal Excellence
+              </div>
             </div>
             {/* Main Heading */}
             <div>
@@ -33,7 +33,7 @@ const AboutIntro = () => {
                     </div>
                     <div className="h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent flex-1 max-w-md"></div>
                   </div>
-                  <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                  <p className="text-sm font-bold text-slate-600 max-w-xl mx-auto leading-relaxed">
                     Fearlessly upholding justice with 15+ years of legal expertise and unwavering commitment to our clients
                   </p>
                 </div>
@@ -51,7 +51,7 @@ const AboutIntro = () => {
               </p>
 
               <p>
-                Our team has wide range of experience in handling litigations before the <span className="font-semibold text-slate-900">Supreme Court, State High Courts, District Courts and Tribunals</span>.
+                Our team has wide range of experience in handling litigations before the <span className="font-semibold text-slate-900 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">Supreme Court, State High Courts, District Courts and Tribunals</span>.
               </p>
               <p>We also provide strategic advisory services in complex corporate, commercial, banking, and insolvency matters. Our commitment lies not only in resolving disputes but also in preventing them through sound legal structuring and compliance support. With a client-first philosophy, we ensure every matter is handled with utmost diligence, confidentiality, and integrity.</p>
             </div>
@@ -104,8 +104,8 @@ const AboutIntro = () => {
                     <div className="w-20 h-18 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-4">
                       <img src="images/logo.png" alt="" srcset="" className='w-96 h-10' />
                     </div>
-                    <h3 className="font-bold text-slate-900 text-lg">Asterisms Legal</h3>
-                    <p className="text-slate-600">Full-Service Law Firm</p>
+                    <h3 className="font-bold text-slate-900 text-lg text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">Asterisms Legal</h3>
+                    <p className="text-slate-600 font-sans text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">Full-Service Law Firm</p>
                   </div>
 
                   {/* Key Points */}

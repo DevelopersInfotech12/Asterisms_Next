@@ -13,7 +13,7 @@ const CommercialandcorporateScreen = () => {
     return (
         <div>
             <Navbar />
-               <OtherHero   title = "Commercial and Corporate Law"
+               <OtherHero   title = "Commercial, Corporate & Companies Law"
   subtitle ="Explore"/>
             <CommercialandCorporate/>
             <OtherPracticeAreas currentPractice="commercial-corporate" />

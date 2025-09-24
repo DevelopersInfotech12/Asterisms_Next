@@ -13,7 +13,7 @@ const CompanieslawScreen = () => {
     return (
         <div>
             <Navbar />
-               <OtherHero   title = "Companies law"
+               <OtherHero   title = "Arbitration Law"
   subtitle ="Explore"/>
             <Companieslaw />
             <OtherPracticeAreas currentPractice="companies-law" />

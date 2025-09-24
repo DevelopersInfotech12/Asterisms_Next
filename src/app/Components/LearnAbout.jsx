@@ -64,7 +64,7 @@ const LearnAbout = () => {
             </div>
 
             <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Fearlessly upholding justice with 15+ years of legal expertise and unwavering commitment to our clients
+              Fearlessly upholding justice with 21+ years of legal expertise and unwavering commitment to our clients
             </p>
           </div>
 
@@ -96,7 +96,7 @@ const LearnAbout = () => {
 
               <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-6 border border-slate-100 hover:scale-110 transition-transform duration-300">
                 <div className="text-center">
-                  <div className="text-3xl font-black bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">15+</div>
+                  <div className="text-3xl font-black bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">21+</div>
                   <div className="text-sm text-slate-600 font-semibold">Years</div>
                 </div>
               </div>
@@ -123,12 +123,12 @@ const LearnAbout = () => {
             {/* Features Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
-                <div key={index} className="group p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div key={index} className="group p-3 py-4 bg-white/80 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="text-slate-700 group-hover:text-amber-600 mb-3 transition-colors duration-300">
                     {feature.icon}
                   </div>
-                  <h4 className="font-bold text-slate-700 mb-2">{feature.title}</h4>
-                  <p className="text-sm text-slate-500 font-sans">{feature.desc}</p>
+                  <h4 className="font-bold text-slate-700 mb-1">{feature.title}</h4>
+                  <p className="text-sm font-sans text-[#FFC107] font-semibold">{feature.desc}</p>
                 </div>
               ))}
             </div>

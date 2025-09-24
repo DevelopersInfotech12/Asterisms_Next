@@ -80,7 +80,7 @@ const Companieslaw = () => {
                   <div className="flex items-center space-x-4">
                     <div className="w-2 h-16 bg-gradient-to-b from-orange-500 to-blue-500 rounded-full"></div>
                     <div>
-                      <h2 className="text-4xl font-bold text-slate-800">Companies Law</h2>
+                      <h2 className="text-4xl font-bold text-slate-800">Arbitration Law</h2>
                       <p className="text-orange-600 font-medium mt-2 font-sans">
                         Expert legal advisory for corporate compliance and governance
                       </p>
@@ -90,14 +90,14 @@ const Companieslaw = () => {
 
                 <div className="grid lg:grid-cols-2 gap-12">
                   <div className="prose prose-xl text-slate-600 space-y-6">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       Our Firm provides <span className="font-semibold text-orange-600">comprehensive advisory</span> on the Companies Act, 2013, covering compliance, corporate governance, and secretarial services for leading domestic and international clients.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       We specialize in <span className="font-semibold text-orange-600">corporate restructuring, mergers & acquisitions, and strategic advisory</span>, ensuring companies operate efficiently within the legal framework.
                     </p>
                   </div>
-                  <div className="prose prose-xl text-slate-600 space-y-6">
+                  <div className="prose prose-xl text-slate-600 space-y-6 text-justify">
                     <p className="text-lg leading-relaxed">
                       Our team is trusted by top corporates for <span className="font-semibold text-orange-600">board advisory, stakeholder management, and regulatory compliance</span>, helping businesses achieve their strategic objectives.
                     </p>

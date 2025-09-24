@@ -88,14 +88,14 @@ const BankruptcyandInsolvency = () => {
                 
                 <div className="grid lg:grid-cols-2 gap-12">
                   <div className="prose prose-xl text-slate-600 space-y-6">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       The Firm has <span className="font-semibold text-orange-600">extensive experience</span> dealing with matters on Insolvency and Bankruptcy Code, 2016 
                       (IBC). We have expertise in both pursuing and defending insolvency and bankruptcy proceedings. We 
                       follow a systematic and strategic evaluation of cases, thereby providing advisory services to multi-national 
                       corporations on insolvency issues.
                     </p>
                     
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       Our Insolvency and Bankruptcy team is equipped with <span className="font-semibold text-orange-600">in-depth knowledge and qualifications</span>, 
                       making them adept at handling high stakes matters, which have been landmark cases in IBC. We 
                       have been assisting our domestic and international clients by continuously deep diving into 
@@ -104,7 +104,7 @@ const BankruptcyandInsolvency = () => {
                   </div>
                   
                   <div className="prose prose-xl text-slate-600 space-y-6">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       We take pride in being the <span className="font-semibold text-orange-600">trusted advisors</span> to business leaders who consult us on complex issues 
                       under the IBC. Our lawyers had played a key role in several successful high-value acquisitions right 
                       from the time when IBC was enacted.
@@ -203,7 +203,7 @@ const BankruptcyandInsolvency = () => {
                         <ArrowRight className="w-6 h-6 text-slate-400 group-hover:text-orange-500 group-hover:translate-x-1 transition-all duration-300" />
                       </div>
                       
-                      <p className="text-lg text-slate-600 leading-relaxed pl-11">
+                      <p className="text-lg text-slate-600 leading-relaxed pl-11 text-justify">
                         {highlight.description}
                       </p>
                     </div>

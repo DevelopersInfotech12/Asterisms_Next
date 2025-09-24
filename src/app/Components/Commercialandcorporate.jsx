@@ -80,7 +80,7 @@ const CommercialandCorporate = () => {
                   <div className="flex items-center space-x-4">
                     <div className="w-2 h-16 bg-gradient-to-b from-orange-500 to-blue-500 rounded-full"></div>
                     <div>
-                      <h2 className="text-4xl font-bold text-slate-800">Commercial & Corporate Law</h2>
+                      <h2 className="text-4xl font-bold text-slate-800">Commercial, Corporate & Companies Law</h2>
                       <p className="text-orange-600 font-medium mt-2 font-sans">
                         Guiding India’s top corporations with strategic corporate solutions
                       </p>
@@ -90,10 +90,10 @@ const CommercialandCorporate = () => {
 
                 <div className="grid lg:grid-cols-2 gap-12">
                   <div className="prose prose-xl text-slate-600 space-y-6">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       Our Firm provides <span className="font-semibold text-orange-600">comprehensive corporate advisory</span> to domestic and international clients, covering commercial contracts, joint ventures, mergers & acquisitions, and corporate governance.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       We advise on <span className="font-semibold text-orange-600">strategic business decisions</span>, helping clients navigate complex legal landscapes and achieve sustainable growth.
                     </p>
                   </div>
@@ -101,7 +101,7 @@ const CommercialandCorporate = () => {
                     <p className="text-lg leading-relaxed">
                       Our team is recognized for <span className="font-semibold text-orange-600">expert guidance</span> in cross-border transactions, regulatory compliance, and corporate structuring, making us trusted partners for leading corporations.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-justify">
                       We regularly represent clients before <span className="font-semibold text-orange-600">High Courts, National Company Law Tribunal, and the Supreme Court of India</span>, ensuring robust legal protection.
                     </p>
                   </div>
