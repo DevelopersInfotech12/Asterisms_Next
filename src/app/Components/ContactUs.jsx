@@ -54,7 +54,7 @@ const ContactUs = () => {
             <div className="h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent flex-1 max-w-md"></div>
             <div className="mx-8">
               <h1 className="text-5xl text-slate-900 leading-[1.1] tracking-relaxed font-semibold">
-                 Get In Touch
+                Get In Touch
                 <span className="block text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold">
                   Let's Discuss
                 </span>
@@ -108,7 +108,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-                  <p className="text-slate-200">asteriamalegal@gmail.com</p>
+                  <p className="text-slate-200">asterismslegal@gmail.com</p>
                 </div>
               </div>
             </div>
