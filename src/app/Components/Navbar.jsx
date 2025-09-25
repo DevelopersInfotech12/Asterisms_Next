@@ -8,6 +8,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("HOME");
   const dropdownRef = useRef(null);
 
@@ -22,6 +23,26 @@ const Navbar = () => {
     { name: "OUR PEOPLE", href: "/ourpeople" },
     { name: "CONTACT US", href: "/contactus" },
     { name: "KNOWLEDGE CENTRE", href: "/blog" },
+  ];
+
+  // Consistent dropdown items for both desktop and mobile
+  const practiceAreaItems = [
+    {
+      name: "Bankruptcy & Insolvency Laws",
+      href: "/bankruptcyandInsolvency"
+    },
+    {
+      name: "Banking Law",
+      href: "/bankinglaw"
+    },
+    {
+      name: "Commercial, Corporate & Companies Law",
+      href: "/commercialandcorporate"
+    },
+    {
+      name: "Arbitration Law",
+      href: "/companieslaw"
+    }
   ];
 
   // Close dropdown when clicking outside
@@ -45,8 +66,14 @@ const Navbar = () => {
 
   const handleDropdownItemClick = (href) => {
     console.log("Navigating to:", href);
-    setIsDropdownOpen(false); // Close dropdown after selection
+    setIsDropdownOpen(false); // Close desktop dropdown after selection
+    setIsMobileDropdownOpen(false); // Close mobile dropdown after selection
     setIsMenuOpen(false); // Also close mobile menu if open
+  };
+
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
+    setActiveTab("PRACTICE AREAS");
   };
 
   return (
@@ -121,41 +148,19 @@ const Navbar = () => {
                     </Link>
                   )}
 
-                  {/* Dropdown Menu */}
+                  {/* Desktop Dropdown Menu */}
                   {item.hasDropdown && isDropdownOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border-2 border-yellow-400 py-3 z-50 font-sans">
-                      <Link
-                        href="/bankruptcyandInsolvency"
-                        onClick={() =>
-                          handleDropdownItemClick("/bankruptcyandInsolvency")
-                        }
-                        className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
-                      >
-                        Bankruptcy & Insolvency Laws
-                      </Link>
-                      <Link
-                        href="/bankinglaw"
-                        onClick={() => handleDropdownItemClick("/bankinglaw")}
-                        className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
-                      >
-                        Banking Law
-                      </Link>
-                      <Link
-                        href="/commercialandcorporate"
-                        onClick={() =>
-                          handleDropdownItemClick("/commercialandcorporate")
-                        }
-                        className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
-                      >
-                        Commercial, Corporate & Companies Law
-                      </Link>
-                      <Link
-                        href="/companieslaw"
-                        onClick={() => handleDropdownItemClick("/companieslaw")}
-                        className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
-                      >
-                        Arbitration Law
-                      </Link>
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border-2 border-yellow-400 py-3 z-50 font-sans">
+                      {practiceAreaItems.map((practiceItem, practiceIndex) => (
+                        <Link
+                          key={practiceIndex}
+                          href={practiceItem.href}
+                          onClick={() => handleDropdownItemClick(practiceItem.href)}
+                          className="block px-6 py-3 text-sm font-medium text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
+                        >
+                          {practiceItem.name}
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -196,7 +201,7 @@ const Navbar = () => {
                   {item.hasDropdown ? (
                     <>
                       <button
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        onClick={toggleMobileDropdown}
                         className={`w-full text-left flex items-center justify-between px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name
                             ? "text-yellow-400 bg-slate-800 border-yellow-400"
                             : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
@@ -204,48 +209,23 @@ const Navbar = () => {
                       >
                         {item.name}
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-300 text-yellow-400 ${isDropdownOpen ? "rotate-180" : ""
+                          className={`h-4 w-4 transition-transform duration-300 text-yellow-400 ${isMobileDropdownOpen ? "rotate-180" : ""
                             }`}
                         />
                       </button>
-                      {isDropdownOpen && (
+                      {/* Mobile Dropdown Items */}
+                      {isMobileDropdownOpen && (
                         <div className="ml-4 mt-2 space-y-2">
-                          <Link
-                            href="/practice/corporate-law"
-                            onClick={() =>
-                              handleDropdownItemClick("/practice/corporate-law")
-                            }
-                            className="block px-4 py-2 text-sm text-slate-300 hover:text-yellow-400 hover:bg-slate-800 rounded-lg transition-all duration-200"
-                          >
-                            Corporate Law
-                          </Link>
-                          <Link
-                            href="/practice/litigation"
-                            onClick={() =>
-                              handleDropdownItemClick("/practice/litigation")
-                            }
-                            className="block px-4 py-2 text-sm text-slate-300 hover:text-yellow-400 hover:bg-slate-800 rounded-lg transition-all duration-200"
-                          >
-                            Litigation
-                          </Link>
-                          <Link
-                            href="/practice/intellectual-property"
-                            onClick={() =>
-                              handleDropdownItemClick("/practice/intellectual-property")
-                            }
-                            className="block px-4 py-2 text-sm text-slate-300 hover:text-yellow-400 hover:bg-slate-800 rounded-lg transition-all duration-200"
-                          >
-                            Intellectual Property
-                          </Link>
-                          <Link
-                            href="/practice/employment-law"
-                            onClick={() =>
-                              handleDropdownItemClick("/practice/employment-law")
-                            }
-                            className="block px-4 py-2 text-sm text-slate-300 hover:text-yellow-400 hover:bg-slate-800 rounded-lg transition-all duration-200"
-                          >
-                            Employment Law
-                          </Link>
+                          {practiceAreaItems.map((practiceItem, practiceIndex) => (
+                            <Link
+                              key={practiceIndex}
+                              href={practiceItem.href}
+                              onClick={() => handleDropdownItemClick(practiceItem.href)}
+                              className="block px-4 py-2 text-sm text-slate-300 hover:text-yellow-400 hover:bg-slate-800 rounded-lg transition-all duration-200"
+                            >
+                              {practiceItem.name}
+                            </Link>
+                          ))}
                         </div>
                       )}
                     </>
@@ -256,6 +236,7 @@ const Navbar = () => {
                         setActiveTab(item.name);
                         setIsMenuOpen(false);
                         setIsDropdownOpen(false);
+                        setIsMobileDropdownOpen(false);
                       }}
                       className={`block px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name
                           ? "text-yellow-400 bg-slate-800 border-yellow-400"
