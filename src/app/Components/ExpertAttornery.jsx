@@ -48,8 +48,8 @@ const ExpertAttorneys = () => {
           <button
             onClick={() => setIsDark(!isDark)}
             className={`p-3 rounded-full transition-all duration-300 ${isDark
-              ? 'bg-gray-800 hover:bg-gray-700 text-amber-400 shadow-xl shadow-amber-500/20'
-              : 'bg-white hover:bg-gray-100 text-gray-600 shadow-xl shadow-gray-200/50'
+              ? 'bg-gray-800 text-amber-400 shadow-xl shadow-amber-500/20'
+              : 'bg-white text-gray-600 shadow-xl shadow-gray-200/50'
               }`}
           >
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -82,7 +82,7 @@ const ExpertAttorneys = () => {
           {attorneys.map((attorney, index) => (
             <div
               key={attorney.id}
-              className={`group relative overflow-hidden transition-all duration-700 ${isDark
+              className={`relative overflow-hidden transition-all duration-700 ${isDark
                 ? 'bg-gradient-to-br from-gray-800/80 via-gray-800 to-gray-900 backdrop-blur-sm'
                 : 'bg-gradient-to-br from-white via-gray-50/50 to-white backdrop-blur-sm'
                 } rounded-2xl border ${isDark ? 'border-gray-700/50' : 'border-gray-200/80'
@@ -111,21 +111,21 @@ const ExpertAttorneys = () => {
                   {/* Image with Enhanced Styling */}
                   <div className="relative inline-block mb-6">
                     <div className="relative">
-                      <div className={`w-32 h-32 lg:w-36 lg:h-36 rounded-2xl overflow-hidden border-4 transition-all duration-500 ${isDark
-                        ? 'border-amber-400/30 group-hover:border-amber-400/60 shadow-xl shadow-amber-500/20'
-                        : 'border-amber-300/40 group-hover:border-amber-400/70 shadow-xl shadow-amber-500/30'
+                      <div className={`w-32 h-32 lg:w-36 lg:h-36 rounded-2xl overflow-hidden border-4 ${isDark
+                        ? 'border-amber-400/30 shadow-xl shadow-amber-500/20'
+                        : 'border-amber-300/40  shadow-xl shadow-amber-500/30'
                         }`}>
                         <img
                           src={attorney.image}
                           alt={attorney.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover "
                         />
                       </div>
                       {/* Floating Accent */}
                       <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isDark
                         ? 'bg-amber-500 text-gray-900 shadow-lg shadow-amber-500/40'
                         : 'bg-amber-500 text-white shadow-lg shadow-amber-500/50'
-                        } group-hover:rotate-12 group-hover:scale-110`}>
+                        } `}>
                         <Award className="w-4 h-4" />
                       </div>
                     </div>
@@ -133,8 +133,8 @@ const ExpertAttorneys = () => {
 
                   {/* Name & Title */}
                   <h3 className={`text-3xl lg:text-4xl font-serif italic mb-3 tracking-wide transition-all duration-300 ${isDark
-                    ? 'text-white group-hover:text-amber-100'
-                    : 'text-gray-900 group-hover:text-gray-800'
+                    ? 'text-white'
+                    : 'text-gray-900 '
                     }`}>
                     {attorney.name}
                   </h3>
@@ -192,9 +192,9 @@ const ExpertAttorneys = () => {
                       <span
                         key={idx}
                         className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 border font-sans ${isDark
-                          ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-amber-900/30 hover:text-amber-300 hover:border-amber-500/50'
-                          : 'bg-white text-gray-700 border-gray-200 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300'
-                          } hover:scale-105 cursor-default`}
+                          ? 'bg-gray-700/50 text-gray-300 border-gray-600'
+                          : 'bg-white text-gray-700 border-gray-200 '
+                          } `}
                       >
                         {specialty}
                       </span>
@@ -208,11 +208,11 @@ const ExpertAttorneys = () => {
                   : 'bg-gray-50/50 border-gray-200/70'
                   }`}>
                   <div className="flex flex-wrap gap-3 justify-center">
-                    <button 
+                    <button
                       onClick={() => window.location.href = `tel:${attorney.contact.phone}`}
                       className={`flex items-center gap-3 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border cursor-pointer ${isDark
-                        ? 'bg-amber-500 text-gray-900 border-amber-400 hover:bg-amber-400'
-                        : 'bg-amber-500 text-white border-amber-600 hover:bg-amber-600'
+                        ? 'bg-amber-500 text-gray-900 border-amber-400'
+                        : 'bg-amber-500 text-white border-amber-600 '
                         }`}
                     >
                       <Phone className="w-4 h-4" />
@@ -223,36 +223,30 @@ const ExpertAttorneys = () => {
                     <button
                       onClick={() => window.location.href = `mailto:${attorney.contact.email}`}
                       className={`p-3 rounded-xl transition-all duration-200 border cursor-pointer ${isDark
-                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-gray-600 hover:text-white'
-                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-800'
+                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 '
+                        : 'bg-white text-gray-600 border-gray-200 '
                         }`}
                       title={attorney.contact.email}
                     >
                       <Mail className="w-5 h-5" />
                     </button>
 
-                    <button
-                      onClick={() => {
-                        console.log('Opening LinkedIn:', attorney.contact.linkedin);
-                        window.open(attorney.contact.linkedin, '_blank');
-                      }}
+                    <a
+                      href={attorney.contact.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`p-3 rounded-xl transition-all duration-200 border cursor-pointer ${isDark
-                        ? 'bg-gray-700/50 text-gray-300 border-gray-600 hover:bg-gray-600 hover:text-white'
-                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-800'
+                        ? 'bg-gray-700/50 text-gray-300 border-gray-600'
+                        : 'bg-white text-gray-600 border-gray-200 '
                         }`}
                       title="Open LinkedIn Profile"
                     >
                       <Linkedin className="w-5 h-5" />
-                    </button>
+                    </a>
+
                   </div>
                 </div>
               </div>
-
-              {/* Animated Border Glow */}
-              <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isDark
-                ? 'bg-gradient-to-r from-amber-400/0 via-amber-400/20 to-amber-400/0'
-                : 'bg-gradient-to-r from-amber-300/0 via-amber-300/30 to-amber-300/0'
-                } blur-sm`}></div>
             </div>
           ))}
         </div>

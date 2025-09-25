@@ -93,18 +93,16 @@ const Navbar = () => {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 group border border-transparent hover:border-yellow-400 ${
-                        activeTab === item.name
+                      className={`flex items-center px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 group border border-transparent hover:border-yellow-400 ${activeTab === item.name
                           ? "text-yellow-400 bg-slate-700 border-yellow-400"
                           : "text-white hover:text-yellow-400 hover:bg-slate-700"
-                      }`}
+                        }`}
                       onClick={toggleDropdown}
                     >
                       {item.name}
                       <ChevronDown
-                        className={`ml-2 h-4 w-4 transition-transform duration-300 text-yellow-400 ${
-                          isDropdownOpen ? "rotate-180" : ""
-                        }`}
+                        className={`ml-2 h-4 w-4 transition-transform duration-300 text-yellow-400 ${isDropdownOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                   ) : (
@@ -114,11 +112,10 @@ const Navbar = () => {
                         setActiveTab(item.name);
                         setIsDropdownOpen(false);
                       }}
-                      className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 block border border-transparent hover:border-yellow-400 ${
-                        activeTab === item.name
+                      className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 block border border-transparent hover:border-yellow-400 ${activeTab === item.name
                           ? "text-yellow-400 bg-slate-700 border-yellow-400"
                           : "text-white hover:text-yellow-400 hover:bg-slate-700"
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -167,9 +164,11 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
+               <Link href="/contactus">
               <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-3 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border-2 border-yellow-400">
                 Get Consultation
               </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -198,17 +197,15 @@ const Navbar = () => {
                     <>
                       <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className={`w-full text-left flex items-center justify-between px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${
-                          activeTab === item.name
+                        className={`w-full text-left flex items-center justify-between px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name
                             ? "text-yellow-400 bg-slate-800 border-yellow-400"
                             : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
-                        }`}
+                          }`}
                       >
                         {item.name}
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-300 text-yellow-400 ${
-                            isDropdownOpen ? "rotate-180" : ""
-                          }`}
+                          className={`h-4 w-4 transition-transform duration-300 text-yellow-400 ${isDropdownOpen ? "rotate-180" : ""
+                            }`}
                         />
                       </button>
                       {isDropdownOpen && (
@@ -260,11 +257,10 @@ const Navbar = () => {
                         setIsMenuOpen(false);
                         setIsDropdownOpen(false);
                       }}
-                      className={`block px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${
-                        activeTab === item.name
+                      className={`block px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name
                           ? "text-yellow-400 bg-slate-800 border-yellow-400"
                           : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -272,9 +268,11 @@ const Navbar = () => {
                 </div>
               ))}
               <div className="pt-6">
-                <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-6 py-4 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg">
-                  Get Consultation
-                </button>
+                <Link href="/contactus">
+                  <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-6 py-4 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg">
+                    Get Consultation
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

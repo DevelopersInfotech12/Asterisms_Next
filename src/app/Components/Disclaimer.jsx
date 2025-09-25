@@ -32,7 +32,7 @@ const Disclaimer = () => {
       <div className={`bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-4xl w-full max-h-[90vh] overflow-hidden transform transition-all duration-500 ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
         
         {/* Gradient Header */}
-        <div className="relative bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 p-8 text-white overflow-hidden">
+        <div className="relative bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 p-4 text-white overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-40"></div>
           <div className="relative flex items-center justify-between">
             <div className="flex items-center space-x-6">
@@ -69,7 +69,7 @@ const Disclaimer = () => {
         </div>
 
         {/* Content with improved typography */}
-        <div className="p-8 space-y-6 overflow-y-auto max-h-[60vh]">
+        <div className="p-8  overflow-y-auto max-h-[60vh]">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-xl">
             <p className="text-gray-700 leading-relaxed text-lg">
               As per the <span className="font-semibold text-blue-700">Bar Council of India</span> regulations, we are not permitted to solicit work or advertise. 
@@ -77,7 +77,7 @@ const Disclaimer = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="font-sans ">
             {[
               "There has been no advertisement, personal communication, solicitation, invitation, or inducement of any kind from us or any of our members to solicit work through this website.",
               "The user wishes to obtain more information about us for their own personal use and knowledge.",
@@ -87,7 +87,7 @@ const Disclaimer = () => {
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full flex items-center justify-center text-white text-sm font-bold group-hover:scale-110 transition-transform duration-200">
                   {index + 1}
                 </div>
-                <p className="text-gray-700 leading-relaxed">{item}</p>
+                <p className="text-gray-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -102,11 +102,11 @@ const Disclaimer = () => {
         </div>
 
         {/* Modern Action Buttons */}
-        <div className="bg-gray-50/80 backdrop-blur-sm p-8 border-t border-gray-200/50">
+        <div className="bg-gray-50/80 backdrop-blur-sm p-4 border-t border-gray-200/50">
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
             <button
               onClick={handleAccept}
-              className="group relative w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center space-x-2"
+              className="group relative w-full sm:w-auto px-4 py-3 bg-yellow-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center space-x-2"
             >
               <CheckCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
               <span>I Accept & Understand</span>

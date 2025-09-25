@@ -28,7 +28,7 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="bg-slate-800 pt-20 pb-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Top Row - Company Info */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6 pb-6 border-b border-slate-700">
             <div className="mb-2 lg:mb-0">
@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-gray-300 text-sm font-sans max-w-md leading-relaxed">
-                Full-service law firm providing comprehensive legal solutions through 
+                Full-service law firm providing comprehensive legal solutions through
                 expert guidance and strategic counsel for businesses and individuals.
               </p>
             </div>
@@ -68,14 +68,14 @@ const Footer = () => {
 
           {/* Bottom Row - Links and Contact */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            
+
             {/* Practice Areas */}
             <div>
               <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">PRACTICE AREAS</h4>
               <ul className="space-y-2 ">
                 {[
                   "Bankruptcy & Insolvency Law",
-                  "Banking Law", 
+                  "Banking Law",
                   "Commercial, Corporate & Companies Law",
                   "Arbitration Law"
                 ].map((item, index) => (
@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
 
             {/* Company */}
-            <div className='ml-12'> 
+            <div className='ml-12'>
               <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">COMPANY</h4>
               <ul className="space-y-2">
                 {["About Us", "Our Team", "Practices", "Career"].map((item, index) => (
@@ -130,10 +130,10 @@ const Footer = () => {
             <div>
               <h4 className="text-xl font-bold text-yellow-400 mb-8 tracking-wide">FOLLOW US</h4>
               <div className="flex gap-4 mb-8">
-                <a href="#" className="w-16 h-16 bg-slate-700 hover:bg-yellow-500 rounded-2xl flex items-center justify-center transition-all duration-300 group">
+                <a href="https://www.instagram.com/asterismslegal?igsh=bHNiNXRzZWRjNHRx" className="w-16 h-16 bg-slate-700 hover:bg-yellow-500 rounded-2xl flex items-center justify-center transition-all duration-300 group">
                   <Instagram className="w-8 h-8 text-yellow-500 group-hover:text-slate-900" />
                 </a>
-                <a href="#" className="w-16 h-16 bg-slate-700 hover:bg-yellow-500 rounded-2xl flex items-center justify-center transition-all duration-300 group">
+                <a href="https://www.linkedin.com/company/asterisms-legal/posts/?feedView=all" className="w-16 h-16 bg-slate-700 hover:bg-yellow-500 rounded-2xl flex items-center justify-center transition-all duration-300 group">
                   <Linkedin className="w-8 h-8 text-yellow-500 group-hover:text-slate-900" />
                 </a>
               </div>
@@ -154,9 +154,18 @@ const Footer = () => {
               <a href="#" className="hover:text-yellow-400 transition-colors">Legal Notice</a>
             </div>
             <p className="text-gray-400 text-center md:text-right">
-              © 2024 <span className="text-yellow-400">Asterisms Legal</span>. 
-              Designed by <span className="text-yellow-400">DEVELOPERS INFOTECH PVT LTD</span>
+              © 2025 <span className="text-yellow-400">Asterisms Legal</span>.
+              Designed by{" "}
+              <a
+                href="https://developersinfotech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:underline"
+              >
+                DEVELOPERS INFOTECH PVT LTD
+              </a>
             </p>
+
           </div>
         </div>
       </div>
