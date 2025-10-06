@@ -23,7 +23,7 @@ const HomeScreen = () => {
             <WhyChooseUs/>
             <ExpertAttorneys/>
             <Faq/>
-            <HomeBlog/>
+            {/* <HomeBlog/> */}
             <Footer/>
         </div>
     )

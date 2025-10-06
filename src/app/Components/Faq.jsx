@@ -7,19 +7,15 @@ const Faq = () => {
   const faqs = [
     {
       question: "What types of legal services does Asterisms Legal provide?",
-      answer: "We offer comprehensive legal services including corporate law, litigation, intellectual property, employment law, real estate, family law, criminal defense, and regulatory compliance. Our experienced attorneys are equipped to handle both individual and corporate legal matters across various practice areas."
+      answer: "At Asterisms Legal (AL), our team of expert attorneys focuses primarily on matters under the Insolvency and Bankruptcy Code (IBC) and related areas of corporate restructuring, recovery, and commercial litigation. We also handle a range of other corporate and legal disputes, representing creditors, debtors, and resolution professionals before the NCLT, NCLAT, High Court, and the Supreme Court of India.  "
     },
     {
       question: "How much do legal consultations cost?",
-      answer: "We offer a free initial consultation for new clients to discuss your case and understand your legal needs. Our fee structure varies depending on the complexity and type of case. We provide transparent pricing with no hidden costs and offer flexible payment plans when appropriate."
+      answer: " We offer personalized initial consultations for new clients to evaluate your case and understand your specific legal requirements. Our fee structure is transparent and tailored to reflect the complexity and nature of each matter. At Asterisms Legal, we believe in clarity, fairness, and value, ensuring there are no hidden costs and providing flexible engagement options where appropriate. "
     },
     {
       question: "How long does it typically take to resolve a legal case?",
       answer: "The timeline for resolving legal matters varies significantly based on the complexity of the case, court schedules, and the cooperation of all parties involved. Simple matters may be resolved in a few weeks, while complex litigation can take several months to years. We provide realistic timelines during our initial consultation."
-    },
-    {
-      question: "Do you handle cases outside of Delhi?",
-      answer: "Yes, we handle cases throughout India. While our primary office is located in Delhi, our legal team is licensed to practice in various states and we have established networks with local counsel when needed. We can effectively represent clients in matters across different jurisdictions."
     },
     {
       question: "What should I bring to my first consultation?",
@@ -89,7 +85,7 @@ const Faq = () => {
 
                   <div className="space-y-4">
                     <button className="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transform transition-all duration-300">
-                      Schedule Free Consultation
+                      Schedule Consultation
                     </button>
                     <button className="w-full py-4 px-6 font-sans bg-white/10 backdrop-blur-sm text-white rounded-xl font-medium border border-white/20 hover:bg-white/20 transition-all duration-300">
                       <Phone className="w-4 h-4 inline mr-2" />
@@ -107,8 +103,8 @@ const Faq = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="group">
                     <div className={`bg-white/80 backdrop-blur-sm border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${openIndex === index
-                        ? 'border-amber-300/50 shadow-amber-100/50'
-                        : 'border-slate-200/50 hover:border-slate-300/50'
+                      ? 'border-amber-300/50 shadow-amber-100/50'
+                      : 'border-slate-200/50 hover:border-slate-300/50'
                       }`}>
 
                       {/* Question Button */}
@@ -120,8 +116,8 @@ const Faq = () => {
                           <div className={`flex-shrink-0 mt-1 transition-all duration-300 ${openIndex === index ? 'scale-110' : 'group-hover:scale-105'
                             }`}>
                             <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${openIndex === index
-                                ? 'bg-gradient-to-r from-amber-500 to-orange-600'
-                                : 'bg-slate-100 group-hover:bg-slate-200'
+                              ? 'bg-gradient-to-r from-amber-500 to-orange-600'
+                              : 'bg-slate-100 group-hover:bg-slate-200'
                               }`}>
                               <Scale className={`w-5 h-5 transition-colors duration-300 ${openIndex === index ? 'text-white' : 'text-slate-600'
                                 }`} />
@@ -134,8 +130,8 @@ const Faq = () => {
 
                         <div className="flex-shrink-0 ml-4">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index
-                              ? 'bg-amber-500 rotate-180'
-                              : 'bg-slate-200 group-hover:bg-slate-300'
+                            ? 'bg-amber-500 rotate-180'
+                            : 'bg-slate-200 group-hover:bg-slate-300'
                             }`}>
                             <ChevronDown className={`w-4 h-4 transition-colors duration-300 ${openIndex === index ? 'text-white' : 'text-slate-600'
                               }`} />
@@ -145,8 +141,8 @@ const Faq = () => {
 
                       {/* Enhanced Answer */}
                       <div className={`px-8 transition-all duration-500 ease-out ${openIndex === index
-                          ? 'pb-8 opacity-100 max-h-96'
-                          : 'pb-0 opacity-0 max-h-0 overflow-hidden'
+                        ? 'pb-8 opacity-100 max-h-96'
+                        : 'pb-0 opacity-0 max-h-0 overflow-hidden'
                         }`}>
                         <div className="pl-15">
                           <div className="h-px bg-gradient-to-r from-amber-200 via-slate-200 to-transparent mb-6"></div>

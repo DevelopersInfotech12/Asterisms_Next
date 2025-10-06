@@ -13,17 +13,17 @@ const LearnAbout = () => {
   }, []);
 
   const stats = [
-    { number: '500+', label: 'Cases Won', icon: <Award className="w-6 h-6" />, color: 'from-emerald-500 to-emerald-600' },
-    { number: '15+', label: 'Years Experience', icon: <Star className="w-6 h-6" />, color: 'from-blue-500 to-blue-600' },
-    { number: '100+', label: 'Happy Clients', icon: <Users className="w-6 h-6" />, color: 'from-purple-500 to-purple-600' },
-    { number: '24/7', label: 'Legal Support', icon: <CheckCircle className="w-6 h-6" />, color: 'from-orange-500 to-orange-600' }
+    { number: 'IBC', label: 'Specialists', icon: <Award className="w-6 h-6" />, color: 'from-emerald-500 to-emerald-600' },
+    { number: 'NCLT', label: 'Experts', icon: <Star className="w-6 h-6" />, color: 'from-blue-500 to-blue-600' },
+    { number: 'Supreme', label: 'Court Practice', icon: <Users className="w-6 h-6" />, color: 'from-purple-500 to-purple-600' },
+    { number: 'Boutique', label: 'Excellence', icon: <CheckCircle className="w-6 h-6" />, color: 'from-orange-500 to-orange-600' }
   ];
 
   const features = [
-    { icon: <Scale className="w-6 h-6" />, title: 'Supreme Court Experience', desc: 'Extensive litigation experience' },
-    { icon: <Shield className="w-6 h-6" />, title: 'Expert Legal Team', desc: 'Well-trained advocates' },
-    { icon: <Gavel className="w-6 h-6" />, title: 'Holistic Approach', desc: 'Comprehensive legal solutions' },
-    { icon: <TrendingUp className="w-6 h-6" />, title: 'Client-Focused Solutions', desc: 'Tailored to your needs' }
+    { icon: <Scale className="w-6 h-6" />, title: 'IBC & Restructuring Experts', desc: 'Proven excellence in insolvency' },
+    { icon: <Shield className="w-6 h-6" />, title: 'Strategic Litigation Practice', desc: 'Supreme Court and NCLTs' },
+    { icon: <Gavel className="w-6 h-6" />, title: 'Focused Expertise', desc: 'Boutique firm, personalized strategies' },
+    { icon: <TrendingUp className="w-6 h-6" />, title: 'Client-Centric Solutions', desc: 'Business-driven, pragmatic advice' }
   ];
 
   return (
@@ -64,7 +64,7 @@ const LearnAbout = () => {
             </div>
 
             <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Fearlessly upholding justice with 21+ years of legal expertise and unwavering commitment to our clients
+              Specialized in IBC, corporate restructuring, and strategic litigation with precision, integrity, and outcome-oriented advocacy
             </p>
           </div>
 
@@ -104,18 +104,17 @@ const LearnAbout = () => {
           </div>
 
           {/* Right - Content */}
-          <div className={`space-y-10 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+          <div className={`space-y-6 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
 
             {/* Main Description */}
             <div className="space-y-6">
               <div className="prose prose-lg">
                 <p className="text-[15px] text-gray-600 leading-relaxed text-justify font-semibold">
-                  <span className="text-2xl font-sans text-slate-600 leading-relaxed text-justify text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Asterisms Legal (AL)</span> is a premier full-service law firm founded on the principle of delivering exceptional legal solutions through innovation, expertise, and unwavering dedication.
+                  <span className="text-2xl font-sans text-slate-600 leading-relaxed text-justify text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Asterisms Legal (AL)</span> is a boutique law firm specializing in Insolvency and Bankruptcy Code (IBC), corporate restructuring, and commercial litigation. Our seasoned advocates combine strategic insight with deep legal acumen to deliver tailored, results-driven solutions across the Supreme Court, High Courts, NCLTs, and Tribunals.
                 </p>
 
                 <p className="text-[15px] text-gray-600 leading-relaxed text-justify font-semibold">
-                  Our extraordinary team of seasoned advocates combines deep legal knowledge with strategic thinking to champion our clients' interests across all levels of the judicial system. Our team has wide range of experience in handling litigations before the Supreme Court, State High Courts, District Courts and Tribunals.
-
+                  We are known for our focused expertise in IBC and restructuring matters, offering personalized legal strategies backed by our strong presence before the Supreme Court and NCLTs. Our business-driven, pragmatic approach ensures outcome-oriented advocacy built on precision, integrity, and trusted counsel.
                 </p>
               </div>
             </div>

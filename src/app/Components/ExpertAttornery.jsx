@@ -167,18 +167,7 @@ const ExpertAttorneys = () => {
                       Experience
                     </div>
                   </div>
-                  <div className={`w-px transition-colors duration-300 ${isDark ? 'bg-gray-600' : 'bg-gray-300'
-                    }`}></div>
-                  <div className="text-center">
-                    <div className={`text-2xl font-bold mb-1 transition-colors duration-300 ${isDark ? 'text-amber-400' : 'text-amber-600'
-                      }`}>
-                      {attorney.cases}
-                    </div>
-                    <div className={`text-xs uppercase tracking-wider transition-colors font-sans font-semibold duration-300 ${isDark ? 'text-gray-400' : 'text-gray-500'
-                      }`}>
-                      Cases Won
-                    </div>
-                  </div>
+                  
                 </div>
 
                 {/* Specialties */}

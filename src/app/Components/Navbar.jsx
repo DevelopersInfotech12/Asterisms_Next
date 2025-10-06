@@ -79,7 +79,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-b border-yellow-200">
+      {/* <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-b border-yellow-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center py-3">
             <div className="flex items-center space-x-2 text-slate-700">
@@ -91,7 +91,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navbar */}
       <nav className="bg-slate-800 shadow-2xl border-b border-slate-700">
