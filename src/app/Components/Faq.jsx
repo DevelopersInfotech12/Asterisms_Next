@@ -74,7 +74,7 @@ const Faq = () => {
                       <MessageCircle className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-semibold mb-2">Need Personal Help?</h3>
+                      <h3 className="text-2xl font-semibold mb-2">Need Legal Advice?</h3>
                       <p className="text-slate-300 text-sm">Expert legal guidance awaits</p>
                     </div>
                   </div>
