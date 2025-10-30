@@ -87,7 +87,7 @@ const slides = [
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-center">
         {/* Main Heading with smooth transitions */}
         <div className="mb-8">
-          <h1 className="text-xl md:text-7xl lg:text-7xl font-bold text-white tracking-wide transition-all duration-1000 transform drop-shadow-lg space-y-4">
+          <h1 className="text-4xl md:text-7xl lg:text-7xl font-bold text-white tracking-wide transition-all duration-1000 transform drop-shadow-lg space-y-4">
             <span className="block transition-opacity duration-1000">
               {slides[currentSlide].title}
             </span>

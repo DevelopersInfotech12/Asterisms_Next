@@ -2,15 +2,13 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Award } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("HOME");
-  const [activeDropdown, setActiveDropdown] = useState(null); // Track which dropdown is open
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
   const aboutDropdownRef = useRef(null);
 
@@ -115,47 +113,28 @@ const Navbar = () => {
     }
   };
 
-  // Get dropdown items based on the menu name
+  // Get dropdown items based on the menu name - FIXED to use exact menu names
   const getDropdownItems = (menuName) => {
-    if (menuName === "ABOUT") return aboutDropdownItems;
+    if (menuName === "ABOUT US") return aboutDropdownItems;
     if (menuName === "PRACTICE AREAS") return practiceAreaItems;
     return [];
   };
 
   return (
     <div className="w-full">
-      {/* Top Banner */}
-      {/* <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-b border-yellow-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center py-3">
-            <div className="flex items-center space-x-2 text-slate-700">
-              <Award className="h-4 w-4 text-yellow-600" />
-              <span className="text-sm font-semibold text-gray-500">
-                Prior approval of the Competition Commission of India (CCI) under
-                Section 31(4) of the Competition Act, 2002
-              </span>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Main Navbar */}
       <nav className="bg-slate-800 shadow-2xl border-b border-slate-700">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/">
+              <a href="/">
                 <div className="text-slate-800 p-4 rounded-xl shadow-lg flex flex-col items-center cursor-pointer">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Asterisms Legal Logo"
-                    width={160}
-                    height={360}
-                    className="rounded-md"
-                  />
+                  <div className="w-40 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-md flex items-center justify-center">
+                    <span className="text-slate-800 font-bold text-lg">LOGO</span>
+                  </div>
                 </div>
-              </Link>
+              </a>
             </div>
 
             {/* Desktop Navigation */}
@@ -164,7 +143,7 @@ const Navbar = () => {
                 <div
                   key={index}
                   className="relative"
-                  ref={item.name === "PRACTICE AREAS" ? dropdownRef : item.name === "ABOUT" ? aboutDropdownRef : null}
+                  ref={item.name === "PRACTICE AREAS" ? dropdownRef : item.name === "ABOUT US" ? aboutDropdownRef : null}
                 >
                   {item.hasDropdown ? (
                     <button
@@ -181,7 +160,7 @@ const Navbar = () => {
                       />
                     </button>
                   ) : (
-                    <Link
+                    <a
                       href={item.href}
                       onClick={() => handleNavItemClick(item.name)}
                       className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 block border ${activeTab === item.name
@@ -190,21 +169,21 @@ const Navbar = () => {
                         }`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   )}
 
                   {/* Desktop Dropdown Menu */}
                   {item.hasDropdown && activeDropdown === item.name && (
                     <div className="absolute top-full left-0 mt-2 min-w-42 bg-white rounded-xl shadow-2xl border-2 border-yellow-400 py-3 z-50 font-sans ">
                       {getDropdownItems(item.name).map((dropdownItem, dropdownIndex) => (
-                        <Link
+                        <a
                           key={dropdownIndex}
                           href={dropdownItem.href}
                           onClick={() => handleDropdownItemClick(dropdownItem.href)}
                           className="block px-6 py-3 text-sm font-semibold text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 border-l-4 border-transparent hover:border-yellow-400"
                         >
                           {dropdownItem.name}
-                        </Link>
+                        </a>
                       ))}
                     </div>
                   )}
@@ -214,11 +193,11 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Link href="/contactus">
+              <a href="/contactus">
                 <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-3 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border-2 border-yellow-400">
                   Get Consultation
                 </button>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -262,20 +241,20 @@ const Navbar = () => {
                       {activeDropdown === item.name && (
                         <div className="ml-4 mt-2 space-y-2">
                           {getDropdownItems(item.name).map((dropdownItem, dropdownIndex) => (
-                            <Link
+                            <a
                               key={dropdownIndex}
                               href={dropdownItem.href}
                               onClick={() => handleDropdownItemClick(dropdownItem.href)}
                               className="block px-4 py-2 text-sm text-slate-300 hover:text-yellow-400 hover:bg-slate-800 rounded-lg transition-all duration-200"
                             >
                               {dropdownItem.name}
-                            </Link>
+                            </a>
                           ))}
                         </div>
                       )}
                     </>
                   ) : (
-                    <Link
+                    <a
                       href={item.href}
                       onClick={() => {
                         handleNavItemClick(item.name);
@@ -287,16 +266,16 @@ const Navbar = () => {
                         }`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   )}
                 </div>
               ))}
               <div className="pt-6">
-                <Link href="/contactus">
+                <a href="/contactus">
                   <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-6 py-4 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg">
                     Get Consultation
                   </button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
