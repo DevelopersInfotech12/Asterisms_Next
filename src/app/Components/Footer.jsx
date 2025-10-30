@@ -14,12 +14,12 @@ const Footer = () => {
             Get expert legal consultation from our experienced team of attorneys
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className=" hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+            <button className=" hover:bg-slate-800 text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-4xl transform hover:-translate-y-1">
               Schedule Consultation
             </button>
             <div className="flex items-center gap-4 text-slate-900">
               
-              <span className="flex items-center text-lg font-semibold bg-slate-900 hover:bg-slate-800 text-white px-4 py-3 rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 gap-3"><Phone className="w-6 h-6" />+91-9811898418 <br /> +91-9910356257</span>
+              <span className="flex items-center text-lg font-semibold bg-slate-900 hover:bg-slate-800 text-white px-4 py-3 rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 gap-3 "><Phone className="w-6 h-6 flex " />+91-9811898418 <br />+91-9910356257</span>
             </div>
           </div>
         </div>
