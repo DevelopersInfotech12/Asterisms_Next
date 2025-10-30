@@ -15,7 +15,7 @@ const Disclaimer = () => {
   }, []);
 
   const handleAccept = () => {
-    // In a real app: localStorage.setItem('disclaimerAccepted', 'true');
+    // In a real app: localStorage.setItem('di.sclaimerAccepted', 'true');
     setIsVisible(false);
   };
 
