@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Award } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -128,13 +130,17 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <a href="/">
+              <Link href="/">
                 <div className="text-slate-800 p-4 rounded-xl shadow-lg flex flex-col items-center cursor-pointer">
-                  <div className="w-40 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-md flex items-center justify-center">
-                    <span className="text-slate-800 font-bold text-lg">LOGO</span>
-                  </div>
+                  <Image
+                    src="/images/logo.png"
+                    alt="Asterisms Legal Logo"
+                    width={160}
+                    height={360}
+                    className="rounded-md"
+                  />
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -148,8 +154,8 @@ const Navbar = () => {
                   {item.hasDropdown ? (
                     <button
                       className={`flex items-center px-2 py-3 text-sm font-semibold rounded-lg transition-all duration-300 group border ${activeTab === item.name && activeDropdown === item.name
-                          ? "text-yellow-400 bg-slate-700 border-yellow-400 "
-                          : "text-white hover:text-yellow-400 hover:bg-slate-700 border-transparent hover:border-yellow-400"
+                        ? "text-yellow-400 bg-slate-700 border-yellow-400 "
+                        : "text-white hover:text-yellow-400 hover:bg-slate-700 border-transparent hover:border-yellow-400"
                         }`}
                       onClick={() => toggleDropdown(item.name)}
                     >
@@ -164,8 +170,8 @@ const Navbar = () => {
                       href={item.href}
                       onClick={() => handleNavItemClick(item.name)}
                       className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 block border ${activeTab === item.name
-                          ? "text-yellow-400 bg-slate-700 border-yellow-400"
-                          : "text-white hover:text-yellow-400 hover:bg-slate-700 border-transparent hover:border-yellow-400"
+                        ? "text-yellow-400 bg-slate-700 border-yellow-400"
+                        : "text-white hover:text-yellow-400 hover:bg-slate-700 border-transparent hover:border-yellow-400"
                         }`}
                     >
                       {item.name}
@@ -227,8 +233,8 @@ const Navbar = () => {
                       <button
                         onClick={() => toggleMobileDropdown(item.name)}
                         className={`w-full text-left flex items-center justify-between px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name && activeDropdown === item.name
-                            ? "text-yellow-400 bg-slate-800 border-yellow-400"
-                            : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
+                          ? "text-yellow-400 bg-slate-800 border-yellow-400"
+                          : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
                           }`}
                       >
                         {item.name}
@@ -261,8 +267,8 @@ const Navbar = () => {
                         setIsMenuOpen(false);
                       }}
                       className={`block px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name
-                          ? "text-yellow-400 bg-slate-800 border-yellow-400"
-                          : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
+                        ? "text-yellow-400 bg-slate-800 border-yellow-400"
+                        : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
                         }`}
                     >
                       {item.name}
