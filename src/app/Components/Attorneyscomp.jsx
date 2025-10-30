@@ -37,7 +37,7 @@ const Attorneyscomp = () => {
             location: "Delhi, India",
             experience: "20+ Years",
             bio: "Founding Partner at Asterisms Legal with extensive expertise in Corporate Insolvency, Banking & Financial Disputes, Commercial Litigation, and Corporate Law. With over two decades of legal experience, I specialize in providing strategic legal solutions for complex commercial matters. My practice encompasses comprehensive legal advisory services across insolvency proceedings, banking regulations, civil litigation, and corporate structuring.",
-           profileImage: "/images/gautam.jfif",
+            profileImage: "/images/gautam.jfif",
 
             achievements: [
                 { icon: Scale, label: "Legal Expertise", value: "20+ Years" },
@@ -241,8 +241,8 @@ const Attorneyscomp = () => {
                                     setActiveTab('journey');
                                 }}
                                 className={`flex items-center gap-3 px-8 py-4 rounded-xl font-medium transition-all duration-300 ${selectedAttorney === 'gautam'
-                                        ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-gray-900 shadow-lg shadow-amber-500/20 scale-105'
-                                        : 'text-gray-300 hover:bg-gray-700'
+                                    ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-gray-900 shadow-lg shadow-amber-500/20 scale-105'
+                                    : 'text-gray-300 hover:bg-gray-700'
                                     }`}
                             >
                                 <Scale size={20} />
@@ -254,8 +254,8 @@ const Attorneyscomp = () => {
                                     setActiveTab('journey');
                                 }}
                                 className={`flex items-center gap-3 px-8 py-4 rounded-xl font-medium transition-all duration-300 ${selectedAttorney === 'rajat'
-                                        ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-gray-900 shadow-lg shadow-amber-500/20 scale-105'
-                                        : 'text-gray-300 hover:bg-gray-700'
+                                    ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-gray-900 shadow-lg shadow-amber-500/20 scale-105'
+                                    : 'text-gray-300 hover:bg-gray-700'
                                     }`}
                             >
                                 <Scale size={20} />
@@ -281,8 +281,8 @@ const Attorneyscomp = () => {
                             <div className="flex justify-center">
                                 <div className="relative">
                                     <div className="w-72 h-96 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 shadow-2xl border-4 border-amber-400/20 overflow-hidden">
-                                        <img 
-                                            src={currentAttorney.profileImage} 
+                                        <img
+                                            src={currentAttorney.profileImage}
                                             alt={currentAttorney.name}
                                             className="w-full h-full object-cover"
                                             onError={(e) => {
@@ -363,7 +363,7 @@ const Attorneyscomp = () => {
                 {/* Navigation Tabs */}
                 <div className="flex justify-center mb-12 font-sans">
                     <div className="bg-gray-800 rounded-2xl p-2 shadow-xl border border-gray-700">
-                        <div className="flex gap-2 flex-wrap justify-center text-green-900">
+                        <div className="flex flex-col md:flex-row gap-2 justify-center text-green-900">
                             {[
                                 { id: 'journey', label: 'Professional Journey', icon: TrendingUp },
                                 { id: 'values', label: 'Professional Values', icon: Heart },
@@ -372,18 +372,21 @@ const Attorneyscomp = () => {
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={` flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === tab.id
+                                    className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl w-full md:w-auto text-center font-medium transition-all duration-300 ${activeTab === tab.id
                                             ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-gray-900 shadow-lg shadow-amber-500/20'
                                             : 'text-gray-300 hover:bg-gray-700'
                                         }`}
                                 >
                                     <tab.icon size={18} />
-                                    <span className="hidden sm:block">{tab.label}</span>
+                                    <span className="text-xs sm:text-sm md:text-base whitespace-nowrap">
+                                        {tab.label}
+                                    </span>
                                 </button>
                             ))}
                         </div>
                     </div>
                 </div>
+
 
                 {/* Content Sections */}
                 <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
