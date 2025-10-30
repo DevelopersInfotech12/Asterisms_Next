@@ -16,8 +16,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: "HOME", href: "/" },
-    { 
-      name: "ABOUT", 
+    {
+      name: "ABOUT US",
       href: "/about",
       hasDropdown: true,
     },
@@ -66,7 +66,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target) &&
-          aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target)) {
+        aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
         setActiveDropdown(null);
       }
@@ -145,15 +145,17 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <div className="text-slate-800 p-4 rounded-xl shadow-lg flex flex-col items-center">
-                <Image
-                  src="/images/logo.png"
-                  alt="Asterisms Legal Logo"
-                  width={160}
-                  height={360}
-                  className="rounded-md"
-                />
-              </div>
+              <Link href="/">
+                <div className="text-slate-800 p-4 rounded-xl shadow-lg flex flex-col items-center cursor-pointer">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Asterisms Legal Logo"
+                    width={160}
+                    height={360}
+                    className="rounded-md"
+                  />
+                </div>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -166,29 +168,26 @@ const Navbar = () => {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center px-2 py-3 text-sm font-semibold rounded-lg transition-all duration-300 group border ${
-                        activeTab === item.name && activeDropdown === item.name
+                      className={`flex items-center px-2 py-3 text-sm font-semibold rounded-lg transition-all duration-300 group border ${activeTab === item.name && activeDropdown === item.name
                           ? "text-yellow-400 bg-slate-700 border-yellow-400 "
                           : "text-white hover:text-yellow-400 hover:bg-slate-700 border-transparent hover:border-yellow-400"
-                      }`}
+                        }`}
                       onClick={() => toggleDropdown(item.name)}
                     >
                       {item.name}
                       <ChevronDown
-                        className={`ml-2 h-4 w-4 transition-transform duration-300 text-yellow-400 ${
-                          activeDropdown === item.name ? "rotate-180" : ""
-                        }`}
+                        className={`ml-2 h-4 w-4 transition-transform duration-300 text-yellow-400 ${activeDropdown === item.name ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                   ) : (
                     <Link
                       href={item.href}
                       onClick={() => handleNavItemClick(item.name)}
-                      className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 block border ${
-                        activeTab === item.name
+                      className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 block border ${activeTab === item.name
                           ? "text-yellow-400 bg-slate-700 border-yellow-400"
                           : "text-white hover:text-yellow-400 hover:bg-slate-700 border-transparent hover:border-yellow-400"
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -215,10 +214,10 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-               <Link href="/contactus">
-              <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-3 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border-2 border-yellow-400">
-                Get Consultation
-              </button>
+              <Link href="/contactus">
+                <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-3 rounded-lg font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border-2 border-yellow-400">
+                  Get Consultation
+                </button>
               </Link>
             </div>
 
@@ -248,17 +247,15 @@ const Navbar = () => {
                     <>
                       <button
                         onClick={() => toggleMobileDropdown(item.name)}
-                        className={`w-full text-left flex items-center justify-between px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${
-                          activeTab === item.name && activeDropdown === item.name
+                        className={`w-full text-left flex items-center justify-between px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name && activeDropdown === item.name
                             ? "text-yellow-400 bg-slate-800 border-yellow-400"
                             : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
-                        }`}
+                          }`}
                       >
                         {item.name}
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-300 text-yellow-400 ${
-                            activeDropdown === item.name ? "rotate-180" : ""
-                          }`}
+                          className={`h-4 w-4 transition-transform duration-300 text-yellow-400 ${activeDropdown === item.name ? "rotate-180" : ""
+                            }`}
                         />
                       </button>
                       {/* Mobile Dropdown Items */}
@@ -284,11 +281,10 @@ const Navbar = () => {
                         handleNavItemClick(item.name);
                         setIsMenuOpen(false);
                       }}
-                      className={`block px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${
-                        activeTab === item.name
+                      className={`block px-6 py-4 text-base font-semibold rounded-lg transition-all duration-300 border ${activeTab === item.name
                           ? "text-yellow-400 bg-slate-800 border-yellow-400"
                           : "text-white hover:text-yellow-400 hover:bg-slate-800 border-slate-700 hover:border-yellow-400"
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>
