@@ -36,7 +36,7 @@ const Attorneyscomp = () => {
             role: "Founding Partner | Advocate & Insolvency Professional",
             location: "Delhi, India",
             experience: "20+ Years",
-            bio: "Founding Partner at Asterisms Legal with extensive expertise in Corporate Insolvency, Banking & Financial Disputes, Commercial Litigation, and Corporate Law. With over two decades of legal experience, I specialize in providing strategic legal solutions for complex commercial matters. My practice encompasses comprehensive legal advisory services across insolvency proceedings, banking regulations, civil litigation, and corporate structuring.",
+            bio: "Founding Partner at Asterisms Legal, possessing extensive expertise in Corporate Insolvency, Banking & Financial Disputes, Commercial Litigation, and Corporate Law. With over two decades of legal experience, he specializes in delivering strategic legal solutions for complex commercial matters. His practice includes comprehensive legal advisory and representation across insolvency proceedings, banking regulations, civil and commercial litigation, and corporate structuring.",
             profileImage: "/images/gautam.jfif",
 
             achievements: [
@@ -128,7 +128,7 @@ const Attorneyscomp = () => {
             role: "Advocate, Partner, Co-founder",
             location: "Defence Colony, New Delhi, Delhi, India",
             experience: "8+ Years",
-            bio: "Advocate, Partner, and Co-founder at Asterisms Legal with comprehensive expertise in diverse legal domains. Specializing in Insolvency Law, Company Law, Commercial Litigation, Corporate Law, Bankruptcy Law, and Legal Assistance. Committed to providing high-quality legal services and strategic counsel to clients across various industries. Member of the Bar Council of Delhi.",
+            bio: "Advocate, Partner, and Co-founder at Asterisms Legal, with comprehensive expertise across diverse legal domains. He is a Member of the Bar Council of Delhi. Specialized in Insolvency Law, Company Law, Commercial Litigation, Corporate Law, Bankruptcy Law, and strategic legal assistance, he is committed to delivering high-quality legal services and tailored counsel to clients across various industries.",
             profileImage: "/images/rajat.jpg",
 
             achievements: [
