@@ -10,6 +10,7 @@ import ExpertAttorneys from '../Components/ExpertAttornery';
 import Faq from '../Components/Faq';
 import HomeBlog from '../Components/HomeBlog';
 import Footer from '../Components/Footer';
+import AmendmentBanner from '../Components/AmendmentBanner';
 // import Navbar from '../app/Components/Navbar'
 
 
@@ -22,6 +23,7 @@ const HomeScreen = () => {
             <HomePracticeAreas/>
             <WhyChooseUs/>
             <ExpertAttorneys/>
+            <AmendmentBanner/>
             <Faq/>
             {/* <HomeBlog/> */}
             <Footer/>
