@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: "ABOUT US", href: "/about", hasDropdown: true },
     { name: "EXPERTISE", href: "#", hasDropdown: true },
     { name: "OUR TEAM", href: "/ourpeople" },
-    { name: "CAREERS", href: "/contactus" },
+    // { name: "CAREERS", href: "/contactus" },
     { name: "CONTACT US", href: "/contactus" },
     // { name: "KNOWLEDGE CENTRE", href: "/blog" },
   ];
