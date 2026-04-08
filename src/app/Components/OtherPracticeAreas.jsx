@@ -1,43 +1,70 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Scale, Building2, Briefcase, CreditCard, Copyright, Handshake, Gavel } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Scale, Building2, Briefcase, CreditCard, Copyright, Handshake, Gavel,Users,Shield,Home } from 'lucide-react';
 
 const OtherPracticeAreas = ({ currentPractice }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Define all practice areas with their details
-  const allPracticeAreas = [
-    {
-      id: 'bankruptcy-insolvency',
-      title: 'Bankruptcy & Insolvency Laws',
-      description: 'The Firm provides strategic advice and support to clients concerning the protection, exploitation and enforcement of trademarks and copyrights. We also assist in restructuring and insolvency resolution .',
-      icon: <Scale className="w-6 h-6" />,
-      bgImage: '/images/img3.jpg'
-    },
-    {
-      id: 'banking-law',
-      title: 'Banking Law',
-      description: 'The Firm represents in the Deaf and Hard-of-Hearing Community in public interest litigation filed in the Supreme Court. We advise banks and financial institutions on compliance, disputes .',
-      icon: <Handshake className="w-6 h-6" />,
-      bgImage: '/images/img2.jpg'
-    },
-    {
-      id: 'commercial-corporate',
-      title: 'Commercial, Corporate & Companies Law',
-      description: 'The Firm is recognised as one of the best corporate litigation firms in the country. We have extensive experience in dealing with complex disputes and offering strategic business-oriented solutions .',
-      icon: <Gavel className="w-6 h-6" />,
-      bgImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop'
-    },
-    {
-      id: 'companies-law',
-      title: 'Arbitration Law',
-      description: 'Expert legal services in corporate governance, compliance, mergers and acquisitions, and corporate restructuring matters. Our team ensures smooth navigation of legal complexities for businesses .',
-      icon: <Building2 className="w-6 h-6" />,
-      bgImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop'
-    }
-  ];
-
+ const allPracticeAreas = [
+  {
+    id: 'bankruptcy-insolvency',
+    title: 'Bankruptcy & Insolvency Laws',
+    description:
+      'We advise on insolvency resolution, liquidation, restructuring, and bankruptcy proceedings under the Insolvency and Bankruptcy Code (IBC). Our firm represents clients before NCLT and NCLAT.',
+    icon: <Scale className="w-6 h-6" />,
+    bgImage: '/images/img3.jpg'
+  },
+  {
+    id: 'banking-law',
+    title: 'Banking Law',
+    description:
+      'We provide legal advisory to banks, NBFCs, and financial institutions on regulatory compliance, loan recovery, SARFAESI proceedings, and financial disputes.',
+    icon: <Handshake className="w-6 h-6" />,
+    bgImage: '/images/img2.jpg'
+  },
+  {
+    id: 'commercial-corporate',
+    title: 'Commercial, Corporate & Companies Law',
+    description:
+      'Our firm handles corporate transactions, mergers & acquisitions, compliance, and commercial disputes, providing strategic legal solutions to businesses.',
+    icon: <Gavel className="w-6 h-6" />,
+    bgImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop'
+  },
+  {
+    id: 'family-law',
+    title: 'Matrimonial / Family Law',
+    description:
+      'We handle divorce, child custody, maintenance, domestic violence, and family disputes with a client-sensitive approach and strong legal representation.',
+    icon: <Users className="w-6 h-6" />,
+    bgImage: '/images/matri.jpg'
+  },
+  {
+    id: 'criminal-law',
+    title: 'Criminal Law',
+    description:
+      'We represent clients in bail matters, criminal trials, white-collar crimes, cyber offences, and appeals, ensuring strong defense and protection of rights.',
+    icon: <Shield className="w-6 h-6" />,
+    bgImage: '/images/criminal.jpg'
+  },
+  {
+    id: 'civil-law',
+    title: 'Civil Law',
+    description:
+      'We handle property disputes, recovery suits, injunctions, contract disputes, and civil litigation, ensuring effective enforcement of legal rights.',
+    icon: <Home className="w-6 h-6" />,
+    bgImage: '/images/civil.jpg'
+  },
+  {
+    id: 'arbitration-law',
+    title: 'Arbitration Law',
+    description:
+      'We provide arbitration and dispute resolution services, including domestic and international arbitration, mediation, and enforcement of arbitral awards.',
+    icon: <Briefcase className="w-6 h-6" />,
+    bgImage: '/images/arbitration.jpg'
+  }
+];
 
   // Filter out the current practice area
   const otherPracticeAreas = allPracticeAreas.filter(area => area.id !== currentPractice);

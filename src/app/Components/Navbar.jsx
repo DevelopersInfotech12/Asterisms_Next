@@ -17,10 +17,11 @@ const Navbar = () => {
   const navItems = [
     { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "/about", hasDropdown: true },
-    { name: "PRACTICE AREAS", href: "#", hasDropdown: true },
-    { name: "OUR PEOPLE", href: "/ourpeople" },
+    { name: "EXPERTISE", href: "#", hasDropdown: true },
+    { name: "OUR TEAM", href: "/ourpeople" },
+    { name: "CAREERS", href: "/contactus" },
     { name: "CONTACT US", href: "/contactus" },
-    { name: "KNOWLEDGE CENTRE", href: "/blog" },
+    // { name: "KNOWLEDGE CENTRE", href: "/blog" },
   ];
 
   const aboutDropdownItems = [
@@ -29,10 +30,13 @@ const Navbar = () => {
   ];
 
   const practiceAreaItems = [
-    { name: "Bankruptcy & Insolvency Laws", href: "/bankruptcyandInsolvency" },
-    { name: "Banking Law", href: "/bankinglaw" },
-    { name: "Commercial, Corporate & Companies Law", href: "/commercialandcorporate" },
-    { name: "Arbitration Law", href: "/companieslaw" }
+  { name: "Insolvency and Bankruptcy", href: "/bankruptcyandInsolvency" },
+  { name: "Banking Law", href: "/bankinglaw" },
+  { name: "Commercial, Corporate & Company Law", href: "/commercialandcorporate" },
+  { name: "Matrimonial / Family Law", href: "/familylaw" },
+  { name: "Criminal", href: "/criminallaw" },
+  { name: "Civil", href: "/civillaw" },
+  { name: "Arbitration", href: "/companieslaw" }
   ];
 
   useEffect(() => {
@@ -73,7 +77,7 @@ const Navbar = () => {
 
   const getDropdownItems = (menuName) => {
     if (menuName === "ABOUT US") return aboutDropdownItems;
-    if (menuName === "PRACTICE AREAS") return practiceAreaItems;
+    if (menuName === "EXPERTISE") return practiceAreaItems;
     return [];
   };
 
@@ -100,7 +104,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center space-x-1">
               {navItems.map((item, index) => (
                 <div key={index} className="relative"
-                  ref={item.name === "PRACTICE AREAS" ? dropdownRef :
+                  ref={item.name === "EXPERTISE" ? dropdownRef :
                        item.name === "ABOUT US" ? aboutDropdownRef : null}>
                   
                   {item.hasDropdown ? (
@@ -135,7 +139,7 @@ const Navbar = () => {
                         <button
                           key={idx}
                           onClick={() => handleDropdownItemClick(dropdownItem.href)}
-                          className="block w-full text-left px-6 py-3 text-sm font-semibold text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition border-l-4 border-transparent hover:border-yellow-400"
+                          className="block w-42 text-left px-6 py-3 text-sm font-semibold text-slate-800 hover:bg-yellow-50 hover:text-yellow-600 transition border-l-4 border-transparent hover:border-yellow-400"
                         >
                           {dropdownItem.name}
                         </button>

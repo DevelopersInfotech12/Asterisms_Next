@@ -13,7 +13,7 @@ const BankruptcyandInsolvencyScreen = () => {
     return (
         <div>
             <Navbar />
-               <OtherHero   title = "Bankruptcy and Insolvency Law"
+               <OtherHero   title = "Insolvency and Bankruptcy Law"
   subtitle ="Explore"/>
             <BankruptcyandInsolvency />
             <OtherPracticeAreas currentPractice="bankruptcy-insolvency" />

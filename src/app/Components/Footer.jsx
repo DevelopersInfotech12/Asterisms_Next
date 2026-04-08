@@ -70,23 +70,41 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
             {/* Practice Areas */}
-            <div>
-              <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">PRACTICE AREAS</h4>
-              <ul className="space-y-2 ">
-                {[
-                  "Bankruptcy & Insolvency Law",
-                  "Banking Law",
-                  "Commercial, Corporate & Companies Law",
-                  "Arbitration Law"
-                ].map((item, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-base font-sans">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+           <div>
+  <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">
+    PRACTICE AREAS
+  </h4>
+
+  <ul className="space-y-2">
+    {[
+      {
+        name: "Bankruptcy & Insolvency Law",
+        link: "/bankruptcyandInsolvency"
+      },
+      {
+        name: "Banking Law",
+        link: "/bankinglaw"
+      },
+      {
+        name: "Commercial, Corporate & Companies Law",
+        link: "/commercialandcorporate"
+      },
+      {
+        name: "Arbitration Law",
+        link: "/companieslaw"
+      }
+    ].map((item, index) => (
+      <li key={index}>
+        <a
+          href={item.link}
+          className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-base font-sans"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
 
             {/* Company */}
             <div className='ml-12'>
@@ -144,15 +162,9 @@ const Footer = () => {
 
       {/* Copyright Bar */}
       <div className="bg-slate-900 py-4 border-t border-slate-700">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-6 text-gray-400">
-              <a href="#" className="hover:text-yellow-400 transition-colors">Terms of Service</a>
-              <span>•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
-              <span>•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Legal Notice</a>
-            </div>
+          
             <p className="text-gray-400 text-center md:text-right">
               © 2025 <span className="text-yellow-400">Asterisms Legal</span>.
               Designed by{" "}

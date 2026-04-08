@@ -36,7 +36,7 @@ export default function AmendmentBanner() {
             {/* Image */}
             <div className="relative w-full lg:w-[44%] h-44 lg:h-auto lg:min-h-[260px] bg-[#111b33]">
               <Image
-                src="/images/blog1.jpg"
+                src="/images/lbc1.jpg"
                 alt="IBC Amendment 2026"
                 fill
                 className="object-cover group-hover:scale-105 transition duration-500"

@@ -216,22 +216,8 @@ const ContactUs = () => {
               <div className="mt-8 text-center">
                 <h3 className="text-xl font-semibold text-white mb-4">Follow Us</h3>
                 <div className="flex justify-center space-x-4">
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-blue-600 rounded-2xl hover:bg-blue-700 transition"
-                  >
-                    <Facebook className="h-6 w-6 text-white" />
-                  </a>
-                  <a
-                    href="https://twitter.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-sky-500 rounded-2xl hover:bg-sky-600 transition"
-                  >
-                    <Twitter className="h-6 w-6 text-white" />
-                  </a>
+              
+               
                   <a
                     href="https://www.linkedin.com/"
                     target="_blank"
