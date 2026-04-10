@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Scale, Award, Target, ArrowRight, Phone, Mail, Users } from 'lucide-react';
+import { Scale, Award, Target, Users } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,163 +10,144 @@ const WhyChooseUs = () => {
 
   const features = [
     {
-      icon: <Award className="w-12 h-12" />,
+      icon: <Award size={20} />,
       title: "Best Law Practices",
-      description:
-        "At our firm, we combine unparalleled expertise with unwavering dedication, ensuring comprehensive legal solutions tailored to each client's unique needs."
+      description: "At our firm, we combine unparalleled expertise with unwavering dedication, ensuring comprehensive legal solutions tailored to each client's unique needs."
     },
     {
-      icon: <Scale className="w-12 h-12" />,
+      icon: <Scale size={20} />,
       title: "Efficiency & Trust",
-      description:
-        "Our firm's integrity is the cornerstone of our practice, built on a legacy of trustworthiness, transparency, and steadfast reliability."
+      description: "Our firm's integrity is the cornerstone of our practice, built on a legacy of trustworthiness, transparency, and steadfast reliability."
     },
     {
-      icon: <Target className="w-12 h-12" />,
+      icon: <Target size={20} />,
       title: "Results You Deserve",
-      description:
-        "Our firm consistently achieves impactful results through a potent combination of strategic acumen and legal prowess, securing favorable outcomes."
+      description: "Our firm consistently achieves impactful results through a potent combination of strategic acumen and legal prowess, securing favorable outcomes."
     },
     {
-      icon: <Users className="w-12 h-12" />,
+      icon: <Users size={20} />,
       title: "Client-Centered Approach",
-      description:
-        "We place our clients at the heart of everything we do, offering personalized guidance, clear communication, and unwavering support throughout every stage of the legal process."
+      description: "We place our clients at the heart of everything we do, offering personalized guidance, clear communication, and unwavering support at every stage."
     }
   ];
 
-  const stats = [
-    { number: 500, suffix: '+', label: 'Happy Clients', icon: '👥' },
-    { number: 21, suffix: '+', label: 'Years of Service', icon: '⚖️' },
-    { number: 25, suffix: '+', label: 'Expert Lawyers', icon: '🎓' },
-    { number: 2000, suffix: '+', label: 'Successful Cases', icon: '🏆' }
-  ];
-
-  const CountUpNumber = ({ target, suffix, duration = 2000 }) => {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-      if (!isVisible) return;
-      
-      let startTime;
-      const animate = (currentTime) => {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        setCount(Math.floor(target * easeOutQuart));
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      
-      requestAnimationFrame(animate);
-    }, [target, duration, isVisible]);
-
-    return <span>{count.toLocaleString()}{suffix}</span>;
-  };
-
   return (
-    <section className="bg-slate-50 pb-20 pt-8">
-      <div className="container mx-auto px-6">
+    <section style={{ backgroundColor: "#0D0B08", padding: "100px 0" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
 
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="flex items-center justify-center mb-2">
-            <div className="h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent flex-1 max-w-md"></div>
-            <div className="mx-8">
-              <h1 className="text-5xl text-slate-900 leading-[1.1] tracking-relaxed font-semibold">
-                Why Choose Us
-                <span className="block text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold">
-                  Legal Excellence
-                </span>
-              </h1>
-            </div>
-            <div className="h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent flex-1 max-w-md"></div>
+        <div style={{ textAlign: "center", marginBottom: "72px" }}>
+          <p style={{ color: "#C9A84C", fontSize: "11px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "20px" }}>
+            — OUR COMMITMENT
+          </p>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "32px", marginBottom: "16px" }}>
+            <div style={{ height: "1px", backgroundColor: "#2A2518", flex: 1, maxWidth: "160px" }}></div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: "300", color: "#E8E0D0", margin: 0 }}>
+              Why Choose{" "}
+              <span style={{ color: "#C9A84C", fontStyle: "italic" }}>Us</span>
+            </h2>
+            <div style={{ height: "1px", backgroundColor: "#2A2518", flex: 1, maxWidth: "160px" }}></div>
           </div>
-
-          <p className="text-base font-sans font-semibold max-w-2xl mx-auto text-slate-600 font-light leading-relaxed">
+          <p style={{ color: "#5A4A30", fontSize: "15px", fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+            Legal Excellence
+          </p>
+          <p style={{ color: "#8A7A5A", fontSize: "14px", maxWidth: "480px", margin: "12px auto 0", lineHeight: "1.7", fontFamily: "Georgia, serif" }}>
             Experience the difference that comes with choosing a law firm dedicated to excellence, integrity, and results.
           </p>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-20 items-start max-w-[90%] mx-auto">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }}>
 
           {/* Left - Features */}
-          <div className="space-y-6">
+          <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
             {features.map((feature, index) => (
-              <div key={index} className="group">
-                <div className="flex gap-8 items-start">
+              <div
+                key={index}
+                style={{ display: "flex", gap: "24px", alignItems: "flex-start", opacity: isVisible ? 1 : 0, transform: isVisible ? "translateX(0)" : "translateX(-20px)", transition: `all 0.6s ease ${index * 0.15}s` }}
+              >
+                {/* Icon */}
+                <div style={{
+                  flexShrink: 0,
+                  width: "44px",
+                  height: "44px",
+                  border: "1px solid #2A2518",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#C9A84C",
+                  marginTop: "2px",
+                }}>
+                  {feature.icon}
+                </div>
 
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center text-amber-600 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
-                      {feature.icon}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-4 group-hover:text-amber-700 transition-colors duration-300">
+                {/* Content */}
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "10px" }}>
+                    <div style={{ width: "20px", height: "1px", backgroundColor: "#C9A84C" }}></div>
+                    <h3 style={{ fontFamily: "Georgia, serif", fontSize: "16px", fontWeight: "300", color: "#E8E0D0", margin: 0, fontStyle: "italic" }}>
                       {feature.title}
                     </h3>
-                    <p className="text-slate-600 text-[15px] font-sans ">
-                      {feature.description}
-                    </p>
                   </div>
+                  <p style={{ color: "#5A4A30", fontSize: "14px", lineHeight: "1.8", fontFamily: "Georgia, serif", margin: 0 }}>
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Right - Image/Visual Section */}
-          <div className="relative">
+          {/* Right - Visual Card */}
+          <div style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? "translateX(0)" : "translateX(20px)", transition: "all 0.8s ease 0.4s", position: "relative" }}>
 
-            {/* Main Visual Card */}
-            <div className="bg-white rounded-none shadow-2xl overflow-hidden">
+            {/* Main Card */}
+            <div style={{ border: "1px solid #2A2518", overflow: "hidden", position: "relative" }}>
+              {/* Gold corner accents */}
+              <div style={{ position: "absolute", top: "-6px", left: "-6px", width: "32px", height: "32px", borderTop: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C", zIndex: 2 }}></div>
+              <div style={{ position: "absolute", bottom: "-6px", right: "-6px", width: "32px", height: "32px", borderBottom: "2px solid #C9A84C", borderRight: "2px solid #C9A84C", zIndex: 2 }}></div>
 
               {/* Header */}
-              <div className="bg-slate-900 p-8 text-white">
-                <div className="flex items-center gap-4 mb-4">
-                  <Scale className="w-10 h-10 text-amber-400" />
-                  <div>
-                    <h3 className="text-2xl font-semibold">Asterisms Legal</h3>
-                    <p className="text-slate-300">Your Trusted Legal Partner</p>
-                  </div>
+              <div style={{ backgroundColor: "#13110D", padding: "28px 32px", borderBottom: "1px solid #2A2518", display: "flex", alignItems: "center", gap: "16px" }}>
+                <Scale size={22} color="#C9A84C" />
+                <div>
+                  <h3 style={{ fontFamily: "Georgia, serif", fontSize: "18px", fontWeight: "300", color: "#E8E0D0", margin: 0, fontStyle: "italic" }}>Asterisms Legal</h3>
+                  <p style={{ color: "#5A4A30", fontSize: "11px", letterSpacing: "0.15em", fontFamily: "Arial, sans-serif", margin: "4px 0 0" }}>YOUR TRUSTED LEGAL PARTNER</p>
                 </div>
               </div>
 
-              {/* Professional Image Section */}
-              <div className="relative h-96 overflow-hidden">
+              {/* Image */}
+              <div style={{ position: "relative", height: "320px", overflow: "hidden" }}>
                 <img
                   src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop&crop=center"
                   alt="Professional lawyers in meeting"
-                  className="w-full h-full object-cover"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", filter: "sepia(30%) brightness(0.7)" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="font-semibold text-lg">Professional Legal Services</p>
-                  <p className="text-sm opacity-90">Expert consultation & representation</p>
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,8,5,0.8) 0%, transparent 50%)" }}></div>
+                <div style={{ position: "absolute", bottom: "24px", left: "24px" }}>
+                  <p style={{ fontFamily: "Georgia, serif", fontSize: "16px", color: "#E8E0D0", margin: 0, fontStyle: "italic" }}>Professional Legal Services</p>
+                  <p style={{ color: "#8A7A5A", fontSize: "12px", fontFamily: "Arial, sans-serif", letterSpacing: "0.1em", margin: "4px 0 0" }}>EXPERT CONSULTATION & REPRESENTATION</p>
                 </div>
               </div>
             </div>
 
-            {/* Floating Elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-amber-400 rounded-full opacity-20"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-400 rounded-full opacity-20"></div>
-
-            {/* Quote */}
-            <div className="absolute -top-4 left-8 bg-white p-6 shadow-xl rounded-lg border-l-4 border-amber-600 max-w-xs">
-              <p className="text-sm text-slate-600 italic mb-2">"Prior approval of the Competition Commission of India (CCI) under Section 31(4)"</p>
-              <div className="text-xs text-amber-600 font-semibold">Legal Compliance</div>
+            {/* Quote card */}
+            <div style={{
+              position: "absolute",
+              top: "-20px",
+              right: "-20px",
+              backgroundColor: "#13110D",
+              border: "1px solid #2A2518",
+              borderLeft: "2px solid #C9A84C",
+              padding: "20px 24px",
+              maxWidth: "240px",
+            }}>
+              <p style={{ color: "#8A7A5A", fontSize: "12px", fontFamily: "Georgia, serif", fontStyle: "italic", lineHeight: "1.6", margin: "0 0 8px" }}>
+                "Prior approval of CCI under Section 31(4) — ensuring legal compliance."
+              </p>
+              <span style={{ color: "#C9A84C", fontSize: "10px", letterSpacing: "0.15em", fontFamily: "Arial, sans-serif" }}>LEGAL COMPLIANCE</span>
             </div>
-
           </div>
         </div>
-
-
       </div>
     </section>
   );

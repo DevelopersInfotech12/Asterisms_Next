@@ -1,185 +1,205 @@
+"use client";
+
 import React from 'react';
-import { Phone, Mail, Instagram, Linkedin, MapPin, Clock, ArrowUp } from 'lucide-react';
+import { Phone, Mail, Instagram, Linkedin, MapPin, Clock, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative">
+    <footer style={{ backgroundColor: "#0D0B08" }}>
+
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Ready to Resolve Your Legal Matters?
-          </h2>
-          <p className="text-xl text-slate-800 mb-8 max-w-2xl mx-auto">
-            Get expert legal consultation from our experienced team of attorneys
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className=" hover:bg-slate-800 text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-4xl transform hover:-translate-y-1">
-              Schedule Consultation
-            </button>
-            <div className="flex items-center gap-4 text-slate-900">
-              
-              <span className="flex items-center text-lg font-semibold bg-slate-900 hover:bg-slate-800 text-white px-4 py-3 rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 gap-3 "><Phone className="w-6 h-6 flex " />+91-9811898418 <br />+91-9910356257</span>
-            </div>
-          </div>
+      <div style={{ backgroundColor: "#13110D", borderTop: "2px solid #C9A84C", borderBottom: "1px solid #2A2518", padding: "80px 48px", textAlign: "center" }}>
+        <p style={{ color: "#C9A84C", fontSize: "11px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "20px" }}>
+          — READY TO BEGIN
+        </p>
+        <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: "300", color: "#E8E0D0", marginBottom: "16px", lineHeight: "1.2" }}>
+          Ready to Resolve Your{" "}
+          <span style={{ color: "#C9A84C", fontStyle: "italic" }}>Legal Matters?</span>
+        </h2>
+        <p style={{ color: "#8A7A5A", fontSize: "15px", maxWidth: "480px", margin: "0 auto 40px", lineHeight: "1.7", fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+          Get expert legal consultation from our experienced team of attorneys.
+        </p>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
+          <button style={{
+            backgroundColor: "#C9A84C",
+            color: "#0D0B08",
+            padding: "14px 36px",
+            fontSize: "11px",
+            letterSpacing: "0.18em",
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "700",
+            border: "none",
+            cursor: "pointer",
+          }}>
+            SCHEDULE CONSULTATION
+          </button>
+          <a
+            href="tel:+919811898418"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              padding: "14px 28px",
+              border: "1px solid #2A2518",
+              color: "#8A7A5A",
+              fontSize: "13px",
+              fontFamily: "Georgia, serif",
+              textDecoration: "none",
+              transition: "border-color 0.2s",
+            }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = "#C9A84C"}
+            onMouseLeave={e => e.currentTarget.style.borderColor = "#2A2518"}
+          >
+            <Phone size={14} color="#C9A84C" />
+            +91-9811898418 / +91-9910356257
+          </a>
         </div>
       </div>
 
       {/* Main Footer */}
-      <div className="bg-slate-800 pt-20 pb-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div style={{ padding: "72px 48px 40px", maxWidth: "1200px", margin: "0 auto" }}>
 
-          {/* Top Row - Company Info */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6 pb-6 border-b border-slate-700">
-            <div className="mb-2 lg:mb-0">
-              <div className="flex items-center mb-4 ">
-                <div className="w-36  rounded-2xl flex items-center shadow-lg">
-                  {/* <span className="text-slate-900 font-black text-2xl">AL</span> */}
-                  <img src="/images/logo.png" alt="" />
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-white">ASTERISMS LEGAL</h3>
-                  <p className="text-yellow-400 font-medium">Professional Law Services</p>
-                </div>
+        {/* Top Row */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "48px", paddingBottom: "48px", borderBottom: "1px solid #2A2518" }}>
+          {/* Brand */}
+          <div style={{ maxWidth: "340px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px" }}>
+              <div style={{ width: "128px" }}>
+                <img src="/images/logo.png" alt="Asterisms Legal" style={{ width: "100%" }} />
               </div>
-              <p className="text-gray-300 text-sm font-sans max-w-md leading-relaxed">
-                Boutique Law Firm providing comprehensive legal solutions through
-                expert guidance and strategic counsel for businesses and individuals.
-              </p>
+              <div>
+                <h3 style={{ fontFamily: "Georgia, serif", fontSize: "18px", fontWeight: "300", color: "#E8E0D0", margin: "0 0 4px", letterSpacing: "0.05em" }}>ASTERISMS LEGAL</h3>
+                <p style={{ color: "#C9A84C", fontSize: "10px", letterSpacing: "0.2em", fontFamily: "Arial, sans-serif", margin: 0 }}>PROFESSIONAL LAW SERVICES</p>
+              </div>
             </div>
+            <p style={{ color: "#5A4A30", fontSize: "13px", lineHeight: "1.8", fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+              Asterisms Law Firm providing comprehensive legal solutions through expert guidance and strategic counsel for businesses and individuals.
+            </p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4 hover:bg-yellow-500 transition-all duration-300 group">
-                  <Clock className="w-10 h-10 text-yellow-500 group-hover:text-slate-900" />
+          {/* Stats */}
+          <div style={{ display: "flex", gap: "48px" }}>
+            {[{ icon: <Clock size={20} />, label: "24/7 Support", sub: "Always Available" }, { icon: <MapPin size={20} />, label: "Delhi Office", sub: "Defence Colony" }].map((item, i) => (
+              <div key={i} style={{ textAlign: "center" }}>
+                <div style={{ width: "52px", height: "52px", border: "1px solid #2A2518", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9A84C", margin: "0 auto 12px" }}>
+                  {item.icon}
                 </div>
-                <h4 className="text-white font-bold mb-2">24/7 Support</h4>
-                <p className="text-gray-400">Always Available</p>
+                <p style={{ color: "#E8E0D0", fontSize: "13px", fontFamily: "Georgia, serif", margin: "0 0 4px" }}>{item.label}</p>
+                <p style={{ color: "#5A4A30", fontSize: "11px", fontFamily: "Arial, sans-serif", letterSpacing: "0.08em", margin: 0 }}>{item.sub}</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4 hover:bg-yellow-500 transition-all duration-300 group">
-                  <MapPin className="w-10 h-10 text-yellow-500 group-hover:text-slate-900" />
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Links Row */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px" }}>
+
+          {/* Practice Areas */}
+          <div>
+            <h4 style={{ color: "#C9A84C", fontSize: "10px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "24px" }}>PRACTICE AREAS</h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+              {[
+                { name: "Bankruptcy & Insolvency Law", link: "/bankruptcyandInsolvency" },
+                { name: "Banking Law", link: "/bankinglaw" },
+                { name: "Commercial & Corporate Law", link: "/commercialandcorporate" },
+                { name: "Arbitration Law", link: "/companieslaw" }
+              ].map((item, i) => (
+                <li key={i}>
+                  <a href={item.link} style={{ color: "#5A4A30", fontSize: "13px", fontFamily: "Georgia, serif", fontStyle: "italic", textDecoration: "none", transition: "color 0.2s" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "#C9A84C"}
+                    onMouseLeave={e => e.currentTarget.style.color = "#5A4A30"}
+                  >{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 style={{ color: "#C9A84C", fontSize: "10px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "24px" }}>COMPANY</h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+              {["About Us", "Our Team", "Practices", "Career"].map((item, i) => (
+                <li key={i}>
+                  <a href="#" style={{ color: "#5A4A30", fontSize: "13px", fontFamily: "Georgia, serif", fontStyle: "italic", textDecoration: "none", transition: "color 0.2s" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "#C9A84C"}
+                    onMouseLeave={e => e.currentTarget.style.color = "#5A4A30"}
+                  >{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 style={{ color: "#C9A84C", fontSize: "10px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "24px" }}>CONTACT</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                <Phone size={14} color="#C9A84C" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <div>
+                  <a href="tel:+919811898418" style={{ color: "#5A4A30", fontSize: "13px", fontFamily: "Georgia, serif", textDecoration: "none", display: "block", transition: "color 0.2s" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "#C9A84C"}
+                    onMouseLeave={e => e.currentTarget.style.color = "#5A4A30"}
+                  >+91-9811898418</a>
+                  <a href="tel:+919910356257" style={{ color: "#5A4A30", fontSize: "13px", fontFamily: "Georgia, serif", textDecoration: "none", display: "block", transition: "color 0.2s" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "#C9A84C"}
+                    onMouseLeave={e => e.currentTarget.style.color = "#5A4A30"}
+                  >+91-9910356257</a>
                 </div>
-                <h4 className="text-white font-bold mb-2">Delhi Office</h4>
-                <p className="text-gray-400">Prime Location</p>
+              </div>
+              <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                <Mail size={14} color="#C9A84C" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <a href="mailto:asterismslegal@gmail.com" style={{ color: "#5A4A30", fontSize: "13px", fontFamily: "Georgia, serif", textDecoration: "none", transition: "color 0.2s" }}
+                  onMouseEnter={e => e.currentTarget.style.color = "#C9A84C"}
+                  onMouseLeave={e => e.currentTarget.style.color = "#5A4A30"}
+                >asterismslegal@gmail.com</a>
               </div>
             </div>
           </div>
 
-          {/* Bottom Row - Links and Contact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-
-            {/* Practice Areas */}
-           <div>
-  <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">
-    PRACTICE AREAS
-  </h4>
-
-  <ul className="space-y-2">
-    {[
-      {
-        name: "Bankruptcy & Insolvency Law",
-        link: "/bankruptcyandInsolvency"
-      },
-      {
-        name: "Banking Law",
-        link: "/bankinglaw"
-      },
-      {
-        name: "Commercial, Corporate & Companies Law",
-        link: "/commercialandcorporate"
-      },
-      {
-        name: "Arbitration Law",
-        link: "/companieslaw"
-      }
-    ].map((item, index) => (
-      <li key={index}>
-        <a
-          href={item.link}
-          className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-base font-sans"
-        >
-          {item.name}
-        </a>
-      </li>
-    ))}
-  </ul>
-</div>
-
-            {/* Company */}
-            <div className='ml-12'>
-              <h4 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide">COMPANY</h4>
-              <ul className="space-y-2">
-                {["About Us", "Our Team", "Practices", "Career"].map((item, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-base font-sans">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="text-xl font-bold text-yellow-400 mb-8 tracking-wide">CONTACT</h4>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-yellow-500 mt-1 flex-shrink-0" />
-                  <div>
-                    <a href="tel:+919811893418" className="text-gray-300 hover:text-yellow-400 transition-colors block text-base font-sans">
-                      +91-9811898418
-                    </a>
-                    <a href="tel:+919910356257" className="text-gray-300 hover:text-yellow-400 transition-colors block text-base font-sans">
-                      +91-9910356257
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-yellow-500 mt-1 flex-shrink-0" />
-                  <a href="mailto:asterismslegal@gmail.com" className="text-gray-300 hover:text-yellow-400 transition-colors text-base font-sans">
-                    asterismslegal@gmail.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Follow Us */}
-            <div>
-              <h4 className="text-xl font-bold text-yellow-400 mb-8 tracking-wide">FOLLOW US</h4>
-              <div className="flex gap-4 mb-8">
-                <a href="https://www.instagram.com/asterismslegal?igsh=bHNiNXRzZWRjNHRx" className="w-16 h-16 bg-slate-700 hover:bg-yellow-500 rounded-2xl flex items-center justify-center transition-all duration-300 group">
-                  <Instagram className="w-8 h-8 text-yellow-500 group-hover:text-slate-900" />
+          {/* Follow */}
+          <div>
+            <h4 style={{ color: "#C9A84C", fontSize: "10px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "24px" }}>FOLLOW US</h4>
+            <div style={{ display: "flex", gap: "12px" }}>
+              {[
+                { href: "https://www.instagram.com/asterismslegal", icon: <Instagram size={16} />, label: "Instagram" },
+                { href: "https://www.linkedin.com/company/asterisms-legal/", icon: <Linkedin size={16} />, label: "LinkedIn" }
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  title={item.label}
+                  style={{
+                    width: "44px",
+                    height: "44px",
+                    border: "1px solid #2A2518",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#5A4A30",
+                    textDecoration: "none",
+                    transition: "border-color 0.2s, color 0.2s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#C9A84C"; e.currentTarget.style.color = "#C9A84C"; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = "#2A2518"; e.currentTarget.style.color = "#5A4A30"; }}
+                >
+                  {item.icon}
                 </a>
-                <a href="https://www.linkedin.com/company/asterisms-legal/posts/?feedView=all" className="w-16 h-16 bg-slate-700 hover:bg-yellow-500 rounded-2xl flex items-center justify-center transition-all duration-300 group">
-                  <Linkedin className="w-8 h-8 text-yellow-500 group-hover:text-slate-900" />
-                </a>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* Copyright Bar */}
-      <div className="bg-slate-900 py-4 border-t border-slate-700">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          
-            <p className="text-gray-400 text-center md:text-right">
-              © 2025 <span className="text-yellow-400">Asterisms Legal</span>.
-              Designed by{" "}
-              <a
-                href="https://developersinfotech.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-yellow-400 hover:underline"
-              >
-                DEVELOPERS INFOTECH PVT LTD
-              </a>
-            </p>
-
-          </div>
-        </div>
+      <div style={{ borderTop: "1px solid #2A2518", padding: "20px 48px", textAlign: "center" }}>
+        <p style={{ color: "#3A3020", fontSize: "11px", fontFamily: "Arial, sans-serif", letterSpacing: "0.08em", margin: 0 }}>
+          © 2025{" "}
+          <span style={{ color: "#C9A84C" }}>Asterisms Legal</span>
+          {" "}· Designed by{" "}
+          <a href="https://developersinfotech.com" target="_blank" rel="noopener noreferrer" style={{ color: "#C9A84C", textDecoration: "none" }}>
+            DEVELOPERS INFOTECH PVT LTD
+          </a>
+        </p>
       </div>
     </footer>
   );

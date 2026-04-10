@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Calendar, Clock, User, ArrowRight, Eye, Heart, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, Eye, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const BlogsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,370 +11,165 @@ const BlogsPage = () => {
   const [likedPosts, setLikedPosts] = useState(new Set());
   const postsPerPage = 6;
 
-  // Sample blog posts data
   const blogPosts = [
-    // BANKRUPTCY & INSOLVENCY
-    {
-      id: 1,
-      title: "Corporate Insolvency: Strategic Restructuring in India",
-      excerpt:
-        "Understanding how businesses can effectively navigate insolvency proceedings under the IBC framework.",
-      content:
-        "The Insolvency and Bankruptcy Code (IBC) provides a time-bound process for resolving corporate insolvency. Strategic restructuring involves evaluating debt, negotiating with creditors, and ensuring business continuity...",
-      image: "/images/blog4.jpg",
-      author: "Priyanshu Gupta",
-      date: "2025-03-15",
-      readTime: "7 min read",
-      category: "Bankruptcy & Insolvency Laws",
-      views: 2300,
-      likes: 112,
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Role of Insolvency Professionals in Resolution Process",
-      excerpt:
-        "Examining the duties and powers of insolvency professionals under the IBC.",
-      content:
-        "Insolvency professionals act as intermediaries, managing the debtor's assets, coordinating with creditors, and ensuring compliance with the IBC regulations...",
-     image: "/images/blog5.jpg",
-      author: "Dr. Anjali Mehra",
-      date: "2025-03-18",
-      readTime: "6 min read",
-      category: "Bankruptcy & Insolvency Laws",
-      views: 1750,
-      likes: 89,
-      featured: false
-    },
-
-    // BANKING LAW
-    {
-      id: 3,
-      title: "Banking Compliance in India: RBI Guidelines Explained",
-      excerpt:
-        "Breaking down key compliance requirements for banks and financial institutions.",
-      content:
-        "Banking institutions in India are governed by RBI guidelines, covering risk management, asset classification, and corporate governance...",
-      image: "/images/blog6.jpg",
-      author: "Dr. Rakesh Sharma",
-      date: "2025-03-17",
-      readTime: "8 min read",
-      category: "Banking Law",
-      views: 2100,
-      likes: 98,
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Resolving Banking Disputes: Legal Remedies for Lenders",
-      excerpt:
-        "Exploring effective legal strategies for banks to resolve disputes with borrowers.",
-      content:
-        "Dispute resolution in the banking sector often involves debt recovery tribunals, arbitration, and structured settlements...",
-      image: "/images/blog7.jpg",
-      author: "Dr. Meera Nair",
-      date: "2025-03-20",
-      readTime: "7 min read",
-      category: "Banking Law",
-      views: 1800,
-      likes: 84,
-      featured: false
-    },
-
-    // COMMERCIAL & CORPORATE LAW
-    {
-      id: 5,
-      title: "Mergers & Acquisitions: Legal Considerations in India",
-      excerpt:
-        "A deep dive into regulatory approvals and due diligence in corporate mergers.",
-      content:
-        "M&A transactions require compliance with SEBI, Competition Commission of India (CCI), and corporate governance norms to safeguard shareholders...",
-      image: "/images/blog1.jpg",
-      author: "Dr. Rahul Khanna",
-      date: "2025-03-10",
-      readTime: "9 min read",
-      category: "Commercial & Corporate Law",
-      views: 2500,
-      likes: 120,
-      featured: true
-    },
-    {
-      id: 6,
-      title: "Shareholder Agreements: Protecting Minority Interests",
-      excerpt:
-        "Understanding clauses that safeguard the rights of minority shareholders.",
-      content:
-        "Shareholder agreements define exit rights, voting powers, and dispute resolution mechanisms, ensuring protection for minority investors...",
-      image: "/images/blog2.jpg",
-      author: "Dr. Kavita Joshi",
-      date: "2025-03-12",
-      readTime: "6 min read",
-      category: "Commercial & Corporate Law",
-      views: 1600,
-      likes: 77,
-      featured: false
-    },
-
-    // COMPANIES LAW
-
-    {
-      id: 8,
-      title: "Corporate Governance: Ensuring Accountability",
-      excerpt:
-        "Best practices for boards and directors to maintain compliance with corporate governance norms.",
-      content:
-        "Corporate governance strengthens transparency, prevents fraud, and aligns company practices with stakeholder interests...",
-      image: "/images/blog3.jpg",
-      author: "Dr. Sameer Verma",
-      date: "2025-03-09",
-      readTime: "7 min read",
-      category: "Companies Law",
-      views: 1900,
-      likes: 95,
-      featured: false
-    }
+    { id: 1, title: "Corporate Insolvency: Strategic Restructuring in India", excerpt: "Understanding how businesses can effectively navigate insolvency proceedings under the IBC framework.", image: "/images/blog4.jpg", author: "Priyanshu Gupta", date: "2025-03-15", readTime: "7 min read", category: "Bankruptcy & Insolvency Laws", views: 2300, likes: 112, featured: true },
+    { id: 2, title: "Role of Insolvency Professionals in Resolution Process", excerpt: "Examining the duties and powers of insolvency professionals under the IBC.", image: "/images/blog5.jpg", author: "Dr. Anjali Mehra", date: "2025-03-18", readTime: "6 min read", category: "Bankruptcy & Insolvency Laws", views: 1750, likes: 89, featured: false },
+    { id: 3, title: "Banking Compliance in India: RBI Guidelines Explained", excerpt: "Breaking down key compliance requirements for banks and financial institutions.", image: "/images/blog6.jpg", author: "Dr. Rakesh Sharma", date: "2025-03-17", readTime: "8 min read", category: "Banking Law", views: 2100, likes: 98, featured: false },
+    { id: 4, title: "Resolving Banking Disputes: Legal Remedies for Lenders", excerpt: "Exploring effective legal strategies for banks to resolve disputes with borrowers.", image: "/images/blog7.jpg", author: "Dr. Meera Nair", date: "2025-03-20", readTime: "7 min read", category: "Banking Law", views: 1800, likes: 84, featured: false },
+    { id: 5, title: "Mergers & Acquisitions: Legal Considerations in India", excerpt: "A deep dive into regulatory approvals and due diligence in corporate mergers.", image: "/images/blog1.jpg", author: "Dr. Rahul Khanna", date: "2025-03-10", readTime: "9 min read", category: "Commercial & Corporate Law", views: 2500, likes: 120, featured: true },
+    { id: 6, title: "Shareholder Agreements: Protecting Minority Interests", excerpt: "Understanding clauses that safeguard the rights of minority shareholders.", image: "/images/blog2.jpg", author: "Dr. Kavita Joshi", date: "2025-03-12", readTime: "6 min read", category: "Commercial & Corporate Law", views: 1600, likes: 77, featured: false },
+    { id: 8, title: "Corporate Governance: Ensuring Accountability", excerpt: "Best practices for boards and directors to maintain compliance with corporate governance norms.", image: "/images/blog3.jpg", author: "Dr. Sameer Verma", date: "2025-03-09", readTime: "7 min read", category: "Companies Law", views: 1900, likes: 95, featured: false }
   ];
 
-  const getCategoryColor = (category) => {
-    const colors = {
-      "Bankruptcy & Insolvency Laws": "bg-red-100 text-red-800",
-      "Banking Law": "bg-blue-100 text-blue-800",
-      "Commercial & Corporate Law": "bg-orange-100 text-orange-800",
-      "Companies Law": "bg-purple-100 text-purple-800"
-    };
-    return colors[category] || "bg-gray-100 text-gray-800";
+  const categoryColors = {
+    "Bankruptcy & Insolvency Laws": { bg: "#1e1610", border: "#3a2a10", text: "#c9a84c" },
+    "Banking Law": { bg: "#101820", border: "#102030", text: "#7ab0d4" },
+    "Commercial & Corporate Law": { bg: "#1a1210", border: "#2e1e10", text: "#d4915a" },
+    "Companies Law": { bg: "#181020", border: "#261430", text: "#a87ad4" }
   };
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  const formatDate = (dateString) => new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
   const handleLike = (postId) => {
     setLikedPosts(prev => {
-      const newLiked = new Set(prev);
-      if (newLiked.has(postId)) {
-        newLiked.delete(postId);
-      } else {
-        newLiked.add(postId);
-      }
-      return newLiked;
+      const n = new Set(prev);
+      n.has(postId) ? n.delete(postId) : n.add(postId);
+      return n;
     });
   };
 
-  const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
+  const featuredPosts = blogPosts.filter(p => p.featured).slice(0, 3);
 
   const filteredAndSortedPosts = useMemo(() => {
     let filtered = blogPosts.filter(post => {
-      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.author.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) || post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-      const isNotFeatured = !post.featured;
-      return matchesSearch && matchesCategory && isNotFeatured;
+      return matchesSearch && matchesCategory && !post.featured;
     });
-
-    switch (sortBy) {
-      case 'latest':
-        filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-        break;
-      case 'popular':
-        filtered.sort((a, b) => b.views - a.views);
-        break;
-      case 'mostLiked':
-        filtered.sort((a, b) => b.likes - a.likes);
-        break;
-      default:
-        break;
-    }
-
+    if (sortBy === 'latest') filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+    else if (sortBy === 'popular') filtered.sort((a, b) => b.views - a.views);
+    else if (sortBy === 'mostLiked') filtered.sort((a, b) => b.likes - a.likes);
     return filtered;
   }, [searchTerm, selectedCategory, sortBy]);
 
   const totalPages = Math.ceil(filteredAndSortedPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = filteredAndSortedPosts.slice(startIndex, startIndex + postsPerPage);
+  const currentPosts = filteredAndSortedPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+
+  const sectionLabel = { fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418", display: "block" };
+
+  const CardBadge = ({ category }) => {
+    const c = categoryColors[category] || { bg: "#1a1710", border: "#2a2418", text: "#c9a84c" };
+    return (
+      <span style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: c.text, background: c.bg, border: `1px solid ${c.border}`, padding: "3px 8px" }}>
+        {category}
+      </span>
+    );
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", background: "#0f0e0c", color: "#f5f0e8", minHeight: "100vh" }}>
 
-      {/* Featured Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-semibold text-center mb-8 text-green-800 text-5xl text-slate-900 leading-[1.1] tracking-relaxed font-semibold">
-            Featured <span className='text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold'>Articles</span></h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredPosts.map((post, idx) => (
-              <article key={post.id} className={`bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col h-full ${idx === 0 ? 'lg:col-span-2' : ''}`}>
-                <div className="relative">
-                  <img src={post.image} alt={post.title} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(post.category)}`}>
-                      {post.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium ">
-                    Featured
-                  </div>
+      {/* Hero */}
+      <div style={{ background: "linear-gradient(160deg, #0f0e0c 60%, #1a1710 100%)", padding: "3rem 2rem 2rem", borderBottom: "1px solid #2a2418" }}>
+        <p style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", letterSpacing: "0.18em", color: "#c9a84c", textTransform: "uppercase", marginBottom: "1rem" }}>
+          Asterisms Legal · Insights & Articles
+        </p>
+        <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 400, color: "#f5f0e8", lineHeight: 1.2, margin: 0 }}>
+          Legal <em style={{ color: "#c9a84c" }}>Insights.</em>
+        </h1>
+      </div>
+
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2.5rem 2rem" }}>
+
+        {/* Featured */}
+        <div style={{ marginBottom: "3rem" }}>
+          <span style={sectionLabel}>Featured Articles</span>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1px", background: "#2a2418", border: "1px solid #2a2418" }}>
+            {featuredPosts.map((post) => (
+              <div key={post.id} style={{ background: "#0f0e0c", padding: "1.6rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <CardBadge category={post.category} />
+                  <span style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#c9a84c", background: "#1e1a10", border: "1px solid #2e2410", padding: "3px 8px" }}>Featured</span>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3 flex-grow font-sans">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center space-x-1">
-                        <User className="w-4 h-4" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{formatDate(post.date)}</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between mt-auto">
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <div className="flex items-center space-x-1">
-                        <Eye className="w-4 h-4" />
-                        <span>{post.views.toLocaleString()}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Heart className="w-4 h-4" />
-                        <span>{post.likes}</span>
-                      </div>
-                    </div>
-                    <a
-                      href="/blogsingle"
-                      className="flex items-center text-white font-medium hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg"
-                    >
-                      <span className="mr-1">Read More</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </div>
+                <h3 style={{ fontSize: "1.05rem", color: "#f5f0e8", margin: 0, lineHeight: 1.4 }}>{post.title}</h3>
+                <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", color: "#7a7268", lineHeight: 1.6, margin: 0 }}>{post.excerpt}</p>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginTop: "auto" }}>
+                  <span style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", color: "#6e665a" }}>{post.author}</span>
+                  <span style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", color: "#6e665a" }}>{post.readTime}</span>
                 </div>
-              </article>
+                <a href="/blogsingle" style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#c9a84c", textDecoration: "none", display: "flex", alignItems: "center", gap: "4px" }}>
+                  Read More →
+                </a>
+              </div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Main Blog Section - Continuous Layout */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-center mb-8">
-             <h1 className="text-4xl font-semibold text-center mb-8 text-green-800 text-5xl text-slate-900 leading-[1.1] tracking-relaxed font-semibold">
-            All <span className='text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold'>Articles</span></h1>
-          </div>
-          
-          {/* Continuous Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Filters */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "2rem", alignItems: "center" }}>
+          <input
+            type="text"
+            placeholder="Search articles..."
+            value={searchTerm}
+            onChange={e => { setSearchTerm(e.target.value); setCurrentPage(1); }}
+            style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", background: "#141210", border: "1px solid #2a2418", color: "#c5bfb3", padding: "0.5rem 1rem", outline: "none", flex: "1", minWidth: "200px" }}
+          />
+          <select value={selectedCategory} onChange={e => { setSelectedCategory(e.target.value); setCurrentPage(1); }}
+            style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", background: "#141210", border: "1px solid #2a2418", color: "#c5bfb3", padding: "0.5rem 1rem", outline: "none" }}>
+            <option value="All">All Categories</option>
+            {["Bankruptcy & Insolvency Laws", "Banking Law", "Commercial & Corporate Law", "Companies Law"].map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+          <select value={sortBy} onChange={e => setSortBy(e.target.value)}
+            style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", background: "#141210", border: "1px solid #2a2418", color: "#c5bfb3", padding: "0.5rem 1rem", outline: "none" }}>
+            <option value="latest">Latest</option>
+            <option value="popular">Most Viewed</option>
+            <option value="mostLiked">Most Liked</option>
+          </select>
+        </div>
+
+        {/* All Articles */}
+        <div style={{ marginBottom: "3rem" }}>
+          <span style={sectionLabel}>All Articles</span>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1px", background: "#2a2418", border: "1px solid #2a2418" }}>
             {currentPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1 flex flex-col h-full">
-                <div className="relative overflow-hidden">
-                  <img src={post.image} alt={post.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(post.category)}`}>
-                      {post.category}
-                    </span>
-                  </div>
+              <div key={post.id} style={{ background: "#0f0e0c", padding: "1.6rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                <CardBadge category={post.category} />
+                <h3 style={{ fontSize: "1.05rem", color: "#f5f0e8", margin: 0, lineHeight: 1.4 }}>{post.title}</h3>
+                <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", color: "#7a7268", lineHeight: 1.6, margin: 0 }}>{post.excerpt}</p>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <span style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", color: "#6e665a" }}>{post.author}</span>
+                  <span style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", color: "#6e665a" }}>{post.readTime}</span>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3 flex-grow font-sans">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <User className="w-4 h-4" />
-                      <span>{post.author}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{formatDate(post.date)}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Eye className="w-4 h-4" />
-                      <span>{post.views.toLocaleString()}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between mt-auto">
-                    <div className="flex items-center space-x-1 text-sm text-gray-500">
-                      <Heart className="w-4 h-4" />
-                      <span>{post.likes}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <a
-                        href="/blogsingle"
-                        className="flex items-center text-white font-medium font-sans hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg"
-                      >
-                        <span className="mr-1">Read More</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                      <button
-                        onClick={() => handleLike(post.id)}
-                        className={`p-2 rounded-full transition-colors duration-200 ${likedPosts.has(post.id)
-                          ? 'bg-red-100 text-red-600'
-                          : 'bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-600'}`}
-                      >
-                        <Heart className="w-4 h-4" fill={likedPosts.has(post.id) ? 'currentColor' : 'none'} />
-                      </button>
-                    </div>
-                  </div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
+                  <button onClick={() => handleLike(post.id)} style={{ background: "none", border: "none", cursor: "pointer", color: likedPosts.has(post.id) ? "#c9a84c" : "#6e665a", fontFamily: "Arial, sans-serif", fontSize: "11px", display: "flex", alignItems: "center", gap: "4px", padding: 0 }}>
+                    ♥ {post.likes + (likedPosts.has(post.id) ? 1 : 0)}
+                  </button>
+                  <a href="/blogsingle" style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#c9a84c", textDecoration: "none" }}>
+                    Read More →
+                  </a>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
-
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="flex items-center justify-center space-x-2 mt-12">
-              <button
-                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
-                className="p-2 rounded-lg bg-white shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${currentPage === page
-                    ? 'bg-green-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md hover:shadow-lg'}`}
-                >
-                  {page}
-                </button>
-              ))}
-
-              <button
-                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                disabled={currentPage === totalPages}
-                className="p-2 rounded-lg bg-white shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          )}
         </div>
-      </section>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+            <button onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} disabled={currentPage === 1}
+              style={{ background: "#141210", border: "1px solid #2a2418", color: "#c9a84c", padding: "0.4rem 0.8rem", cursor: "pointer", opacity: currentPage === 1 ? 0.4 : 1 }}>‹</button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <button key={page} onClick={() => setCurrentPage(page)}
+                style={{ background: currentPage === page ? "#c9a84c" : "#141210", border: "1px solid #2a2418", color: currentPage === page ? "#0f0e0c" : "#c5bfb3", padding: "0.4rem 0.8rem", cursor: "pointer", fontFamily: "Arial, sans-serif", fontSize: "0.85rem" }}>
+                {page}
+              </button>
+            ))}
+            <button onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages}
+              style={{ background: "#141210", border: "1px solid #2a2418", color: "#c9a84c", padding: "0.4rem 0.8rem", cursor: "pointer", opacity: currentPage === totalPages ? 0.4 : 1 }}>›</button>
+          </div>
+        )}
+
+      </div>
     </div>
   );
 };

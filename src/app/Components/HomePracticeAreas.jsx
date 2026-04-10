@@ -1,138 +1,190 @@
-import React, { useState } from 'react';
-import { Building, Users, DollarSign, GraduationCap, ArrowRight, Moon, Sun } from 'lucide-react';
+import React from 'react';
+import { Building, Users, DollarSign, GraduationCap, ArrowRight } from 'lucide-react';
 
 const HomePracticeAreas = () => {
-  const [isDark, setIsDark] = useState(false);
-
   const practiceAreas = [
     {
       id: 1,
       icon: Building,
       title: "Bankruptcy & Insolvency Laws",
-      description: "Asterisms Legal primarily provides advisory and litigation services to the clients relating to Insolvency and Bankruptcy Code, 2016. Our team is involved in comprehensive legal support for insolvency proceedings.",
-      gradient: "from-amber-400/10 to-yellow-400/10",
-      darkGradient: "from-amber-400/20 to-yellow-400/20"
+      description: "Asterisms Legal primarily provides advisory and litigation services relating to the Insolvency and Bankruptcy Code, 2016. Our team is involved in comprehensive legal support for insolvency proceedings.",
     },
     {
       id: 2,
       icon: Users,
       title: "Banking Law",
-      description: "Our Team at Asterisms Legal have deep and vast knowledge & understanding of SARFAESI & Recovery of Debts and Bankruptcy Act. Our team represents Banks with extensive expertise in financial regulations.",
-      gradient: "from-amber-400/10 to-orange-400/10",
-      darkGradient: "from-amber-400/20 to-orange-400/20"
+      description: "Our team at Asterisms Legal has deep knowledge of SARFAESI & Recovery of Debts and Bankruptcy Act. We represent Banks with extensive expertise in financial regulations.",
     },
     {
       id: 3,
       icon: DollarSign,
       title: "Commercial, Corporate and Companies Law",
-      description: "Asterisms Legal provides comprehensive legal services in Commercial & Corporate Law, representing clients across various different forums with specialized expertise in business transactions.",
-      gradient: "from-amber-400/10 to-yellow-400/10",
-      darkGradient: "from-amber-400/20 to-yellow-400/20"
+      description: "Asterisms Legal provides comprehensive legal services in Commercial & Corporate Law, representing clients across various forums with specialized expertise in business transactions.",
     },
     {
       id: 4,
       icon: GraduationCap,
       title: "Arbitration Law",
-      description: "Our team handles all aspects of Arbitration Law, from drafting agreements to representing clients in arbitral proceedings. We provide end-to-end solutions, including enforcement of awards in domestic and international matters",
-      gradient: "from-amber-400/10 to-orange-400/10",
-      darkGradient: "from-amber-400/20 to-orange-400/20"
+      description: "Our team handles all aspects of Arbitration Law, from drafting agreements to representing clients in arbitral proceedings, including enforcement of awards in domestic and international matters.",
     }
   ];
 
   return (
-    <section className={`pt- px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${isDark ? 'bg-gray-900' : 'bg-gray-50'
-      }`}>
-      <div className="max-w-7xl mx-auto">
-        {/* Theme Toggle */}
-        <div className="flex justify-end mb-8">
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className={`p-3 rounded-full transition-all duration-300 ${isDark
-              ? 'bg-gray-800 hover:bg-gray-700 text-amber-400'
-              : 'bg-white hover:bg-gray-100 text-gray-600 shadow-lg'
-              }`}
-          >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
-        </div>
+    <section style={{ backgroundColor: "#0D0B08", padding: "100px 0" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 48px" }}>
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center">
-            <div className="max-w-3xl mx-auto text-center ">
-              <div className="flex items-center justify-center mb-2">
-                <div className="h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent flex-1 max-w-md"></div>
-                <div className="mx-8">
-                  <h1 className="text-5xl text-slate-900 leading-[1.1] tracking-relaxed font-semibold">
-                    Our Practice Areas
-                    <span className="block text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold">
-                      Field Of Work
-                    </span>
-                  </h1>
-                </div>
-                <div className="h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent flex-1 max-w-md"></div>
-              </div>
+        <div style={{ textAlign: "center", marginBottom: "72px" }}>
+          <p style={{
+            color: "#C9A84C",
+            fontSize: "11px",
+            letterSpacing: "0.25em",
+            fontFamily: "Arial, sans-serif",
+            marginBottom: "20px",
+          }}>
+            — AREAS OF PRACTICE
+          </p>
 
-              <p className="text-base font-sans font-semibold max-w-2xl mx-auto text-slate-600 font-light leading-relaxed">
-                Experience the difference that comes with choosing a law firm dedicated to excellence, integrity, and results.
-              </p>
-            </div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "32px", marginBottom: "16px" }}>
+            <div style={{ height: "1px", backgroundColor: "#2A2518", flex: 1, maxWidth: "160px" }}></div>
+            <h2 style={{
+              fontFamily: "Georgia, 'Times New Roman', serif",
+              fontSize: "clamp(32px, 4vw, 48px)",
+              fontWeight: "300",
+              color: "#E8E0D0",
+              margin: 0,
+              lineHeight: "1.1",
+            }}>
+              Our Practice Areas
+            </h2>
+            <div style={{ height: "1px", backgroundColor: "#2A2518", flex: 1, maxWidth: "160px" }}></div>
           </div>
+
+          <p style={{
+            color: "#5A4A30",
+            fontSize: "15px",
+            fontFamily: "Georgia, serif",
+            fontStyle: "italic",
+            marginTop: "4px",
+          }}>
+            Field of Work
+          </p>
+
+          <p style={{
+            color: "#8A7A5A",
+            fontSize: "14px",
+            maxWidth: "520px",
+            margin: "16px auto 0",
+            lineHeight: "1.7",
+            fontFamily: "Georgia, serif",
+          }}>
+            Experience the difference that comes with choosing a law firm dedicated to excellence, integrity, and results.
+          </p>
         </div>
 
         {/* Practice Areas Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", backgroundColor: "#2A2518" }}>
           {practiceAreas.map((area) => {
             const IconComponent = area.icon;
             return (
               <div
                 key={area.id}
-                className="group relative bg-gray-800 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/20 border border-gray-700"
+                style={{
+                  backgroundColor: "#0D0B08",
+                  padding: "40px 32px",
+                  position: "relative",
+                  cursor: "default",
+                  transition: "background-color 0.3s",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.backgroundColor = "#13110D";
+                  e.currentTarget.querySelector('.gold-line').style.width = "48px";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.backgroundColor = "#0D0B08";
+                  e.currentTarget.querySelector('.gold-line').style.width = "24px";
+                }}
               >
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${area.darkGradient} opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
-
-                {/* Content */}
-                <div className="relative p-8">
-                  {/* Icon */}
-                  <div className="mb-8 relative">
-                    <div className="w-20 h-20 bg-gray-700 rounded-2xl flex items-center justify-center group-hover:bg-amber-900/30 transition-colors duration-300">
-                      <IconComponent className="w-10 h-10 text-amber-400 group-hover:text-amber-300 transition-colors duration-300" />
-                    </div>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-serif text-white mb-4 italic group-hover:text-amber-100 transition-colors duration-300">
-                    {area.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-8 group-hover:text-gray-200 transition-colors duration-300 text-justify font-sans">
-                    {area.description}
-                  </p>
-
-                  {/* Learn More Button */}
-                  <button className="inline-flex items-center bg-yellow-500 hover:bg-yellow-300 text-gray-900 px-4 py-2 rounded-lg">
-                    <span className="text-sm mr-2 group-hover/btn:border-gray-900/30 transition-colors duration-300 font-sans text-relaxed font-medium">
-                      LEARN MORE
-                    </span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </button>
+                {/* Icon */}
+                <div style={{
+                  width: "48px",
+                  height: "48px",
+                  border: "1px solid #2A2518",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "24px",
+                  color: "#C9A84C",
+                }}>
+                  <IconComponent size={20} />
                 </div>
 
-                {/* Hover Border Effect */}
-                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-amber-400/30 transition-colors duration-500"></div>
+                {/* Gold accent line */}
+                <div
+                  className="gold-line"
+                  style={{
+                    height: "1px",
+                    backgroundColor: "#C9A84C",
+                    width: "24px",
+                    marginBottom: "20px",
+                    transition: "width 0.3s ease",
+                  }}
+                ></div>
+
+                {/* Title */}
+                <h3 style={{
+                  fontFamily: "Georgia, 'Times New Roman', serif",
+                  fontSize: "16px",
+                  fontWeight: "300",
+                  color: "#E8E0D0",
+                  marginBottom: "16px",
+                  lineHeight: "1.4",
+                  fontStyle: "italic",
+                }}>
+                  {area.title}
+                </h3>
+
+                {/* Description */}
+                <p style={{
+                  color: "#5A4A30",
+                  fontSize: "13px",
+                  lineHeight: "1.8",
+                  fontFamily: "Georgia, serif",
+                  marginBottom: "28px",
+                }}>
+                  {area.description}
+                </p>
+
+                {/* Learn More */}
+                <a
+                  href="#"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    color: "#C9A84C",
+                    fontSize: "10px",
+                    letterSpacing: "0.2em",
+                    fontFamily: "Arial, sans-serif",
+                    textDecoration: "none",
+                    borderBottom: "1px solid #2A2518",
+                    paddingBottom: "2px",
+                    transition: "border-color 0.2s",
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = "#C9A84C"}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = "#2A2518"}
+                >
+                  LEARN MORE
+                  <ArrowRight size={12} />
+                </a>
               </div>
             );
           })}
         </div>
 
         {/* Bottom decoration */}
-        <div className="mt-20 flex justify-center">
-          <div className={`h-px bg-gradient-to-r from-transparent to-transparent w-full max-w-md ${isDark
-            ? 'via-amber-400/30'
-            : 'via-amber-300/50'
-            }`}></div>
+        <div style={{ marginTop: "64px", display: "flex", justifyContent: "center" }}>
+          <div style={{ height: "1px", backgroundColor: "#2A2518", width: "100%", maxWidth: "400px" }}></div>
         </div>
       </div>
     </section>

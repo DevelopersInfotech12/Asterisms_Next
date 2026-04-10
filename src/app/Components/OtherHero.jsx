@@ -1,38 +1,72 @@
 import React from 'react';
 
-const OtherHero = ({ 
-  title,
-  subtitle
-}) => {
+const OtherHero = ({ title, subtitle }) => {
   return (
-    <div className="relative w-full h-96 overflow-hidden">
+    <div style={{ position: "relative", width: "100%", height: "384px", overflow: "hidden" }}>
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <div
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "sepia(30%) brightness(0.55)",
         }}
-      >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
-      
-      {/* Content - OPTION 2: Stacked with Border */}
-      <div className="relative z-10 flex items-center h-full px-8 md:px-16 lg:px-24">
-        <div className="max-w-4xl">
-          {/* Title with left border */}
-          <div className="border-l-4 border-orange-500 pl-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              {title}
-            </h1>
-            
-            {/* Subtitle */}
-            {subtitle && (
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-orange-300 uppercase tracking-wider">
-                {subtitle}
-              </h2>
-            )}
+      />
+
+      {/* Dark overlay */}
+      <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(10, 8, 5, 0.65)" }} />
+
+      {/* Gold bottom border accent */}
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "2px", backgroundColor: "#C9A84C" }} />
+
+      {/* Content */}
+      <div style={{
+        position: "relative",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        height: "100%",
+        padding: "0 96px",
+      }}>
+        <div style={{ maxWidth: "720px" }}>
+          {/* Eyebrow line */}
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+            <div style={{ width: "36px", height: "1px", backgroundColor: "#C9A84C" }} />
+            <span style={{ color: "#C9A84C", fontSize: "11px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif" }}>
+              ASTERISMS LEGAL
+            </span>
           </div>
+
+          {/* Title */}
+          <h1 style={{
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            fontSize: "clamp(36px, 5vw, 60px)",
+            fontWeight: "300",
+            color: "#E8E0D0",
+            lineHeight: "1.1",
+            margin: "0 0 12px",
+            letterSpacing: "-0.01em",
+          }}>
+            {title}
+          </h1>
+
+          {/* Subtitle */}
+          {subtitle && (
+            <h2 style={{
+              fontFamily: "Georgia, 'Times New Roman', serif",
+              fontSize: "clamp(16px, 2vw, 22px)",
+              fontWeight: "300",
+              color: "#C9A84C",
+              fontStyle: "italic",
+              letterSpacing: "0.05em",
+              margin: 0,
+            }}>
+              {subtitle}
+            </h2>
+          )}
         </div>
       </div>
     </div>

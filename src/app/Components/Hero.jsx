@@ -4,28 +4,32 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
-  // Slider data with background images and corresponding text
-const slides = [
-  {
-    background: '/images/carousel1.jpg',
-    title: 'RESOLVING',
-    subtitle: 'INSOLVENCY',
-    quote: '"Guiding clients through bankruptcy & insolvency with strategic solutions and steadfast representation."'
-  },
-  {
-    background: 'images/carousel2.jpg',
-    title: 'SAFEGUARDING',
-    subtitle: 'BANKING INTERESTS',
-    quote: '"Trusted legal counsel in banking law, ensuring compliance, security, and dispute resolution."'
-  },
-  {
-    background: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    title: 'DRIVING',
-    subtitle: 'CORPORATE GROWTH',
-    quote: '"Empowering businesses with pragmatic advice in commercial & corporate law."'
-  },
-];
-
+  const slides = [
+    {
+      background: '/images/carousel1.jpg',
+      titleRegular: 'Precision.',
+      titleItalic: 'Integrity.',
+      titleLast: 'Outcome-Driven',
+      subtitle: 'Legal Counsel.',
+      quote: 'Guiding clients through bankruptcy & insolvency with strategic solutions and steadfast representation.'
+    },
+    {
+      background: 'images/carousel2.jpg',
+      titleRegular: 'Safeguarding',
+      titleItalic: 'Banking',
+      titleLast: 'Interests.',
+      subtitle: '',
+      quote: 'Trusted legal counsel in banking law, ensuring compliance, security, and dispute resolution.'
+    },
+    {
+      background: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      titleRegular: 'Driving',
+      titleItalic: 'Corporate',
+      titleLast: 'Growth.',
+      subtitle: '',
+      quote: 'Empowering businesses with pragmatic advice in commercial & corporate law.'
+    },
+  ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -33,114 +37,183 @@ const slides = [
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background Images - Each slide as a separate layer */}
+    <div style={{ position: "relative", minHeight: "100vh", overflow: "hidden", backgroundColor: "#0D0B08" }}>
+
+      {/* Background Images */}
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
           style={{
+            position: "absolute",
+            inset: 0,
+            opacity: index === currentSlide ? 1 : 0,
+            transition: "opacity 1.2s ease-in-out",
             backgroundImage: `url(${slide.background})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Dark overlay for better text contrast */}
-          <div className="absolute inset-0 bg-black/40"></div>
-          
-          {/* Blue gradient overlay to maintain your color scheme */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-blue-900/30 to-slate-800/40"></div>
+          {/* Dark overlay - heavier to match the reference */}
+          <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(10, 8, 5, 0.72)" }}></div>
         </div>
       ))}
 
-      {/* Background Pattern - very subtle */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, #1e40af 0%, transparent 50%),
-                           radial-gradient(circle at 80% 20%, #1e3a8a 0%, transparent 50%),
-                           radial-gradient(circle at 40% 80%, #1e40af 0%, transparent 50%)`
-        }}></div>
-      </div>
-       
-      {/* Decorative Elements - more subtle */}
-      <div className="absolute inset-0">
-        {/* Left pillar silhouettes */}
-        <div className="absolute left-0 bottom-0 w-16 h-full bg-gradient-to-t from-slate-800/30 to-transparent opacity-60 transform -skew-x-12"></div>
-        <div className="absolute left-12 bottom-0 w-12 h-5/6 bg-gradient-to-t from-slate-700/25 to-transparent opacity-40 transform -skew-x-12"></div>
-        <div className="absolute left-20 bottom-0 w-8 h-4/6 bg-gradient-to-t from-slate-600/20 to-transparent opacity-30 transform -skew-x-12"></div>
-                
-        {/* Right pillar silhouettes */}
-        <div className="absolute right-0 bottom-0 w-16 h-full bg-gradient-to-t from-slate-800/30 to-transparent opacity-60 transform skew-x-12"></div>
-        <div className="absolute right-12 bottom-0 w-12 h-5/6 bg-gradient-to-t from-slate-700/25 to-transparent opacity-40 transform skew-x-12"></div>
-        <div className="absolute right-20 bottom-0 w-8 h-4/6 bg-gradient-to-t from-slate-600/20 to-transparent opacity-30 transform skew-x-12"></div>
-      </div>
-       
       {/* Main Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-center">
-        {/* Main Heading with smooth transitions */}
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-7xl lg:text-7xl font-bold text-white tracking-wide transition-all duration-1000 transform drop-shadow-lg space-y-4">
-            <span className="block transition-opacity duration-1000">
-              {slides[currentSlide].title}
+      <div style={{
+        position: "relative",
+        zIndex: 20,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        minHeight: "100vh",
+        padding: "0 6rem",
+        maxWidth: "900px",
+      }}>
+
+        {/* Main Heading */}
+        <div style={{ marginBottom: "32px" }}>
+          <h1 style={{
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            fontWeight: "300",
+            lineHeight: "1.08",
+            margin: 0,
+          }}>
+            {/* Regular white line */}
+            <span style={{
+              display: "block",
+              fontSize: "clamp(48px, 7vw, 88px)",
+              color: "#E8E0D0",
+              letterSpacing: "-0.01em",
+              transition: "opacity 0.8s",
+            }}>
+              {slides[currentSlide].titleRegular} {slides[currentSlide].titleItalic !== slides[currentSlide].titleItalic ? "" : ""}
             </span>
-            {/* <br /> */}
-            <span 
-              className="transition-all duration-1000 transform drop-shadow-lg" 
-              style={{color: '#FFC107'}}
-            >
-              {slides[currentSlide].subtitle}
+
+            {/* Italic gold line */}
+            <span style={{
+              display: "block",
+              fontSize: "clamp(48px, 7vw, 88px)",
+              color: "#C9A84C",
+              fontStyle: "italic",
+              fontWeight: "300",
+              letterSpacing: "-0.01em",
+              transition: "opacity 0.8s",
+            }}>
+              {slides[currentSlide].titleItalic}
             </span>
+
+            {/* Last line white */}
+            <span style={{
+              display: "block",
+              fontSize: "clamp(48px, 7vw, 88px)",
+              color: "#E8E0D0",
+              letterSpacing: "-0.01em",
+              transition: "opacity 0.8s",
+            }}>
+              {slides[currentSlide].titleLast}
+            </span>
+
+            {slides[currentSlide].subtitle && (
+              <span style={{
+                display: "block",
+                fontSize: "clamp(48px, 7vw, 88px)",
+                color: "#E8E0D0",
+                letterSpacing: "-0.01em",
+              }}>
+                {slides[currentSlide].subtitle}
+              </span>
+            )}
           </h1>
         </div>
-         
-        {/* Decorative Line with Dots */}
-        <div className="flex items-center mb-12">
-          <div className="w-24 md:w-32 h-px bg-white opacity-60"></div>
-          <div className="flex space-x-2 mx-4">
-            <div className="w-2 h-2 rounded-full" style={{backgroundColor: '#FFC107'}}></div>
-            <div className="w-2 h-2 rounded-full" style={{backgroundColor: '#FFC107'}}></div>
-            <div className="w-2 h-2 rounded-full" style={{backgroundColor: '#FFC107'}}></div>
-          </div>
-          <div className="w-24 md:w-32 h-px bg-white opacity-60"></div>
-        </div>
-         
-        {/* Quote with smooth transitions */}
-        <p className="text-lg md:text-xl lg:text-2xl text-white max-w-4xl leading-relaxed font-light mb-16 transition-opacity duration-1000 drop-shadow-md">
-          {slides[currentSlide].quote}
+
+        {/* Quote / Description */}
+        <p style={{
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          fontSize: "clamp(14px, 1.4vw, 17px)",
+          color: "#8A7A5A",
+          maxWidth: "520px",
+          lineHeight: "1.7",
+          marginBottom: "40px",
+          fontStyle: "italic",
+          transition: "opacity 0.8s",
+        }}>
+          Asterisms Legal is a practice delivering exceptional legal services across insolvency, arbitration, banking, corporate, and personal matters from Defence Colony, New Delhi.
         </p>
 
+        {/* CTA Buttons */}
+        <div style={{ display: "flex", alignItems: "center", gap: "32px", marginBottom: "48px" }}>
+          <a href="/about" style={{
+            backgroundColor: "#C9A84C",
+            color: "#0D0B08",
+            padding: "14px 32px",
+            fontSize: "11px",
+            letterSpacing: "0.18em",
+            fontWeight: "600",
+            textDecoration: "none",
+            fontFamily: "Arial, sans-serif",
+            display: "inline-block",
+            transition: "background-color 0.2s",
+          }}>
+            OUR PRACTICE AREAS
+          </a>
+          <a href="/about" style={{
+            color: "#A89880",
+            fontSize: "13px",
+            letterSpacing: "0.08em",
+            fontFamily: "Georgia, serif",
+            fontStyle: "italic",
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            transition: "color 0.2s",
+          }}>
+            Learn about us
+            <span style={{ color: "#C9A84C" }}>→</span>
+          </a>
+        </div>
+
         {/* Slide indicators */}
-        <div className="flex space-x-2 mb-8">
+        <div style={{ display: "flex", gap: "8px" }}>
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide 
-                  ? 'bg-yellow-400 scale-110 shadow-lg' 
-                  : 'bg-white/40 hover:bg-white/60'
-              }`}
+              style={{
+                width: index === currentSlide ? "28px" : "8px",
+                height: "2px",
+                backgroundColor: index === currentSlide ? "#C9A84C" : "#3A3020",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+                transition: "all 0.3s",
+              }}
             />
           ))}
         </div>
-         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
-          <div className="text-white text-sm mb-2 drop-shadow-md">Scroll to Explore</div>
-          <div className="flex justify-center">
-            <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-colors cursor-pointer drop-shadow-lg">
-              <ChevronDown size={16} />
-            </div>
-          </div>
-        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div style={{
+        position: "absolute",
+        bottom: "32px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "8px",
+        zIndex: 30,
+        animation: "bounce 2s infinite",
+      }}>
+        <span style={{ color: "#5A4A30", fontSize: "10px", letterSpacing: "0.15em", fontFamily: "Arial, sans-serif" }}>SCROLL</span>
+        <ChevronDown size={14} color="#C9A84C" />
       </div>
     </div>
   );

@@ -1,140 +1,70 @@
 import React from 'react';
-import { Scale, Users, Heart, Shield, FileText, Home, CheckCircle, ArrowRight, Star } from 'lucide-react';
 
 const FamilyLawComp = () => {
   const keyHighlights = [
-    {
-      company: "Divorce & Separation Matters",
-      description:
-        "Handled complex divorce and separation cases including contested and mutual consent divorces, ensuring fair settlements and protecting client interests.",
-      type: "Divorce Law"
-    },
-    {
-      company: "Child Custody & Guardianship",
-      description:
-        "Successfully represented clients in child custody disputes, prioritizing the welfare of the child while securing favorable custody and visitation rights.",
-      type: "Custody Matters"
-    },
-    {
-      company: "Domestic Violence Cases",
-      description:
-        "Provided legal support in domestic violence matters under the Protection of Women from Domestic Violence Act, ensuring safety and justice for affected individuals.",
-      type: "Domestic Violence"
-    },
-    {
-      company: "Maintenance & Alimony",
-      description:
-        "Advised and represented clients in maintenance and alimony proceedings, ensuring fair financial support and legal compliance.",
-      type: "Financial Support"
-    }
+    { company: "Divorce & Separation Matters", description: "Handled complex divorce and separation cases including contested and mutual consent divorces, ensuring fair settlements and protecting client interests.", type: "Divorce Law" },
+    { company: "Child Custody & Guardianship", description: "Successfully represented clients in child custody disputes, prioritizing the welfare of the child while securing favorable custody and visitation rights.", type: "Custody Matters" },
+    { company: "Domestic Violence Cases", description: "Provided legal support in domestic violence matters under the Protection of Women from Domestic Violence Act, ensuring safety and justice for affected individuals.", type: "Domestic Violence" },
+    { company: "Maintenance & Alimony", description: "Advised and represented clients in maintenance and alimony proceedings, ensuring fair financial support and legal compliance.", type: "Financial Support" }
   ];
 
-  const expertise = [
-    { icon: Heart, text: "Divorce & Judicial Separation", highlight: false },
-    { icon: Users, text: "Child Custody & Guardianship", highlight: false },
-    { icon: Shield, text: "Domestic Violence & Protection Laws", highlight: false },
-    { icon: FileText, text: "Maintenance & Alimony Matters", highlight: false },
-    { icon: Home, text: "Property & Matrimonial Disputes", highlight: false },
-    { icon: Scale, text: "Family Settlements & Mediation", highlight: false }
-  ];
-
-  const stats = [
-    { number: "300+", label: "Family Disputes Resolved", icon: Scale },
-    { number: "95%", label: "Client Satisfaction Rate", icon: Star },
-    { number: "10+", label: "Years of Experience", icon: Users },
-    { number: "200+", label: "Successful Settlements", icon: CheckCircle }
-  ];
+  const expertise = ["Divorce & Judicial Separation", "Child Custody & Guardianship", "Domestic Violence & Protection Laws", "Maintenance & Alimony Matters", "Property & Matrimonial Disputes", "Family Settlements & Mediation"];
+  const stats = [{ number: "300+", label: "Disputes Resolved" }, { number: "95%", label: "Satisfaction Rate" }, { number: "10+", label: "Years Experience" }, { number: "200+", label: "Settlements" }];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-pink-50 to-orange-50">
-      
-      {/* Hero Background */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-pink-900 to-orange-900"></div>
+    <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", background: "#0f0e0c", color: "#f5f0e8", minHeight: "100vh" }}>
+      <div style={{ background: "linear-gradient(160deg, #0f0e0c 60%, #1a1710 100%)", padding: "3rem 2rem 2rem", borderBottom: "1px solid #2a2418" }}>
+        <p style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", letterSpacing: "0.18em", color: "#c9a84c", textTransform: "uppercase", marginBottom: "1rem" }}>Asterisms Legal · Matrimonial & Family Law Practice</p>
+        <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 400, color: "#f5f0e8", lineHeight: 1.2, margin: "0 0 0.5rem" }}>
+          Precision. Integrity.<br /><em style={{ color: "#c9a84c" }}>Outcome-Driven</em><br />Family Law Counsel.
+        </h1>
+        <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.95rem", color: "#9e9484", maxWidth: "520px", lineHeight: 1.7, margin: "1rem 0 0" }}>
+          Compassionate and strategic legal solutions for family disputes — Family Courts & High Courts.
+        </p>
       </div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="space-y-20">
-
-          {/* Our Expertise Section */}
-          <div className="bg-white rounded-3xl shadow-2xl p-12 border border-slate-200">
-            <div className="flex items-center mb-8">
-              <div className="w-2 h-16 bg-gradient-to-b from-pink-500 to-orange-500 rounded-full mr-4"></div>
-              <div>
-                <h2 className="text-4xl font-bold text-slate-800">Matrimonial / Family Law</h2>
-                <p className="text-pink-600 mt-2">
-                  Compassionate and strategic legal solutions for family disputes
-                </p>
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2.5rem 2rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "#2a2418", border: "1px solid #2a2418", marginBottom: "3rem" }}>
+          {stats.map((s, i) => (
+            <div key={i} style={{ background: "#0f0e0c", padding: "1.4rem 1rem", textAlign: "center" }}>
+              <span style={{ display: "block", fontSize: "1.6rem", color: "#c9a84c" }}>{s.number}</span>
+              <span style={{ display: "block", fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#6e665a", marginTop: "0.3rem" }}>{s.label}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginBottom: "3rem" }}>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418" }}>About the Practice</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+            <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.92rem", color: "#9e9484", lineHeight: 1.8, margin: 0 }}>Comprehensive services in <strong style={{ color: "#c9a84c" }}>Family Law</strong>, addressing sensitive personal matters with professionalism and empathy across divorce, custody, maintenance, and domestic violence cases.</p>
+            <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.92rem", color: "#9e9484", lineHeight: 1.8, margin: 0 }}>Focused on achieving <strong style={{ color: "#c9a84c" }}>amicable resolutions</strong> through negotiation and mediation, with strong courtroom representation when required.</p>
+          </div>
+        </div>
+        <div style={{ marginBottom: "3rem" }}>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418" }}>Areas of Excellence</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "#2a2418", border: "1px solid #2a2418" }}>
+            {expertise.map((item, i) => (
+              <div key={i} style={{ background: "#141210", padding: "1.1rem 1.4rem", display: "flex", alignItems: "flex-start", gap: "0.8rem" }}>
+                <div style={{ width: "5px", height: "5px", background: "#c9a84c", borderRadius: "50%", marginTop: "7px", flexShrink: 0 }}></div>
+                <span style={{ fontFamily: "Arial, sans-serif", fontSize: "0.88rem", color: "#c5bfb3", lineHeight: 1.5 }}>{item}</span>
               </div>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12 text-slate-600">
-              <p className="text-lg text-justify">
-                Our firm provides comprehensive legal services in <span className="font-semibold text-pink-600">Family Law</span>, addressing sensitive personal matters with professionalism and empathy. We assist clients in divorce, child custody, maintenance, and domestic violence cases.
-              </p>
-              <p className="text-lg text-justify">
-                We focus on achieving <span className="font-semibold text-pink-600">amicable resolutions</span> through negotiation and mediation, while also providing strong courtroom representation before Family Courts and High Courts when required.
-              </p>
-            </div>
+            ))}
           </div>
-
-          {/* Areas of Excellence */}
-          <div className="bg-white rounded-3xl p-12 border border-pink-200">
-            <div className="text-center mb-12">
-              <h3 className="text-4xl font-bold text-slate-800 mb-4">Areas of Excellence</h3>
-              <p className="text-xl text-pink-600">
-                Specialized services in all aspects of family and matrimonial law
-              </p>
+        </div>
+        <div>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418" }}>Key Highlights</div>
+          <div style={{ border: "1px solid #2a2418" }}>
+            <div style={{ background: "#141210", padding: "1.2rem 1.6rem", borderBottom: "1px solid #2a2418" }}>
+              <h3 style={{ margin: 0, fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c9a84c", fontFamily: "Arial, sans-serif", fontWeight: 400 }}>Family Law Expertise</h3>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {expertise.map((item, index) => (
-                <div key={index} className="p-6 rounded-2xl bg-white hover:bg-pink-50 shadow-lg hover:shadow-xl transition">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-pink-100 rounded-xl">
-                      <item.icon className="w-6 h-6 text-pink-600" />
-                    </div>
-                    <span className="text-lg text-slate-600">{item.text}</span>
-                  </div>
+            {keyHighlights.map((h, i) => (
+              <div key={i} style={{ padding: "1.4rem 1.6rem", borderBottom: i < keyHighlights.length - 1 ? "1px solid #1e1c18" : "none", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "start" }}>
+                <div>
+                  <div style={{ fontSize: "1.05rem", color: "#f5f0e8", marginBottom: "0.3rem" }}>{h.company}</div>
+                  <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", color: "#7a7268", lineHeight: 1.6, margin: 0 }}>{h.description}</p>
                 </div>
-              ))}
-            </div>
+                <span style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#c9a84c", background: "#1e1a10", border: "1px solid #2e2410", padding: "4px 10px", whiteSpace: "nowrap" }}>{h.type}</span>
+              </div>
+            ))}
           </div>
-
-          {/* Key Highlights */}
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
-            <div className="bg-gradient-to-r from-slate-800 via-pink-900 to-orange-900 p-12 text-white">
-              <h2 className="text-4xl font-bold mb-4">Key Highlights</h2>
-              <p className="text-xl text-pink-100">
-                Expertise in handling sensitive family disputes with care and precision
-              </p>
-            </div>
-
-            <div className="p-12 space-y-12">
-              {keyHighlights.map((highlight, index) => (
-                <div key={index} className="relative pl-10">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 to-orange-500 rounded-full"></div>
-
-                  <div className="flex items-center mb-3">
-                    <CheckCircle className="w-5 h-5 text-pink-600 mr-2" />
-                    <h3 className="text-2xl font-bold text-slate-800">
-                      {highlight.company}
-                    </h3>
-                  </div>
-
-                  <span className="inline-block px-3 py-1 bg-pink-100 text-pink-700 text-sm rounded-full mb-3">
-                    {highlight.type}
-                  </span>
-
-                  <p className="text-lg text-slate-600">
-                    {highlight.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
         </div>
       </div>
     </div>

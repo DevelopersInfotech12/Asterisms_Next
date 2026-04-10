@@ -1,205 +1,91 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Scale, Building2, Briefcase, CreditCard, Copyright, Handshake, Gavel,Users,Shield,Home } from 'lucide-react';
+import { Scale, Briefcase, Handshake, Gavel, Users, Shield, Home } from 'lucide-react';
 
 const OtherPracticeAreas = ({ currentPractice }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Define all practice areas with their details
- const allPracticeAreas = [
-  {
-    id: 'bankruptcy-insolvency',
-    title: 'Bankruptcy & Insolvency Laws',
-    description:
-      'We advise on insolvency resolution, liquidation, restructuring, and bankruptcy proceedings under the Insolvency and Bankruptcy Code (IBC). Our firm represents clients before NCLT and NCLAT.',
-    icon: <Scale className="w-6 h-6" />,
-    bgImage: '/images/img3.jpg'
-  },
-  {
-    id: 'banking-law',
-    title: 'Banking Law',
-    description:
-      'We provide legal advisory to banks, NBFCs, and financial institutions on regulatory compliance, loan recovery, SARFAESI proceedings, and financial disputes.',
-    icon: <Handshake className="w-6 h-6" />,
-    bgImage: '/images/img2.jpg'
-  },
-  {
-    id: 'commercial-corporate',
-    title: 'Commercial, Corporate & Companies Law',
-    description:
-      'Our firm handles corporate transactions, mergers & acquisitions, compliance, and commercial disputes, providing strategic legal solutions to businesses.',
-    icon: <Gavel className="w-6 h-6" />,
-    bgImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop'
-  },
-  {
-    id: 'family-law',
-    title: 'Matrimonial / Family Law',
-    description:
-      'We handle divorce, child custody, maintenance, domestic violence, and family disputes with a client-sensitive approach and strong legal representation.',
-    icon: <Users className="w-6 h-6" />,
-    bgImage: '/images/matri.jpg'
-  },
-  {
-    id: 'criminal-law',
-    title: 'Criminal Law',
-    description:
-      'We represent clients in bail matters, criminal trials, white-collar crimes, cyber offences, and appeals, ensuring strong defense and protection of rights.',
-    icon: <Shield className="w-6 h-6" />,
-    bgImage: '/images/criminal.jpg'
-  },
-  {
-    id: 'civil-law',
-    title: 'Civil Law',
-    description:
-      'We handle property disputes, recovery suits, injunctions, contract disputes, and civil litigation, ensuring effective enforcement of legal rights.',
-    icon: <Home className="w-6 h-6" />,
-    bgImage: '/images/civil.jpg'
-  },
-  {
-    id: 'arbitration-law',
-    title: 'Arbitration Law',
-    description:
-      'We provide arbitration and dispute resolution services, including domestic and international arbitration, mediation, and enforcement of arbitral awards.',
-    icon: <Briefcase className="w-6 h-6" />,
-    bgImage: '/images/arbitration.jpg'
-  }
-];
+  const allPracticeAreas = [
+    { id: 'bankruptcy-insolvency', title: 'Bankruptcy & Insolvency Laws', description: 'We advise on insolvency resolution, liquidation, restructuring, and bankruptcy proceedings under the IBC. Our firm represents clients before NCLT and NCLAT.', icon: <Scale size={16} />, bgImage: '/images/img3.jpg' },
+    { id: 'banking-law', title: 'Banking Law', description: 'We provide legal advisory to banks, NBFCs, and financial institutions on regulatory compliance, loan recovery, SARFAESI proceedings, and financial disputes.', icon: <Handshake size={16} />, bgImage: '/images/img2.jpg' },
+    { id: 'commercial-corporate', title: 'Commercial, Corporate & Companies Law', description: 'Our firm handles corporate transactions, mergers & acquisitions, compliance, and commercial disputes, providing strategic legal solutions to businesses.', icon: <Gavel size={16} />, bgImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop' },
+    { id: 'family-law', title: 'Matrimonial / Family Law', description: 'We handle divorce, child custody, maintenance, domestic violence, and family disputes with a client-sensitive approach and strong legal representation.', icon: <Users size={16} />, bgImage: '/images/matri.jpg' },
+    { id: 'criminal-law', title: 'Criminal Law', description: 'We represent clients in bail matters, criminal trials, white-collar crimes, cyber offences, and appeals, ensuring strong defense and protection of rights.', icon: <Shield size={16} />, bgImage: '/images/criminal.jpg' },
+    { id: 'civil-law', title: 'Civil Law', description: 'We handle property disputes, recovery suits, injunctions, contract disputes, and civil litigation, ensuring effective enforcement of legal rights.', icon: <Home size={16} />, bgImage: '/images/civil.jpg' },
+    { id: 'arbitration-law', title: 'Arbitration Law', description: 'We provide arbitration and dispute resolution services, including domestic and international arbitration, mediation, and enforcement of arbitral awards.', icon: <Briefcase size={16} />, bgImage: '/images/arbitration.jpg' }
+  ];
 
-  // Filter out the current practice area
-  const otherPracticeAreas = allPracticeAreas.filter(area => area.id !== currentPractice);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % otherPracticeAreas.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + otherPracticeAreas.length) % otherPracticeAreas.length);
-  };
+  const areas = allPracticeAreas.filter(a => a.id !== currentPractice);
 
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-8">
-          {/* <div className="flex items-center mb-2">
-            <div className="h-px bg-gray-400 w-16 mr-4"></div>
-            <h2 className="text-2xl font-semibold text-gray-700">Other Practice Areas</h2>
-          </div> */}
+    <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", background: "#0f0e0c", color: "#f5f0e8", padding: "3rem 2rem" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
-          <div className="flex items-center justify-center mb-12 mt-4 text-center max-w-[50%] mx-auto">
-            {/* Left line */}
-            <div className="flex-1 h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-amber-500 "></div>
-
-            <h1 className="text-4xl font-semibold text-center text-green-800 text-5xl text-slate-900 leading-[1.1] tracking-relaxed font-semibold mx-6">
-              Other <span className='text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold'>Practices</span>
-            </h1>
-
-            {/* Right line */}
-            <div className="flex-1 h-0.5 bg-gradient-to-l from-transparent via-yellow-400 to-amber-500"></div>
+        {/* Section header */}
+        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.5rem", marginBottom: "1.2rem" }}>
+            <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, #2a2418)" }}></div>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 400, color: "#f5f0e8", margin: 0, whiteSpace: "nowrap" }}>
+              Other <em style={{ color: "#c9a84c" }}>Practices</em>
+            </h2>
+            <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, #2a2418)" }}></div>
           </div>
-
-          {/* Progress bar */}
-          <div className="w-full h-2 bg-gray-300 rounded-full">
-            <div className="h-2 bg-gray-400 rounded-full" style={{ width: '75%' }}></div>
+          <div style={{ height: "2px", background: "#2a2418", borderRadius: "2px", maxWidth: "400px", margin: "0 auto" }}>
+            <div style={{ height: "2px", background: "#c9a84c", width: "75%", borderRadius: "2px" }}></div>
           </div>
         </div>
 
-        {/* Cards Container */}
-        <div className="relative">
-          {/* Navigation Arrow - Left */}
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-8">
-            {otherPracticeAreas.map((area, index) => (
-              <div key={area.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                {/* Image Section */}
-                <div
-                  className="h-56 bg-cover bg-center relative"
-                  style={{
-                    backgroundImage: `url(${area.bgImage})`,
-                    backgroundBlendMode: 'overlay',
-                    backgroundColor: 'rgba(0,0,0,0.3)'
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20"></div>
-                  {/* Icon */}
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-700 shadow-sm">
-                      {area.icon}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
-                    {area.title}
-                  </h3>
-                  <p className="text-gray-600 text-[14px] leading-relaxed mb-4 font-sans text-justify">
-                    {area.description}
-                  </p>
-
+        {/* Desktop grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: "#2a2418", border: "1px solid #2a2418" }} className="hidden md:grid">
+          {areas.map((area) => (
+            <div key={area.id} style={{ background: "#0f0e0c", display: "flex", flexDirection: "column" }}>
+              {/* Image */}
+              <div style={{
+                height: "180px", backgroundImage: `url(${area.bgImage})`, backgroundSize: "cover", backgroundPosition: "center",
+                position: "relative", backgroundColor: "#1a1710"
+              }}>
+                <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,8,0.55)" }}></div>
+                <div style={{ position: "absolute", bottom: "1rem", left: "1rem", width: "36px", height: "36px", background: "#0f0e0c", border: "1px solid #2a2418", display: "flex", alignItems: "center", justifyContent: "center", color: "#c9a84c" }}>
+                  {area.icon}
                 </div>
               </div>
-            ))}
-          </div>
+              {/* Content */}
+              <div style={{ padding: "1.3rem 1.4rem", flex: 1 }}>
+                <h3 style={{ fontSize: "0.95rem", color: "#f5f0e8", marginBottom: "0.6rem", lineHeight: 1.4, fontWeight: 400 }}>{area.title}</h3>
+                <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.82rem", color: "#7a7268", lineHeight: 1.7, margin: 0 }}>{area.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Mobile Carousel for smaller screens */}
-        <div className="md:hidden mt-8">
-          <div className="relative overflow-hidden">
-            <div
-              className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {otherPracticeAreas.map((area, index) => (
-                <div key={`mobile-${area.id}`} className="w-full flex-shrink-0">
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden mx-2">
-                    <div
-                      className="h-48 bg-cover bg-center relative"
-                      style={{
-                        backgroundImage: `url(${area.bgImage})`,
-                        backgroundBlendMode: 'overlay',
-                        backgroundColor: 'rgba(0,0,0,0.3)'
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20"></div>
-                      <div className="absolute bottom-4 left-4">
-                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-700 shadow-sm">
-                          {area.icon}
-                        </div>
-                      </div>
+        {/* Mobile carousel */}
+        <div style={{ display: "none" }} className="md:hidden">
+          <div style={{ overflow: "hidden" }}>
+            <div style={{ display: "flex", transition: "transform 0.3s ease", transform: `translateX(-${currentSlide * 100}%)` }}>
+              {areas.map((area) => (
+                <div key={`m-${area.id}`} style={{ minWidth: "100%", padding: "0 0.5rem", boxSizing: "border-box" }}>
+                  <div style={{ background: "#141210", border: "1px solid #2a2418" }}>
+                    <div style={{ height: "160px", backgroundImage: `url(${area.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative", backgroundColor: "#1a1710" }}>
+                      <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,8,0.55)" }}></div>
+                      <div style={{ position: "absolute", bottom: "1rem", left: "1rem", width: "36px", height: "36px", background: "#0f0e0c", border: "1px solid #2a2418", display: "flex", alignItems: "center", justifyContent: "center", color: "#c9a84c" }}>{area.icon}</div>
                     </div>
-                    <div className="p-5">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
-                        {area.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                        {area.description}
-                      </p>
-
+                    <div style={{ padding: "1.2rem 1.4rem" }}>
+                      <h3 style={{ fontSize: "0.95rem", color: "#f5f0e8", marginBottom: "0.6rem", lineHeight: 1.4, fontWeight: 400 }}>{area.title}</h3>
+                      <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.82rem", color: "#7a7268", lineHeight: 1.7, margin: 0 }}>{area.description}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Dots Indicator for Mobile */}
-          <div className="flex justify-center mt-4 space-x-2">
-            {otherPracticeAreas.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-200 ${currentSlide === index
-                  ? 'bg-orange-500'
-                  : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-              />
+          <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", marginTop: "1rem" }}>
+            {areas.map((_, i) => (
+              <button key={i} onClick={() => setCurrentSlide(i)} style={{ width: "8px", height: "8px", borderRadius: "50%", border: "none", background: currentSlide === i ? "#c9a84c" : "#2a2418", cursor: "pointer", padding: 0 }} />
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );

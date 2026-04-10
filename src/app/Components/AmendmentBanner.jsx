@@ -5,102 +5,103 @@ import Image from "next/image";
 
 export default function AmendmentBanner() {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Decorative background grid */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "linear-gradient(#e87722 1px, transparent 1px), linear-gradient(90deg, #e87722 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+    <section style={{ backgroundColor: "#0D0B08", padding: "0", position: "relative", overflow: "hidden" }}>
+      {/* Top gold accent line */}
+      <div style={{ height: "2px", backgroundColor: "#C9A84C", width: "100%" }}></div>
 
-      {/* Top accent bar */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e87722] via-[#f5a05a] to-[#e87722]" />
-
-      <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-14">
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "64px 48px" }}>
 
         {/* Eyebrow */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="inline-block w-7 h-[2px] bg-[#e87722]" />
-          <span className="text-[#e87722] text-[11px] font-semibold tracking-[0.25em] uppercase">
-            IBC · Proposed Amendments
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>
+          <div style={{ width: "28px", height: "1px", backgroundColor: "#C9A84C" }}></div>
+          <span style={{ color: "#C9A84C", fontSize: "11px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif" }}>
+            IBC · PROPOSED AMENDMENTS
           </span>
         </div>
 
         {/* Card */}
-        <Link href="/lbclaw" className="group block">
-          <div className="relative flex flex-col lg:flex-row border border-[#e87722]/30 hover:border-[#e87722]/70 transition-all duration-500 overflow-hidden">
-
+        <Link href="/lbclaw" style={{ display: "block", textDecoration: "none" }}>
+          <div
+            style={{
+              display: "flex",
+              border: "1px solid #2A2518",
+              overflow: "hidden",
+              transition: "border-color 0.3s",
+            }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = "#C9A84C"}
+            onMouseLeave={e => e.currentTarget.style.borderColor = "#2A2518"}
+          >
             {/* Image */}
-            <div className="relative w-full lg:w-[44%] h-44 lg:h-auto lg:min-h-[260px] bg-[#111b33]">
+            <div style={{ position: "relative", width: "44%", minHeight: "280px", flexShrink: 0 }}>
               <Image
                 src="/images/lbc1.jpg"
                 alt="IBC Amendment 2026"
                 fill
-                className="object-cover group-hover:scale-105 transition duration-500"
+                style={{ objectFit: "cover", filter: "sepia(30%) brightness(0.65)" }}
               />
-
-              <div className="absolute top-3 left-3 bg-[#e87722] text-white px-2.5 py-1 text-[11px] font-bold uppercase">
-                IBC 2026
+              <div style={{ position: "absolute", top: "12px", left: "12px", backgroundColor: "#C9A84C", padding: "4px 12px" }}>
+                <span style={{ color: "#0D0B08", fontSize: "10px", letterSpacing: "0.15em", fontFamily: "Arial, sans-serif", fontWeight: "700" }}>
+                  IBC 2026
+                </span>
               </div>
             </div>
 
             {/* Content */}
-            <div className="flex-1 p-7 lg:p-9 bg-[#0d1526]/95 flex flex-col justify-between">
-
+            <div style={{ flex: 1, padding: "40px 48px", backgroundColor: "#0D0B08", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 {/* Tag */}
-                <div className="mb-4 text-[#e87722]/75 text-[14px] font-semibold uppercase tracking-widest">
-                  Insolvency & Bankruptcy Code Update
-                </div>
+                <p style={{ color: "#5A4A30", fontSize: "11px", letterSpacing: "0.2em", fontFamily: "Arial, sans-serif", marginBottom: "16px" }}>
+                  INSOLVENCY & BANKRUPTCY CODE UPDATE
+                </p>
 
                 {/* Title */}
-                <h2 className="text-xl lg:text-3xl text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-bold mb-4 leading-snug uppercase tracking-wide">
-                  The Insolvency and Bankruptcy Code (Amendment) Act, 2026
+                <h2 style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: "clamp(18px, 2vw, 26px)",
+                  fontWeight: "300",
+                  color: "#E8E0D0",
+                  marginBottom: "20px",
+                  lineHeight: "1.3",
+                  fontStyle: "italic",
+                }}>
+                  The Insolvency and Bankruptcy Code{" "}
+                  <span style={{ color: "#C9A84C" }}>(Amendment) Act, 2026</span>
                 </h2>
 
                 {/* Description */}
-                <p className="text-gray-300/80 text-base leading-relaxed mb-6 max-w-xl text-justify font-sans">
-                  Proposed amendments to the Insolvency and Bankruptcy Code, 2016 aim to
-                  enhance the efficiency of the corporate insolvency resolution process (CIRP),
-                  strengthen creditor rights, and introduce faster resolution mechanisms. Key
-                  reform areas include pre-packaged insolvency frameworks, improved cross-border
-                  provisions, and stricter timelines for resolution.
+                <p style={{ color: "#5A4A30", fontSize: "14px", lineHeight: "1.8", fontFamily: "Georgia, serif", maxWidth: "520px" }}>
+                  Proposed amendments to the Insolvency and Bankruptcy Code, 2016 aim to enhance the efficiency of the corporate insolvency resolution process (CIRP), strengthen creditor rights, and introduce faster resolution mechanisms including pre-packaged insolvency frameworks and improved cross-border provisions.
                 </p>
               </div>
 
               <div>
-                {/* Highlights */}
-                <div className="flex flex-wrap gap-2.5 mb-6 font-sans font-semibold">
-                  {[
-                    "Pre-Pack Insolvency Expansion",
-                    "Cross-Border Framework",
-                    "Faster Resolution Timelines",
-                  ].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 border border-[#e87722]/30 text-[#e87722]/80 text-[11px] uppercase tracking-wide"
-                    >
+                {/* Tags */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px", marginTop: "24px" }}>
+                  {["Pre-Pack Insolvency Expansion", "Cross-Border Framework", "Faster Resolution Timelines"].map((tag) => (
+                    <span key={tag} style={{
+                      padding: "4px 12px",
+                      border: "1px solid #2A2518",
+                      color: "#8A7A5A",
+                      fontSize: "10px",
+                      letterSpacing: "0.12em",
+                      fontFamily: "Arial, sans-serif",
+                    }}>
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* CTA */}
-                <div className="flex justify-between items-center border-t border-[#e87722]/20 pt-5">
-                  <span className="text-[#e87722] text-base font-semibold uppercase tracking-wide">
-                    Explore Details →
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #2A2518", paddingTop: "20px" }}>
+                  <span style={{ color: "#C9A84C", fontSize: "12px", letterSpacing: "0.15em", fontFamily: "Arial, sans-serif" }}>
+                    EXPLORE DETAILS →
                   </span>
-
-                  <div className="text-right text-[11px] text-gray-500">
-                    <p>Source</p>
-                    <p className="text-[#e87722]/65">Discussion Papers / MCA / IBBI</p>
+                  <div style={{ textAlign: "right" }}>
+                    <p style={{ color: "#3A3020", fontSize: "10px", fontFamily: "Arial, sans-serif", margin: 0 }}>Source</p>
+                    <p style={{ color: "#5A4A30", fontSize: "10px", fontFamily: "Georgia, serif", fontStyle: "italic", margin: "2px 0 0" }}>Discussion Papers / MCA / IBBI</p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </Link>

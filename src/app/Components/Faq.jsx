@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Scale, HelpCircle, MessageCircle, Clock, Award, Phone } from 'lucide-react';
+import { ChevronDown, Scale, HelpCircle, MessageCircle, Phone } from 'lucide-react';
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -7,11 +7,11 @@ const Faq = () => {
   const faqs = [
     {
       question: "What types of legal services does Asterisms Legal provide?",
-      answer: "At Asterisms Legal (AL), our team of expert attorneys focuses primarily on matters under the Insolvency and Bankruptcy Code (IBC) and related areas of corporate restructuring, recovery, and commercial litigation. We also handle a range of other corporate and legal disputes, representing creditors, debtors, and resolution professionals before the NCLT, NCLAT, High Court, and the Supreme Court of India.  "
+      answer: "At Asterisms Legal (AL), our team focuses primarily on matters under the Insolvency and Bankruptcy Code (IBC) and related areas of corporate restructuring, recovery, and commercial litigation. We represent creditors, debtors, and resolution professionals before the NCLT, NCLAT, High Court, and the Supreme Court of India."
     },
     {
       question: "How much do legal consultations cost?",
-      answer: " We offer personalized initial consultations for new clients to evaluate your case and understand your specific legal requirements. Our fee structure is transparent and tailored to reflect the complexity and nature of each matter. At Asterisms Legal, we believe in clarity, fairness, and value, ensuring there are no hidden costs and providing flexible engagement options where appropriate. "
+      answer: "We offer personalized initial consultations for new clients to evaluate your case and understand your specific legal requirements. Our fee structure is transparent and tailored to reflect the complexity and nature of each matter. We believe in clarity, fairness, and value — ensuring no hidden costs and providing flexible engagement options where appropriate."
     },
     {
       question: "How long does it typically take to resolve a legal case?",
@@ -19,146 +19,178 @@ const Faq = () => {
     },
     {
       question: "What should I bring to my first consultation?",
-      answer: "Please bring all relevant documents related to your case, including contracts, correspondence, court papers, identification documents, and any other materials that might be pertinent to your legal matter. Having organized documentation helps us provide more accurate advice during your consultation."
+      answer: "Please bring all relevant documents related to your case, including contracts, correspondence, court papers, identification documents, and any other materials pertinent to your legal matter. Having organized documentation helps us provide more accurate advice during your consultation."
     }
-
   ];
 
   const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 py-8 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-gradient-to-r from-amber-200/20 to-orange-300/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-gradient-to-l from-slate-300/30 to-gray-400/20 rounded-full blur-3xl"></div>
-      </div>
+    <section style={{ backgroundColor: "#0D0B08", padding: "100px 0" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
 
-      <div className="container mx-auto px-6 relative z-10">
-
-        {/* Modern Header */}
-        <div className="max-w-5xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-white/80 backdrop-blur-sm border border-amber-200/50 rounded-full shadow-sm">
-            <div className="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full flex items-center justify-center">
-              <HelpCircle className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-sm font-semibold text-slate-700 tracking-wide">Get Your Answers</span>
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: "72px" }}>
+          <p style={{ color: "#C9A84C", fontSize: "11px", letterSpacing: "0.25em", fontFamily: "Arial, sans-serif", marginBottom: "20px" }}>
+            — GET YOUR ANSWERS
+          </p>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "32px", marginBottom: "16px" }}>
+            <div style={{ height: "1px", backgroundColor: "#2A2518", flex: 1, maxWidth: "160px" }}></div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: "300", color: "#E8E0D0", margin: 0 }}>
+              Frequently Asked{" "}
+              <span style={{ color: "#C9A84C", fontStyle: "italic" }}>Questions</span>
+            </h2>
+            <div style={{ height: "1px", backgroundColor: "#2A2518", flex: 1, maxWidth: "160px" }}></div>
           </div>
-
-          <h1 className="text-5xl text-slate-900 mb-2 leading-[1.1] tracking-relaxed font-semibold">
-            Frequently Asked
-            <span className="block text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text font-semibold">
-              Questions
-            </span>
-          </h1>
-
-          <p className="text-lg text-slate-600 font-light leading-relaxed max-w-xl mx-auto">
+          <p style={{ color: "#8A7A5A", fontSize: "14px", maxWidth: "480px", margin: "0 auto", lineHeight: "1.7", fontFamily: "Georgia, serif", fontStyle: "italic" }}>
             Everything you need to know about our legal services, processes, and how we can protect your interests.
           </p>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-5 gap-12">
+        {/* Main Content - Two Column */}
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 3fr", gap: "80px", alignItems: "start" }}>
 
-            {/* Enhanced Left Sidebar */}
-            <div className="lg:col-span-2">
-              <div className="sticky top-8 space-y-8">
+          {/* Left Sidebar */}
+          <div style={{ position: "sticky", top: "32px" }}>
+            <div style={{ border: "1px solid #2A2518", backgroundColor: "#13110D", padding: "40px" }}>
+              {/* Gold corner */}
+              <div style={{ width: "32px", height: "2px", backgroundColor: "#C9A84C", marginBottom: "24px" }}></div>
 
-                {/* Main CTA Card */}
-                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-white shadow-2xl">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                      <MessageCircle className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-semibold mb-2">Need Legal Advice?</h3>
-                      <p className="text-slate-300 text-sm">Expert legal guidance awaits</p>
-                    </div>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "24px" }}>
+                <div style={{ width: "44px", height: "44px", border: "1px solid #2A2518", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9A84C", flexShrink: 0 }}>
+                  <MessageCircle size={18} />
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: "Georgia, serif", fontSize: "20px", fontWeight: "300", color: "#E8E0D0", margin: "0 0 4px", fontStyle: "italic" }}>Need Legal Advice?</h3>
+                  <p style={{ color: "#5A4A30", fontSize: "11px", letterSpacing: "0.1em", fontFamily: "Arial, sans-serif", margin: 0 }}>EXPERT GUIDANCE AWAITS</p>
+                </div>
+              </div>
+
+              <p style={{ color: "#5A4A30", fontSize: "13px", lineHeight: "1.8", fontFamily: "Georgia, serif", marginBottom: "32px" }}>
+                Can't find what you're looking for? Our experienced legal team is ready to provide personalized consultation tailored to your specific needs.
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                <button style={{
+                  backgroundColor: "#C9A84C",
+                  color: "#0D0B08",
+                  padding: "14px 24px",
+                  fontSize: "11px",
+                  letterSpacing: "0.15em",
+                  fontFamily: "Arial, sans-serif",
+                  fontWeight: "600",
+                  border: "none",
+                  cursor: "pointer",
+                  width: "100%",
+                }}>
+                  SCHEDULE CONSULTATION
+                </button>
+                <button style={{
+                  backgroundColor: "transparent",
+                  color: "#8A7A5A",
+                  padding: "14px 24px",
+                  fontSize: "11px",
+                  letterSpacing: "0.1em",
+                  fontFamily: "Arial, sans-serif",
+                  border: "1px solid #2A2518",
+                  cursor: "pointer",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                }}>
+                  <Phone size={12} />
+                  +91-9811898418
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ List */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "2px", backgroundColor: "#2A2518" }}>
+            {faqs.map((faq, index) => (
+              <div key={index} style={{ backgroundColor: "#0D0B08" }}>
+                <button
+                  onClick={() => toggleFaq(index)}
+                  style={{
+                    width: "100%",
+                    padding: "28px 32px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "20px",
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    transition: "background-color 0.2s",
+                    backgroundColor: openIndex === index ? "#13110D" : "transparent",
+                  }}
+                >
+                  {/* Icon */}
+                  <div style={{
+                    width: "36px",
+                    height: "36px",
+                    border: "1px solid",
+                    borderColor: openIndex === index ? "#C9A84C" : "#2A2518",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: openIndex === index ? "#C9A84C" : "#3A3020",
+                    flexShrink: 0,
+                    transition: "all 0.2s",
+                  }}>
+                    <Scale size={14} />
                   </div>
 
-                  <p className="text-slate-300 mb-8 leading-relaxed">
-                    Can't find what you're looking for? Our experienced legal team is ready to provide personalized consultation tailored to your specific needs.
-                  </p>
+                  <h3 style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: "15px",
+                    fontWeight: "300",
+                    color: openIndex === index ? "#E8E0D0" : "#8A7A5A",
+                    margin: 0,
+                    flex: 1,
+                    lineHeight: "1.5",
+                    transition: "color 0.2s",
+                  }}>
+                    {faq.question}
+                  </h3>
 
-                  <div className="space-y-4">
-                    <button className="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transform transition-all duration-300">
-                      Schedule Consultation
-                    </button>
-                    <button className="w-full py-4 px-6 font-sans bg-white/10 backdrop-blur-sm text-white rounded-xl font-medium border border-white/20 hover:bg-white/20 transition-all duration-300">
-                      <Phone className="w-4 h-4 inline mr-2" />
-                      Call Now: +91-9811898418
-                    </button>
+                  <div style={{
+                    width: "28px",
+                    height: "28px",
+                    border: "1px solid",
+                    borderColor: openIndex === index ? "#C9A84C" : "#2A2518",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: openIndex === index ? "#C9A84C" : "#3A3020",
+                    flexShrink: 0,
+                    transition: "all 0.2s",
+                    transform: openIndex === index ? "rotate(180deg)" : "rotate(0deg)",
+                  }}>
+                    <ChevronDown size={14} />
+                  </div>
+                </button>
+
+                {/* Answer */}
+                <div style={{
+                  maxHeight: openIndex === index ? "300px" : "0",
+                  overflow: "hidden",
+                  transition: "max-height 0.4s ease",
+                  backgroundColor: "#13110D",
+                }}>
+                  <div style={{ padding: "0 32px 28px 88px" }}>
+                    <div style={{ height: "1px", backgroundColor: "#2A2518", marginBottom: "20px" }}></div>
+                    <p style={{ color: "#5A4A30", fontSize: "14px", lineHeight: "1.8", fontFamily: "Georgia, serif", fontStyle: "italic", margin: 0 }}>
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
-
               </div>
-            </div>
-
-            {/* Enhanced FAQ List */}
-            <div className="lg:col-span-3">
-              <div className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <div key={index} className="group">
-                    <div className={`bg-white/80 backdrop-blur-sm border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${openIndex === index
-                      ? 'border-amber-300/50 shadow-amber-100/50'
-                      : 'border-slate-200/50 hover:border-slate-300/50'
-                      }`}>
-
-                      {/* Question Button */}
-                      <button
-                        onClick={() => toggleFaq(index)}
-                        className="w-full px-8 py-3 text-left flex items-center justify-between hover:bg-slate-50/50 transition-all duration-300"
-                      >
-                        <div className="flex  gap-5 flex-1 text-center items-center">
-                          <div className={`flex-shrink-0 mt-1 transition-all duration-300 ${openIndex === index ? 'scale-110' : 'group-hover:scale-105'
-                            }`}>
-                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${openIndex === index
-                              ? 'bg-gradient-to-r from-amber-500 to-orange-600'
-                              : 'bg-slate-100 group-hover:bg-slate-200'
-                              }`}>
-                              <Scale className={`w-5 h-5 transition-colors duration-300 ${openIndex === index ? 'text-white' : 'text-slate-600'
-                                }`} />
-                            </div>
-                          </div>
-                          <h3 className="text-base font-semibold text-slate-900 leading-relaxed ">
-                            {faq.question}
-                          </h3>
-                        </div>
-
-                        <div className="flex-shrink-0 ml-4">
-                          <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index
-                            ? 'bg-amber-500 rotate-180'
-                            : 'bg-slate-200 group-hover:bg-slate-300'
-                            }`}>
-                            <ChevronDown className={`w-4 h-4 transition-colors duration-300 ${openIndex === index ? 'text-white' : 'text-slate-600'
-                              }`} />
-                          </div>
-                        </div>
-                      </button>
-
-                      {/* Enhanced Answer */}
-                      <div className={`px-8 transition-all duration-500 ease-out ${openIndex === index
-                        ? 'pb-8 opacity-100 max-h-96'
-                        : 'pb-0 opacity-0 max-h-0 overflow-hidden'
-                        }`}>
-                        <div className="pl-15">
-                          <div className="h-px bg-gradient-to-r from-amber-200 via-slate-200 to-transparent mb-6"></div>
-                          <div className="bg-gradient-to-r from-slate-50 to-amber-50/30 rounded-xl p-6">
-                            <p className="text-slate-700 leading-relaxed text-base font-sans">
-                              {faq.answer}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-            </div>
+            ))}
           </div>
         </div>
       </div>

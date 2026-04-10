@@ -1,208 +1,68 @@
 import React from 'react';
-import { Scale, Building2, Award, Users, TrendingUp, CheckCircle, ArrowRight, Star, Briefcase } from 'lucide-react';
 
 const CommercialandCorporate = () => {
   const keyHighlights = [
-    {
-      company: "Reliance Industries Ltd.",
-      description:
-        "Advised Reliance Industries Ltd. on corporate restructuring, joint ventures, and mergers & acquisitions, ensuring regulatory compliance and strategic business growth.",
-      type: "Corporate Restructuring"
-    },
-    {
-      company: "Tata Consultancy Services",
-      description:
-        "Provided comprehensive legal advisory for TCS in cross-border contracts, strategic partnerships, and investment agreements, safeguarding corporate interests.",
-      type: "Strategic Partnerships"
-    },
-    {
-      company: "Infosys Ltd.",
-      description:
-        "Represented Infosys in high-value mergers and acquisitions, due diligence processes, and corporate governance matters, ensuring smooth transactional execution.",
-      type: "M&A Advisory"
-    },
-    {
-      company: "Adani Group",
-      description:
-        "Advised Adani Group on corporate compliance, regulatory filings, joint ventures, and commercial contracts across multiple sectors, facilitating sustainable business operations.",
-      type: "Corporate Compliance"
-    }
+    { company: "Reliance Industries Ltd.", description: "Advised Reliance Industries Ltd. on corporate restructuring, joint ventures, and mergers & acquisitions, ensuring regulatory compliance and strategic business growth.", type: "Corporate Restructuring" },
+    { company: "Tata Consultancy Services", description: "Provided comprehensive legal advisory for TCS in cross-border contracts, strategic partnerships, and investment agreements, safeguarding corporate interests.", type: "Strategic Partnerships" },
+    { company: "Infosys Ltd.", description: "Represented Infosys in high-value mergers and acquisitions, due diligence processes, and corporate governance matters, ensuring smooth transactional execution.", type: "M&A Advisory" },
+    { company: "Adani Group", description: "Advised Adani Group on corporate compliance, regulatory filings, joint ventures, and commercial contracts across multiple sectors, facilitating sustainable business operations.", type: "Corporate Compliance" }
   ];
 
-  const expertise = [
-    { icon: Scale, text: "Corporate & Commercial Advisory", highlight: false },
-    { icon: Building2, text: "Mergers & Acquisitions (M&A)", highlight: false },
-    { icon: Award, text: "Joint Ventures & Strategic Partnerships", highlight: false },
-    { icon: Users, text: "Corporate Governance & Compliance", highlight: false },
-    { icon: TrendingUp, text: "Contract Drafting & Negotiation", highlight: false },
-    { icon: Briefcase, text: "Cross-Border Transactions & Advisory", highlight: false }
-  ];
-
-  const stats = [
-    { number: "500+", label: "Corporate Deals Handled", icon: Award },
-    { number: "₹2 Lakh Cr+", label: "Transaction Value", icon: TrendingUp },
-    { number: "95%", label: "Client Satisfaction Rate", icon: Star },
-    { number: "50+", label: "Top Corporates Advised", icon: Building2 }
-  ];
+  const expertise = ["Corporate & Commercial Advisory", "Mergers & Acquisitions (M&A)", "Joint Ventures & Strategic Partnerships", "Corporate Governance & Compliance", "Contract Drafting & Negotiation", "Cross-Border Transactions & Advisory"];
+  const stats = [{ number: "500+", label: "Corporate Deals" }, { number: "₹2L Cr+", label: "Transaction Value" }, { number: "95%", label: "Satisfaction Rate" }, { number: "50+", label: "Top Corporates" }];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50">
-      {/* Hero Background */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-orange-900">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(251,146,60,0.1)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
-        </div>
-        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-500/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1200 120" fill="none" className="w-full h-auto">
-            <path
-              d="M0,80 C200,120 400,40 600,80 C800,120 1000,40 1200,80 L1200,120 L0,120 Z"
-              fill="currentColor"
-              className="text-slate-50"
-            />
-          </svg>
-        </div>
+    <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", background: "#0f0e0c", color: "#f5f0e8", minHeight: "100vh" }}>
+      <div style={{ background: "linear-gradient(160deg, #0f0e0c 60%, #1a1710 100%)", padding: "3rem 2rem 2rem", borderBottom: "1px solid #2a2418" }}>
+        <p style={{ fontFamily: "Arial, sans-serif", fontSize: "11px", letterSpacing: "0.18em", color: "#c9a84c", textTransform: "uppercase", marginBottom: "1rem" }}>Asterisms Legal · Commercial & Corporate Practice</p>
+        <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 400, color: "#f5f0e8", lineHeight: 1.2, margin: "0 0 0.5rem" }}>
+          Precision. Integrity.<br /><em style={{ color: "#c9a84c" }}>Outcome-Driven</em><br />Corporate Counsel.
+        </h1>
+        <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.95rem", color: "#9e9484", maxWidth: "520px", lineHeight: 1.7, margin: "1rem 0 0" }}>Guiding India's top corporations with strategic legal solutions.</p>
       </div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="space-y-20">
-
-          {/* Our Expertise Section */}
-          <div className="relative">
-            <div className="absolute -top-10 -left-10 w-20 h-20 bg-orange-500/10 rounded-full blur-xl"></div>
-            <div className="bg-white rounded-3xl shadow-2xl p-12 border border-slate-200 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-full blur-2xl"></div>
-              
-              <div className="relative">
-                <div className="flex items-center mb-8">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-2 h-16 bg-gradient-to-b from-orange-500 to-blue-500 rounded-full"></div>
-                    <div>
-                      <h2 className="text-4xl font-bold text-slate-800">Commercial, Corporate & Companies Law</h2>
-                      <p className="text-orange-600 font-medium mt-2 font-sans">
-                        Guiding India’s top corporations with strategic corporate solutions
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid lg:grid-cols-2 gap-12">
-                  <div className="prose prose-xl text-slate-600 space-y-6">
-                    <p className="text-lg leading-relaxed text-justify">
-                      Our Firm provides <span className="font-semibold text-orange-600">comprehensive corporate advisory</span> to domestic and international clients, covering commercial contracts, joint ventures, mergers & acquisitions, and corporate governance.
-                    </p>
-                    <p className="text-lg leading-relaxed text-justify">
-                      We advise on <span className="font-semibold text-orange-600">strategic business decisions</span>, helping clients navigate complex legal landscapes and achieve sustainable growth.
-                    </p>
-                  </div>
-                  <div className="prose prose-xl text-slate-600 space-y-6">
-                    <p className="text-lg leading-relaxed">
-                      Our team is recognized for <span className="font-semibold text-orange-600">expert guidance</span> in cross-border transactions, regulatory compliance, and corporate structuring, making us trusted partners for leading corporations.
-                    </p>
-                    <p className="text-lg leading-relaxed text-justify">
-                      We regularly represent clients before <span className="font-semibold text-orange-600">High Courts, National Company Law Tribunal, and the Supreme Court of India</span>, ensuring robust legal protection.
-                    </p>
-                  </div>
-                </div>
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2.5rem 2rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "#2a2418", border: "1px solid #2a2418", marginBottom: "3rem" }}>
+          {stats.map((s, i) => (
+            <div key={i} style={{ background: "#0f0e0c", padding: "1.4rem 1rem", textAlign: "center" }}>
+              <span style={{ display: "block", fontSize: "1.6rem", color: "#c9a84c" }}>{s.number}</span>
+              <span style={{ display: "block", fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#6e665a", marginTop: "0.3rem" }}>{s.label}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginBottom: "3rem" }}>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418" }}>About the Practice</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+            <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.92rem", color: "#9e9484", lineHeight: 1.8, margin: 0 }}>Our Firm provides <strong style={{ color: "#c9a84c" }}>comprehensive corporate advisory</strong> covering commercial contracts, joint ventures, mergers & acquisitions, and corporate governance.</p>
+            <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.92rem", color: "#9e9484", lineHeight: 1.8, margin: 0 }}>Recognized for <strong style={{ color: "#c9a84c" }}>expert guidance</strong> in cross-border transactions, regulatory compliance, and corporate structuring for leading corporations.</p>
+          </div>
+        </div>
+        <div style={{ marginBottom: "3rem" }}>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418" }}>Areas of Excellence</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "#2a2418", border: "1px solid #2a2418" }}>
+            {expertise.map((item, i) => (
+              <div key={i} style={{ background: "#141210", padding: "1.1rem 1.4rem", display: "flex", alignItems: "flex-start", gap: "0.8rem" }}>
+                <div style={{ width: "5px", height: "5px", background: "#c9a84c", borderRadius: "50%", marginTop: "7px", flexShrink: 0 }}></div>
+                <span style={{ fontFamily: "Arial, sans-serif", fontSize: "0.88rem", color: "#c5bfb3", lineHeight: 1.5 }}>{item}</span>
               </div>
-            </div>
+            ))}
           </div>
-
-          {/* Areas of Excellence */}
-          <div className="bg-white rounded-3xl p-12 border border-orange-200">
-            <div className="text-center mb-12">
-              <h3 className="text-4xl font-bold text-slate-800 mb-4">Areas of Excellence</h3>
-              <p className="text-xl text-orange-600 max-w-3xl mx-auto">
-                Specialized legal services across corporate, commercial, and cross-border transactions
-              </p>
+        </div>
+        <div>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#c9a84c", marginBottom: "1.2rem", paddingBottom: "0.6rem", borderBottom: "1px solid #2a2418" }}>Key Highlights</div>
+          <div style={{ border: "1px solid #2a2418" }}>
+            <div style={{ background: "#141210", padding: "1.2rem 1.6rem", borderBottom: "1px solid #2a2418" }}>
+              <h3 style={{ margin: 0, fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c9a84c", fontFamily: "Arial, sans-serif", fontWeight: 400 }}>Landmark Corporate Transactions</h3>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {expertise.map((item, index) => (
-                <div key={index} className={`group p-6 rounded-2xl transition-all duration-300 hover:scale-105 ${
-                  item.highlight 
-                    ? 'bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-xl' 
-                    : 'bg-white hover:bg-orange-50 shadow-lg hover:shadow-xl'
-                }`}>
-                  <div className="flex items-start space-x-4">
-                    <div className={`flex-shrink-0 p-3 rounded-xl ${
-                      item.highlight 
-                        ? 'bg-white/20 backdrop-blur-sm' 
-                        : 'bg-orange-100 group-hover:bg-orange-200'
-                    } transition-colors`}>
-                      <item.icon className={`w-6 h-6 ${
-                        item.highlight ? 'text-white' : 'text-orange-600'
-                      }`} />
-                    </div>
-                    <div>
-                      <span className={`text-lg leading-relaxed ${
-                        item.highlight ? 'text-white' : 'text-slate-600 group-hover:text-orange-700'
-                      } transition-colors`}>
-                        {item.text}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Key Highlights */}
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
-            <div className="bg-gradient-to-r from-slate-800 via-orange-900 to-blue-900 p-12 text-white">
-              <div className="flex items-center justify-between">
+            {keyHighlights.map((h, i) => (
+              <div key={i} style={{ padding: "1.4rem 1.6rem", borderBottom: i < keyHighlights.length - 1 ? "1px solid #1e1c18" : "none", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "start" }}>
                 <div>
-                  <h2 className="text-4xl font-bold mb-4">Key Highlights</h2>
-                  <p className="text-xl text-orange-100 max-w-2xl">
-                    Landmark corporate and commercial deals shaping India’s corporate landscape
-                  </p>
+                  <div style={{ fontSize: "1.05rem", color: "#f5f0e8", marginBottom: "0.3rem" }}>{h.company}</div>
+                  <p style={{ fontFamily: "Arial, sans-serif", fontSize: "0.85rem", color: "#7a7268", lineHeight: 1.6, margin: 0 }}>{h.description}</p>
                 </div>
-                <div className="hidden lg:block">
-                  <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <Award className="w-16 h-16 text-white" />
-                  </div>
-                </div>
+                <span style={{ fontFamily: "Arial, sans-serif", fontSize: "10px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#c9a84c", background: "#1e1a10", border: "1px solid #2e2410", padding: "4px 10px", whiteSpace: "nowrap" }}>{h.type}</span>
               </div>
-            </div>
-            
-            <div className="p-12">
-              <div className="space-y-12">
-                {keyHighlights.map((highlight, index) => (
-                  <div key={index} className="group relative">
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-blue-500 rounded-full group-hover:w-2 transition-all duration-300"></div>
-                    
-                    <div className="pl-12">
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-3">
-                            <div className="flex-shrink-0 p-2 bg-orange-100 rounded-xl group-hover:bg-orange-200 transition-colors">
-                              <CheckCircle className="w-5 h-5 text-orange-600" />
-                            </div>
-                            <div>
-                              <h3 className="text-2xl font-bold text-slate-800 group-hover:text-orange-700 transition-colors">
-                                {highlight.company}
-                              </h3>
-                              <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-sm font-medium rounded-full mt-1">
-                                {highlight.type}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <ArrowRight className="w-6 h-6 text-slate-400 group-hover:text-orange-500 group-hover:translate-x-1 transition-all duration-300" />
-                      </div>
-                      
-                      <p className="text-lg text-slate-600 leading-relaxed pl-11">
-                        {highlight.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
-
         </div>
       </div>
     </div>
